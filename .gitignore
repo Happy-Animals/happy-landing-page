@@ -1,0 +1,17 @@
+# Ignore the folders
+assets/
+DONT_DEPLOY/
+slugs/
+
+
+# Ignore files
+token.html
+debug.log
+
+# Ignore backup files (optional)
+*.bak
+*.tmp
+
+# Ignore IDE-specific files (optional)
+.vscode/
+.idea/
