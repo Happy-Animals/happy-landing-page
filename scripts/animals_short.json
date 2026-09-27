@@ -1,0 +1,610 @@
+[
+  {
+    "name": "Albatross",
+    "number": "001"
+  },
+  {
+    "name": "Alligator",
+    "number": "002"
+  },
+  {
+    "name": "Alpaca",
+    "number": "003"
+  },
+  {
+    "name": "Anaconda",
+    "number": "004"
+  },
+  {
+    "name": "Anteater",
+    "number": "005"
+  },
+  {
+    "name": "Armadillo",
+    "number": "006"
+  },
+  {
+    "name": "Axolotl",
+    "number": "007"
+  },
+  {
+    "name": "Banteng",
+    "number": "008"
+  },
+  {
+    "name": "Bear",
+    "number": "009"
+  },
+  {
+    "name": "Bengal Tiger",
+    "number": "010"
+  },
+  {
+    "name": "Binturong",
+    "number": "011"
+  },
+  {
+    "name": "Bison",
+    "number": "012"
+  },
+  {
+    "name": "Blue Whale",
+    "number": "013"
+  },
+  {
+    "name": "Bonobo",
+    "number": "014"
+  },
+  {
+    "name": "Buffalo",
+    "number": "015"
+  },
+  {
+    "name": "Butterfly Blue Morpho",
+    "number": "016"
+  },
+  {
+    "name": "Camel",
+    "number": "017"
+  },
+  {
+    "name": "Capybara",
+    "number": "018"
+  },
+  {
+    "name": "Caracal",
+    "number": "019"
+  },
+  {
+    "name": "Cassowary",
+    "number": "020"
+  },
+  {
+    "name": "Cat",
+    "number": "021"
+  },
+  {
+    "name": "Cheetah",
+    "number": "022"
+  },
+  {
+    "name": "Chicken",
+    "number": "023"
+  },
+  {
+    "name": "Chimpanzee",
+    "number": "024"
+  },
+  {
+    "name": "Chinchilla",
+    "number": "025"
+  },
+  {
+    "name": "Coatimundi",
+    "number": "026"
+  },
+  {
+    "name": "Cow",
+    "number": "027"
+  },
+  {
+    "name": "Crocodile",
+    "number": "028"
+  },
+  {
+    "name": "Deer",
+    "number": "029"
+  },
+  {
+    "name": "Tasmanian Devil",
+    "number": "030"
+  },
+  {
+    "name": "Dingo",
+    "number": "031"
+  },
+  {
+    "name": "Dog",
+    "number": "032"
+  },
+  {
+    "name": "Donkey",
+    "number": "033"
+  },
+  {
+    "name": "Duck",
+    "number": "034"
+  },
+  {
+    "name": "Dugong",
+    "number": "035"
+  },
+  {
+    "name": "Eagle",
+    "number": "036"
+  },
+  {
+    "name": "Echidna",
+    "number": "037"
+  },
+  {
+    "name": "Elephant",
+    "number": "038"
+  },
+  {
+    "name": "Elephant Seal",
+    "number": "039"
+  },
+  {
+    "name": "Elk",
+    "number": "040"
+  },
+  {
+    "name": "Emu",
+    "number": "041"
+  },
+  {
+    "name": "Galapagos Tortoise",
+    "number": "042"
+  },
+  {
+    "name": "Gecko",
+    "number": "043"
+  },
+  {
+    "name": "Gharial",
+    "number": "044"
+  },
+  {
+    "name": "Giraffe",
+    "number": "045"
+  },
+  {
+    "name": "Goat",
+    "number": "046"
+  },
+  {
+    "name": "Golden Lion Tamarin",
+    "number": "047"
+  },
+  {
+    "name": "Gorilla",
+    "number": "048"
+  },
+  {
+    "name": "Guinea Pig",
+    "number": "049"
+  },
+  {
+    "name": "Harpy Eagle",
+    "number": "050"
+  },
+  {
+    "name": "Hippopotamus",
+    "number": "051"
+  },
+  {
+    "name": "Honey Badger",
+    "number": "052"
+  },
+  {
+    "name": "Horse",
+    "number": "053"
+  },
+  {
+    "name": "Hummingbird",
+    "number": "054"
+  },
+  {
+    "name": "Hyena",
+    "number": "055"
+  },
+  {
+    "name": "Jaguar",
+    "number": "056"
+  },
+  {
+    "name": "Kangaroo",
+    "number": "057"
+  },
+  {
+    "name": "Killer Whale",
+    "number": "058"
+  },
+  {
+    "name": "Kinkajou",
+    "number": "059"
+  },
+  {
+    "name": "Kiwi",
+    "number": "060"
+  },
+  {
+    "name": "Koala",
+    "number": "061"
+  },
+  {
+    "name": "Komodo Dragon",
+    "number": "062"
+  },
+  {
+    "name": "Kudu",
+    "number": "063"
+  },
+  {
+    "name": "Lemur",
+    "number": "064"
+  },
+  {
+    "name": "Lion",
+    "number": "065"
+  },
+  {
+    "name": "Llama",
+    "number": "066"
+  },
+  {
+    "name": "Lynx",
+    "number": "067"
+  },
+  {
+    "name": "Manatee",
+    "number": "068"
+  },
+  {
+    "name": "Mandrill",
+    "number": "069"
+  },
+  {
+    "name": "Meerkat",
+    "number": "070"
+  },
+  {
+    "name": "Naked Mole Rat",
+    "number": "071"
+  },
+  {
+    "name": "Narwhal",
+    "number": "072"
+  },
+  {
+    "name": "Ocelot",
+    "number": "073"
+  },
+  {
+    "name": "Okapi",
+    "number": "074"
+  },
+  {
+    "name": "Orangutan",
+    "number": "075"
+  },
+  {
+    "name": "Orca",
+    "number": "076"
+  },
+  {
+    "name": "Ostrich",
+    "number": "077"
+  },
+  {
+    "name": "Otter",
+    "number": "078"
+  },
+  {
+    "name": "Sea Otter",
+    "number": "079"
+  },
+  {
+    "name": "Giant Panda",
+    "number": "080"
+  },
+  {
+    "name": "Pangolin",
+    "number": "081"
+  },
+  {
+    "name": "Peacock",
+    "number": "082"
+  },
+  {
+    "name": "Penguin",
+    "number": "083"
+  },
+  {
+    "name": "Pig",
+    "number": "084"
+  },
+  {
+    "name": "Pigeon",
+    "number": "085"
+  },
+  {
+    "name": "Platypus",
+    "number": "086"
+  },
+  {
+    "name": "Polar Bear",
+    "number": "087"
+  },
+  {
+    "name": "Prairie Dog",
+    "number": "088"
+  },
+  {
+    "name": "Puffer Fish",
+    "number": "089"
+  },
+  {
+    "name": "Quail",
+    "number": "090"
+  },
+  {
+    "name": "Quokka",
+    "number": "091"
+  },
+  {
+    "name": "Rabbit",
+    "number": "092"
+  },
+  {
+    "name": "Raccoon",
+    "number": "093"
+  },
+  {
+    "name": "Red Fox",
+    "number": "094"
+  },
+  {
+    "name": "Red Panda",
+    "number": "095"
+  },
+  {
+    "name": "Reindeer",
+    "number": "096"
+  },
+  {
+    "name": "Sea Turtle",
+    "number": "097"
+  },
+  {
+    "name": "Secretary Bird",
+    "number": "098"
+  },
+  {
+    "name": "Serval",
+    "number": "099"
+  },
+  {
+    "name": "Sheep",
+    "number": "100"
+  },
+  {
+    "name": "Sifaka",
+    "number": "101"
+  },
+  {
+    "name": "Sloth",
+    "number": "102"
+  },
+  {
+    "name": "Snow Leopard",
+    "number": "103"
+  },
+  {
+    "name": "Snowy Owl",
+    "number": "104"
+  },
+  {
+    "name": "Sun Bear",
+    "number": "105"
+  },
+  {
+    "name": "Tapir",
+    "number": "106"
+  },
+  {
+    "name": "Tarsier",
+    "number": "107"
+  },
+  {
+    "name": "Tree Kangaroo",
+    "number": "108"
+  },
+  {
+    "name": "Turkey",
+    "number": "109"
+  },
+  {
+    "name": "Turtle",
+    "number": "110"
+  },
+  {
+    "name": "Vicuna",
+    "number": "111"
+  },
+  {
+    "name": "Vulture",
+    "number": "112"
+  },
+  {
+    "name": "Wallaby",
+    "number": "113"
+  },
+  {
+    "name": "Water Buffalo",
+    "number": "114"
+  },
+  {
+    "name": "White Shark",
+    "number": "115"
+  },
+  {
+    "name": "Wolf",
+    "number": "116"
+  },
+  {
+    "name": "Wolverine",
+    "number": "117"
+  },
+  {
+    "name": "Wombat",
+    "number": "118"
+  },
+  {
+    "name": "Yak",
+    "number": "119"
+  },
+  {
+    "name": "Zebra",
+    "number": "120"
+  },
+  {
+    "name": "Zebu",
+    "number": "121"
+  },
+  {
+    "name": "House Mouse",
+    "number": "122"
+  },
+  {
+    "name": "Barn Owl",
+    "number": "123"
+  },
+  {
+    "name": "Rattlesnake",
+    "number": "124"
+  },
+  {
+    "name": "Viper",
+    "number": "125"
+  },
+  {
+    "name": "Frog",
+    "number": "126"
+  },
+  {
+    "name": "Honeybee",
+    "number": "127"
+  },
+  {
+    "name": "Bumblebee",
+    "number": "128"
+  },
+  {
+    "name": "Ant",
+    "number": "129"
+  },
+  {
+    "name": "Dolphin",
+    "number": "130"
+  },
+  {
+    "name": "Seahorse",
+    "number": "131"
+  },
+  {
+    "name": "Spider",
+    "number": "132"
+  },
+  {
+    "name": "Snail",
+    "number": "133"
+  },
+  {
+    "name": "Lobster",
+    "number": "134"
+  },
+  {
+    "name": "Crab",
+    "number": "135"
+  },
+  {
+    "name": "Octopus",
+    "number": "136"
+  },
+  {
+    "name": "Clam",
+    "number": "137"
+  },
+  {
+    "name": "Sea Lion",
+    "number": "138"
+  },
+  {
+    "name": "Seal",
+    "number": "139"
+  },
+  {
+    "name": "Crow",
+    "number": "140"
+  },
+  {
+    "name": "Raven",
+    "number": "141"
+  },
+  {
+    "name": "Owl",
+    "number": "142"
+  },
+  {
+    "name": "Flamingo",
+    "number": "143"
+  },
+  {
+    "name": "Cobra",
+    "number": "144"
+  },
+  {
+    "name": "Chameleon",
+    "number": "145"
+  },
+  {
+    "name": "Gecko",
+    "number": "146"
+  },
+  {
+    "name": "Salamander",
+    "number": "147"
+  },
+  {
+    "name": "Clownfish",
+    "number": "148"
+  },
+  {
+    "name": "Hermit Crab",
+    "number": "149"
+  },
+  {
+    "name": "Cockatoo",
+    "number": "150"
+  },
+  {
+    "name": "Scorpion",
+    "number": "151"
+  },
+  {
+    "name": "Toad",
+    "number": "152"
+  }
+]

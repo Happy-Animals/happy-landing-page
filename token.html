@@ -1,0 +1,1357 @@
+<!-- Landing Page for Project 1: Happy Animals -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&family=DynaPuff:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./language-selector.css" />
+    <script src="./i18n.js"></script>
+    <title>Happy Animals Token | Supporting Wildlife Conservation</title>
+
+    <meta
+      name="description"
+      data-i18n-content="token.metaDescription"
+      content="Learn about the Happy Animals Token, its utility, distribution, and how it contributes to wildlife conservation efforts."
+    />
+    <meta property="og:title" content="Happy Animals Token" />
+    <meta
+      property="og:description"
+      data-i18n-content="token.ogDescription"
+      content="Discover how the Happy Animals Token empowers conservation and benefits NFT holders."
+    />
+    <meta
+      property="og:image"
+      content="https://happyanimals.xyz/assets/happy-animals-token.jpg"
+    />
+    <meta property="og:url" content="https://happyanimals.xyz/token" />
+    <style>
+      .section1Intro-content p {
+        max-width: 1000px;
+      }
+
+      section,
+      footer {
+        min-height: 100vh;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .aurora-wrapper {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      @keyframes auroraShift1 {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 100% 75%;
+        }
+        75% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .aurora-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          115deg,
+          rgb(0, 0, 0),
+          rgb(0, 0, 0),
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0),
+          rgba(127, 0, 255, 0.1),
+          rgba(255, 0, 255, 0.15),
+          rgba(0, 204, 255, 0.1),
+          rgba(255, 204, 51, 0.15),
+          rgba(255, 0, 0, 0.1),
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0),
+          rgb(0, 0, 0),
+          rgb(0, 0, 0)
+        );
+        background-size: 400% 400%;
+        z-index: -1;
+        pointer-events: none;
+        animation: auroraShift1 20s linear infinite;
+      }
+
+      .section1Intro::before {
+        opacity: 0.9;
+      }
+
+      .section2About::before {
+        opacity: 0.9;
+      }
+
+      .section3Competition::before {
+        opacity: 0.9;
+      }
+
+      .section4Badge::before {
+        opacity: 0.9;
+      }
+
+      .section5Collection::before {
+        opacity: 0.9;
+      }
+
+      .footer::before {
+        opacity: 0.9;
+      }
+
+      .canvas-wrapper {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      canvas {
+        width: 100%;
+        height: auto;
+      }
+
+      .section2About,
+      .section3Competition,
+      .section4Badge,
+      .section5Collection {
+        position: relative;
+        overflow: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DynaPuff", cursive;
+        font-weight: 400;
+        font-size: 1.2vw;
+        margin: 0;
+        padding: 0;
+        padding-top: 0px;
+        line-height: 1.5;
+        background-color: #fff;
+        color: #333;
+        overflow-y: scroll;
+        height: 100vh;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.05;
+        margin: 3%;
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        line-height: 1;
+      }
+
+      p,
+      .social-media a {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        margin: 0;
+      }
+
+      .container {
+        width: 60%;
+        max-width: 1400px;
+        margin: 0;
+        background-color: white;
+        padding: 40px;
+        border-radius: 180px;
+        border: 5px solid #f3b34d;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        padding: 5px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 5px 20px;
+        box-sizing: border-box;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-image {
+        width: 50px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .logo-text {
+        font-family: "Luckiest Guy", cursive;
+        font-size: 2vw;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .section1Intro {
+        min-height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .section2About {
+        min-height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .collections {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .collections h2,
+      .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes nftPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .nft-card {
+        margin: 20px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+
+        animation: nftPulse 2s ease-in-out infinite;
+      }
+
+      .nft-card img {
+        width: 100%;
+        height: auto;
+
+        border-radius: 10px;
+      }
+
+      .section3Competition {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .section4Badge {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .section5Collection {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .footer {
+        scroll-snap-align: start;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .social-media p {
+        margin: 10px 0 5px;
+        font-weight: bold;
+        font-size: 1.2vw;
+      }
+
+      .social-links,
+      .additional-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .social-links a,
+      .additional-links a {
+        color: #333;
+        text-decoration: none;
+        margin: 15px 25px;
+        font-size: 1.2vw;
+      }
+
+      .additional-links button {
+        color: #fff;
+        text-decoration: none;
+        margin: 15px 25px;
+        font-size: 1.2vw;
+      }
+
+      .social-links a:hover,
+      .additional-links a:hover {
+        color: #00aaff;
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .social-links img {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        color: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+      }
+
+      .modal h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .blockchain-options {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .blockchain-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #000000;
+        transition: transform 0.3s;
+      }
+
+      .blockchain-option:hover {
+        transform: scale(1.1);
+      }
+
+      .blockchain-logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0px;
+      }
+
+      .scroll-arrow {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1001;
+        font-size: 4rem;
+        color: #ff7f50;
+        cursor: pointer;
+        animation: pulse 1.5s infinite;
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .scroll-arrow:hover {
+        color: #ff6347;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(10px);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 auto;
+      }
+
+      .text-content {
+        flex: 0 1 70%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .image-content {
+        flex: 0 1 30%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .cta-buttona {
+        margin: 10px;
+        font-family: "DynaPuff", cursive;
+        display: inline-block;
+        flex-shrink: 0;
+        padding: 10px 20px;
+        background-color: #ff7f50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 1.2vw;
+        font-weight: bold;
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease,
+          transform 0.3s ease;
+        border: none;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .cta-buttona:hover {
+        background-color: #ff6347;
+        transform: scale(1.05) !important;
+      }
+
+      @keyframes glowEffect {
+        0% {
+          box-shadow:
+            0 4px 15px rgba(255, 0, 0, 0.3),
+            0 2px 5px rgba(255, 204, 0, 0.5);
+        }
+        50% {
+          box-shadow:
+            0 6px 20px rgba(255, 51, 0, 0.5),
+            0 4px 10px rgba(255, 153, 0, 0.7);
+        }
+        100% {
+          box-shadow:
+            0 8px 25px rgba(255, 102, 0, 0.7),
+            0 6px 15px rgba(255, 204, 0, 0.9);
+        }
+      }
+
+      .copyright {
+        position: absolute;
+        font-family: "Roboto", sans-serif;
+        font-size: 0.4vw;
+        color: #888;
+        text-align: center;
+
+        bottom: 10px;
+      }
+
+      .section1Intro-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        z-index: 2;
+      }
+
+      @media (min-width: 769px) {
+        .section1Intro-content h1 {
+          font-size: clamp(2rem, 3.2vw, 3rem);
+          line-height: 1.05;
+          white-space: nowrap;
+        }
+      }
+
+      .nft-image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 300px;
+        margin: 0 auto;
+        background-color: #000000;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        animation: nftPulse 2s ease-in-out infinite;
+      }
+
+      .nft-single-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .ul {
+        max-width: 1400px;
+        margin: 20px auto;
+        font-size: 1.1em;
+        line-height: 1.6;
+        list-style-type: none;
+      }
+
+      #section3Competition .container {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+
+        padding-top: 22px;
+        padding-bottom: 22px;
+      }
+
+      #section3Competition .graph {
+        flex: 0 0 38%;
+        max-width: 38%;
+        min-width: 0;
+      }
+
+      #section3Competition .graph img {
+        width: 100%;
+        height: auto;
+      }
+
+      #section3Competition .text-content {
+        flex: 0 0 57%;
+        max-width: 57%;
+        min-width: 0;
+        padding: 8px;
+      }
+
+      #buttonBackMobile {
+        display: none;
+      }
+
+      @media (min-width: 769px) {
+        #section3Competition h2 {
+          font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+          margin-top: 0;
+          margin-bottom: 14px;
+        }
+
+        #section3Competition .text-content > p {
+          font-size: clamp(0.95rem, 1.35vw, 1.2rem);
+          line-height: 1.35;
+        }
+
+        #section3Competition .ul {
+          margin: 12px auto 0;
+          padding: 0;
+          font-size: 0.92em;
+          line-height: 1.35;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #section3Competition .graph img {
+          display: none;
+        }
+        #section3Competition .container {
+          gap: 0px;
+        }
+
+        .ul {
+          max-width: 100%;
+          padding: 0 15px;
+          font-size: 1rem;
+          line-height: 1.4;
+        }
+        .container {
+          width: 80%;
+          margin: 10px;
+        }
+
+        .header-container {
+          flex-direction: column;
+          justify-content: center;
+          padding: 10px 0;
+        }
+
+        .logo {
+          justify-content: center;
+        }
+        .nft-image-wrapper {
+          max-width: 100%;
+        }
+
+        .logo-text {
+          font-size: 1.3rem;
+        }
+
+        #buttontopright {
+          display: none;
+        }
+
+        #buttonBackMobile {
+          display: block;
+        }
+
+        .cta-buttona {
+          font-size: 1.3rem;
+        }
+
+        .content-wrapper {
+          flex-direction: column;
+        }
+
+        h1 {
+          line-height: 1;
+        }
+
+        .canvas-wrapper {
+          max-width: 200px;
+        }
+
+        .text-content {
+          padding: 0px;
+        }
+
+        .image-content {
+          padding: 0px;
+        }
+
+        .social-links,
+        .additional-links {
+          flex-direction: column;
+        }
+
+        .social-links a,
+        .additional-links a {
+          margin: 10px;
+          font-size: 1.3rem;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+          margin: 0px;
+        }
+        .social-media {
+          margin-bottom: 0px;
+        }
+
+        .social-links a,
+        .additional-links a,
+        .additional-links button {
+          font-size: 1.3rem;
+        }
+
+        .modal-content {
+          max-width: 90%;
+        }
+
+        .blockchain-options {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .blockchain-option {
+          flex: 0 1 48%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+  <body class="token-page" data-i18n-page-title="token.pageTitle">
+    <div
+      class="scroll-arrow"
+      role="button"
+      tabindex="0"
+      aria-label="Scroll"
+      data-i18n-aria-label="common.scrollAria"
+    >
+      <span>&#x2193;</span>
+    </div>
+
+    <div
+      id="blockchainModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-content">
+        <span
+          class="close"
+          onclick="closeModal()"
+          role="button"
+          aria-label="Close"
+          data-i18n-aria-label="common.closeAria"
+          >&times;</span
+        >
+        <h2 id="modalTitle" data-i18n="token.selectBlockchain">
+          Select Blockchain
+        </h2>
+        <div class="blockchain-options">
+          <a
+            id="arbitrumLink"
+            href="#"
+            target="_blank"
+            class="blockchain-option"
+          >
+            <img
+              src="./assets/logos_blockchain/logo_blockchain_arbitrum.svg"
+              alt="Arbitrum Logo"
+              class="blockchain-logo"
+            />
+            <p>Arbitrum</p>
+          </a>
+          <a id="solanaLink" href="#" target="_blank" class="blockchain-option">
+            <img
+              src="./assets/logos_blockchain/logo_blockchain_solana.svg"
+              alt="Solana Logo"
+              class="blockchain-logo"
+            />
+            <p>Solana</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img
+            src="./favicon.ico"
+            alt="Happy Animals Logo"
+            data-i18n-alt="common.logoAlt"
+            class="logo-image"
+          />
+          <div class="logo-text">SMILES ANIMALS</div>
+        </div>
+        <button
+          id="buttontopright"
+          class="cta-buttona"
+          onclick="window.location.href = 'https://happyanimals.xyz'"
+        >
+          <span data-i18n="token.backHome">Back to happyanimals.xyz</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section id="section1Intro" class="section1Intro">
+      <div class="language-selector">
+        <select
+          id="languageSelector"
+          class="language-selector__select"
+          aria-label="Select language"
+        ></select>
+        <span class="language-selector__arrow" aria-hidden="true">▾</span>
+      </div>
+
+      <div class="container">
+        <div class="section1Intro-content">
+          <h1 data-i18n="token.heroTitle">Introducing SMILES Token</h1>
+          <p data-i18n="token.heroBody">
+            The Happy Animals Token is at the core of our mission to integrate
+            digital assets with real-world conservation efforts. Holders of our
+            token can access exclusive benefits, participate in community
+            decisions, and contribute directly to wildlife protection.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Token Utility Section -->
+    <section id="section2About" class="section2About">
+      <div class="container">
+        <h2 data-i18n="token.utilityTitle">Token Utility & Integration</h2>
+        <p data-i18n="token.utilityBody">
+          The Happy Animals Token drives our ecosystem, allowing holders to
+          support conservation, access exclusive perks, and participate in
+          community initiatives.
+        </p>
+        <ul class="ul">
+          <li>
+            <strong data-i18n="token.conservationSupportLabel"
+              >Conservation Support:</strong
+            >
+            <span data-i18n="token.conservationSupportBody"
+              >A portion of proceeds directly funds wildlife protection.</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="token.communityEngagementLabel"
+              >Community Engagement:</strong
+            >
+            <span data-i18n="token.communityEngagementBody"
+              >Vote on upcoming projects and initiatives.</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="token.exclusivePerksLabel"
+              >Exclusive Perks:</strong
+            >
+            <span data-i18n="token.exclusivePerksBody"
+              >Access rare NFT drops and events.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- section3Competition Section -->
+    <!-- Tokenomics Section -->
+    <section id="section3Competition" class="section3Competition">
+      <div class="container">
+        <!-- Pie Chart Container -->
+        <div class="graph">
+          <img
+            src="./assets/token-distribution-pie-chart.png"
+            alt="Pie chart showing the token distribution percentages for SMILES Tokens"
+            data-i18n-alt="token.pieAlt"
+            class="pie-chart"
+          />
+        </div>
+
+        <!-- Text Content -->
+        <div class="text-content">
+          <h2 data-i18n="token.tokenomicsTitle">Tokenomics</h2>
+          <p data-i18n="token.tokenomicsBody">
+            Our tokenomics ensure sustainable growth, with a balanced
+            distribution to engage the community and support development.
+          </p>
+
+          <ul class="ul">
+            <li>
+              <strong data-i18n="token.totalSupply">Total Supply:</strong>
+              410,000,000 SMILES
+            </li>
+            <li>
+              <strong data-i18n="token.publicSale">Public Sale:</strong> 76%
+              <a
+                href="https://raydium.io/swap/?inputMint=3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k&outputMint=sol"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &#x2197;
+              </a>
+            </li>
+            <li>
+              <strong data-i18n="token.ecosystemDevelopment"
+                >Ecosystem Development:</strong
+              >
+              6%
+              <a
+                href="https://solscan.io/address/6zb2ZroFcrh9UdKvHiFuPiVLjC7pSLiMbJZyb9koRUug"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &#x2197;
+              </a>
+            </li>
+            <li>
+              <strong data-i18n="token.team">Team:</strong> 3% (<span
+                data-i18n="token.vested24Months"
+                >vested over 24 months</span
+              >)
+              <a
+                href="https://solscan.io/address/DR2DAFUDnS86NMdcyN44UdsMfFJ75GRGifNCZPkQGKPn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &#x2197;
+              </a>
+            </li>
+            <li>
+              <strong data-i18n="token.marketing">Marketing:</strong> 6%
+              <a
+                href="https://solscan.io/address/Ayatx69nfsjbci8LmmgU1eBobAbeKoVf7a4366htJvkd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &#x2197;
+              </a>
+            </li>
+            <li>
+              <strong data-i18n="token.communityAirdrop"
+                >Community Airdrop:</strong
+              >
+              9%
+              <a
+                href="https://solscan.io/address/3G9HtfGPT3T2v1bgFZz1SfXg4YEZv5kQKLcQZddGEznx"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &#x2197;
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- section4Badge Section -->
+    <section id="section4Badge" class="section4Badge">
+      <div class="container">
+        <h2 data-i18n="token.airdropTitle">Initial Distribution & Airdrop</h2>
+        <p data-i18n="token.airdropBody">
+          We're rewarding early supporters with an airdrop to show appreciation
+          and involve them in our mission from the start.
+        </p>
+        <ul class="ul">
+          <li>
+            <strong data-i18n="token.automaticAirdropLabel"
+              >Automatic Airdrop:</strong
+            >
+            <span data-i18n="token.automaticAirdropBody"
+              >SMILES Tokens will be automatically distributed to wallets
+              holding eligible NFTs.</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="token.simpleParticipationLabel"
+              >Simple Participation:</strong
+            >
+            <span data-i18n="token.simpleParticipationBody1"
+              >No action required from your side.</span
+            >
+            <br /><span data-i18n="token.simpleParticipationBody2"
+              >Just hold your NFTs and receive SMILES Tokens.</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="token.airdropDateLabel">Airdrop Date:</strong>
+            <span data-i18n="token.airdropDateBody"
+              >Announced soon. Stay tuned on our social channels.</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="token.eligibilityLabel">Eligibility:</strong>
+            <span data-i18n="token.eligibilityBody"
+              >Owners of "First Contact" badge NFTs and early
+              participants.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- section5Collection Section -->
+    <section id="section5Collection" class="section5Collection">
+      <div class="container">
+        <div class="text-content">
+          <h2 data-i18n="token.roadmapTitle">Future Roadmap</h2>
+          <p data-i18n="token.roadmapBody">
+            The SMILES Token is set for continuous growth. Upcoming plans
+            include:
+          </p>
+          <ul class="ul">
+            <li>
+              <strong data-i18n="token.expandedUtilityLabel"
+                >Expanded Utility:</strong
+              >
+              <span data-i18n="token.expandedUtilityBody"
+                >More interactive features.</span
+              >
+            </li>
+            <li>
+              <strong data-i18n="token.marketplaceIntegrationLabel"
+                >Marketplace Integration:</strong
+              >
+              <span data-i18n="token.marketplaceIntegrationBody"
+                >Use SMILES Tokens for exclusive assets.</span
+              >
+            </li>
+            <li>
+              <strong data-i18n="token.communityInitiativesLabel"
+                >Community Initiatives:</strong
+              >
+              <span data-i18n="token.communityInitiativesBody"
+                >Reward programs for supporters.</span
+              >
+            </li>
+            <li>
+              <strong data-i18n="token.partnershipsLabel">Partnerships:</strong>
+              <span data-i18n="token.partnershipsBody"
+                >Collaborations to expand token use.</span
+              >
+            </li>
+            <li>
+              <strong data-i18n="token.stakingLabel">Staking:</strong>
+              <span data-i18n="token.stakingBody"
+                >Potential future addition.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="container">
+        <div class="text-content">
+          <h2 data-i18n="token.joinTitle">JOIN THE ADVENTURE</h2>
+          <!-- Button linking to the Raydium or Orca pool once you've created it -->
+          <a
+            class="cta-buttona"
+            href="https://raydium.io/swap/?inputMint=3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k&outputMint=sol"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="token.trade">Trade $SMILES</span>
+          </a>
+          <!-- Link to your token address on Solscan -->
+          <a
+            class="cta-buttona"
+            href="https://solscan.io/token/3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="token.viewSolscan">View on Solscan</span>
+          </a>
+
+          <!--   <p>
+            Be part of this groundbreaking project. Connect with us on social
+            media and stay updated.
+          </p> -->
+          <div class="social-media">
+            <h3 data-i18n="common.followUs">Follow us on:</h3>
+            <div class="social-links">
+              <a
+                href="https://twitter.com/happyanimalsxyz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./assets/logo_social_twitterx.svg"
+                  alt="Twitter"
+                  data-i18n-alt="common.twitterAlt"
+                  width="20"
+                />
+                Twitter
+              </a>
+              <a
+                href="https://discord.gg/hSGmJdRweD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./assets/logo_social_discord.svg"
+                  alt="Discord"
+                  data-i18n-alt="common.discordAlt"
+                  width="20"
+                />
+                Discord
+              </a>
+              <a
+                href="https://github.com/Happy-Animals"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./assets/logo_social_github.svg"
+                  alt="GitHub"
+                  data-i18n-alt="common.githubAlt"
+                  width="20"
+                />
+                GitHub
+              </a>
+            </div>
+
+            <div class="additional-links">
+              <button
+                id="buttonBackMobile"
+                class="cta-buttona"
+                onclick="window.location.href = 'https://happyanimals.xyz'"
+              >
+                <span data-i18n="token.backHome">Back to happyanimals.xyz</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p data-i18n="common.copyright">
+          &copy; 2026 Happy Animals. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="token_background.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll("section");
+        const windowHeight = window.innerHeight;
+
+        sections.forEach((section) => {
+          const textContent = section.querySelector(".text-content");
+          if (!textContent) return;
+
+          const sectionTop = section.getBoundingClientRect().top;
+          const sectionHeight = section.offsetHeight;
+
+          // Calculate the opacity based on scroll position
+          if (sectionTop < windowHeight && sectionTop + sectionHeight > 0) {
+            const distanceToCenter = Math.abs(
+              sectionTop + sectionHeight / 2 - windowHeight / 2,
+            );
+            const maxDistance = windowHeight / 2;
+            const opacity = Math.max(0, 1 - distanceToCenter / maxDistance);
+
+            textContent.style.opacity = opacity;
+          } else {
+            textContent.style.opacity = 0;
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // Ensure page loads at the top
+      window.onload = () => {
+        window.scrollTo(0, 0); // Scroll to the top on page load
+      };
+
+      // Scroll lock variables
+      let scrollLocked = false; // Prevents multiple scrolls in quick succession
+      const scrollDelay = 500; // Adjust delay (in milliseconds) as needed
+
+      // Smooth scroll function with scroll lock
+      document.addEventListener("wheel", (event) => {
+        if (scrollLocked) return; // If scroll is locked, do nothing
+
+        scrollLocked = true; // Lock the scroll
+
+        if (event.deltaY > 0) {
+          window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+        } else {
+          window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
+        }
+
+        // Unlock scroll after the specified delay
+        setTimeout(() => {
+          scrollLocked = false;
+        }, scrollDelay);
+      });
+    </script>
+
+    <script>
+      function openModal(action) {
+        const arbitrumLink = document.getElementById("arbitrumLink");
+        const solanaLink = document.getElementById("solanaLink");
+
+        // Set URLs based on action
+        if (action === "launchApp") {
+          arbitrumLink.href = "https://arb.happyanimals.xyz";
+          solanaLink.href = "https://sol.happyanimals.xyz";
+        } else if (action === "exploreCollections") {
+          arbitrumLink.href = "https://opensea.io/HappyAnimalsCollection";
+          solanaLink.href = "https://magiceden.io/marketplace/HappyAnimals";
+        }
+
+        // Open the modal
+        document.getElementById("blockchainModal").style.display = "block";
+      }
+
+      // General close modal function
+      function closeModal() {
+        document.getElementById("blockchainModal").style.display = "none";
+      }
+
+      // Close modal when clicking outside content
+      window.onclick = function (event) {
+        const modal = document.getElementById("blockchainModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+    </script>
+
+    <script>
+      const scrollArrow = document.querySelector(".scroll-arrow");
+      const copyrightText = document.querySelector(".copyright");
+
+      function updateArrowDirection() {
+        const copyrightTop = copyrightText.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (copyrightTop <= windowHeight) {
+          // Show up arrow
+          if (scrollArrow.innerHTML !== "&#x2191;") {
+            scrollArrow.style.transition =
+              "transform 0.3s ease, color 0.3s ease"; // Smooth transition for change
+            scrollArrow.innerHTML = "&#x2191;"; // Upward arrow
+            scrollArrow.onclick = function () {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            };
+          }
+        } else {
+          // Show down arrow
+          if (scrollArrow.innerHTML !== "&#x2193;") {
+            scrollArrow.style.transition =
+              "transform 0.3s ease, color 0.3s ease"; // Smooth transition for change
+            scrollArrow.innerHTML = "&#x2193;"; // Downward arrow
+            scrollArrow.onclick = function () {
+              window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+            };
+          }
+        }
+
+        // Ensure arrow is always visible
+        scrollArrow.style.display = "block";
+      }
+
+      // Run updateArrowDirection on scroll and page load
+      window.addEventListener("scroll", updateArrowDirection);
+      window.addEventListener("load", updateArrowDirection);
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Happy Animals",
+        "url": "https://happyanimals.xyz",
+        "logo": "https://happyanimals.xyz/assets/logo_happyanimals.webp",
+        "sameAs": [
+          "https://twitter.com/happyanimalsxyz",
+          "https://discord.gg/hSGmJdRweD"
+        ],
+        "description": "Happy Animals is an NFT project supporting wildlife conservation."
+      }
+    </script>
+  </body>
+</html>

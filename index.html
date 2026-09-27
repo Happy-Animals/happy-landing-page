@@ -1,5 +1,5 @@
 <!-- Landing Page for  Happy Animals -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,16 +12,21 @@
       href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&family=DynaPuff:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./language-selector.css" />
+    <script src="./i18n.js"></script>
+    <script src="./landing-config.js"></script>
 
     <title>Happy Animals NFT Project | Collect NFTs & Save Wildlife</title>
 
     <meta
       name="description"
+      data-i18n-content="landing.metaDescription"
       content="Happy Animals is an NFT project that combines collectible animal-themed NFTs with wildlife conservation efforts. Participate in lotteries, support conservation, and own unique digital assets."
     />
     <meta property="og:title" content="Happy Animals" />
     <meta
       property="og:description"
+      data-i18n-content="landing.ogDescription"
       content="Join the Happy Animals NFT project, collect unique animal-themed NFTs, participate in lotteries, and contribute to wildlife conservation."
     />
     <meta
@@ -30,21 +35,39 @@
     />
     <meta property="og:url" content="https://happyanimals.xyz" />
     <style>
+      .blockchain-option p {
+        margin-top: 7px;
+        margin-bottom: 2px;
+        line-height: 1;
+      }
+
+      .blockchain-option small {
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 0;
+        display: block;
+      }
+
       #exploreCollectionsModal .modal-content {
         display: flex;
         flex-direction: column;
-        position: relative;
-        width: 90% !important;
-        height: 100% !important;
-        max-width: none !important;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: fit-content !important;
+        height: auto !important;
+
+        min-width: min(560px, 90vw);
+        max-width: 90vw !important;
+        max-height: 88vh;
+
         overflow-y: auto;
 
-        margin: auto;
-        top: 2%;
-        bottom: 2%;
-        left: 0;
-        right: 0;
-        transform: translate(0, 0);
+        margin: 0;
+        box-sizing: border-box;
       }
 
       #exploreCollectionsModal .close {
@@ -114,7 +137,7 @@
 
       h1 {
         font-size: clamp(2rem, 5vw, 4rem);
-        line-height: 0;
+        line-height: 1.05;
         margin: 3%;
       }
 
@@ -183,7 +206,9 @@
         border-radius: 25px;
         font-size: 1.2vw;
         font-weight: bold;
-        transition: color 0.3s ease, background-color 0.3s ease,
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease,
           transform 0.3s ease;
       }
 
@@ -363,7 +388,9 @@
       .social-links a:hover,
       .additional-links a:hover {
         color: #ff7f50;
-        transition: color 0.3s ease, background-color 0.3s ease;
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease;
       }
 
       .social-links img {
@@ -372,7 +399,9 @@
       }
 
       .hover-effect {
-        transition: color 0.3s ease, background-color 0.3s ease;
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease;
       }
 
       .hover-effect:hover {
@@ -525,7 +554,9 @@
         border-radius: 25px;
         font-size: 1.2vw;
         font-weight: bold;
-        transition: color 0.3s ease, background-color 0.3s ease,
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease,
           transform 0.3s ease;
         border: none;
         cursor: pointer;
@@ -553,13 +584,13 @@
         border-radius: 25px;
         font-size: 1.2vw;
         font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
         overflow: hidden;
         z-index: 1;
         cursor: pointer;
         outline: none;
-
-        animation: fadeSurprise 40s infinite ease-in-out;
       }
 
       @keyframes fadeSurprise {
@@ -606,6 +637,14 @@
         align-items: center;
         gap: 20px;
         z-index: 2;
+      }
+
+      @media (min-width: 769px) {
+        .start-content h1 {
+          font-size: clamp(2rem, 3.2vw, 3rem);
+          line-height: 1.05;
+          white-space: nowrap;
+        }
       }
 
       .nft-image-wrapper {
@@ -715,8 +754,12 @@
       }
     </style>
   </head>
-  <body>
-    <div class="scroll-arrow" aria-label="Scroll">
+  <body class="landing-page" data-i18n-page-title="landing.pageTitle">
+    <div
+      class="scroll-arrow"
+      aria-label="Scroll"
+      data-i18n-aria-label="common.scrollAria"
+    >
       <span>&#x2193;</span>
     </div>
     <!-- #blockchainModal -->
@@ -725,7 +768,7 @@
         <span class="close" onclick="closeExploreCollectionsModal()"
           >&times;</span
         >
-        <h2>Collections</h2>
+        <h2 data-i18n="landing.collectionsModalTitle">Collections</h2>
         <!-- A container for the grid of 152 animals -->
         <div
           id="collectionsGrid"
@@ -754,9 +797,12 @@
           onclick="closeModal()"
           role="button"
           aria-label="Close"
+          data-i18n-aria-label="common.closeAria"
           >&times;</span
         >
-        <h2 id="modalTitle">Select Blockchain</h2>
+        <h2 id="modalTitle" data-i18n="landing.selectBlockchain">
+          Select Blockchain
+        </h2>
         <div class="blockchain-options" id="blockchainOptionsContainer"></div>
       </div>
     </div>
@@ -768,6 +814,7 @@
           <img
             src="./assets/logo_happyanimals.webp"
             alt="Happy Animals Logo"
+            data-i18n-alt="common.logoAlt"
             class="logo-image"
           />
           <div class="logo-text">HAPPY ANIMALS</div>
@@ -780,14 +827,27 @@
     </header>
     <!-- start Section -->
     <section id="start" class="start">
+      <div class="language-selector">
+        <select
+          id="languageSelector"
+          class="language-selector__select"
+          aria-label="Select language"
+        ></select>
+        <span class="language-selector__arrow" aria-hidden="true">▾</span>
+      </div>
+
       <div class="container">
         <div class="start-content">
-          <h1>Collect NFTs, Save Wildlife</h1>
-          <p>
+          <h1 data-i18n="landing.heroTitle">Collect NFTs, Save Wildlife</h1>
+          <p data-i18n="landing.heroBody">
             Join the Happy Animals NFT project. Collect rare animal-themed NFTs
             and contribute to conservation efforts.
           </p>
-          <button class="cta-buttona" onclick="openModal('exploreCollections')">
+          <button
+            class="cta-buttona"
+            onclick="openModal('exploreCollections')"
+            data-i18n="landing.exploreCollections"
+          >
             Explore Collections
           </button>
         </div>
@@ -798,8 +858,8 @@
       <div class="container">
         <div class="content-wrapper">
           <div class="text-content">
-            <h2>About Happy Animals</h2>
-            <p>
+            <h2 data-i18n="landing.aboutTitle">About Happy Animals</h2>
+            <p data-i18n="landing.aboutBody1">
               Happy Animals is a unique NFT project dedicated to wildlife
               conservation. By collecting our beautifully crafted animal-themed
               NFTs, you become eligible to participate in our exciting lotteries
@@ -807,7 +867,7 @@
             </p>
             <br />
 
-            <p>
+            <p data-i18n="landing.aboutBody2">
               Our goal is to create a positive impact through art, crypto, and
               the power of community engagement.
             </p>
@@ -834,13 +894,14 @@
               <img
                 src="./assets/card_albatros.png"
                 alt="NFT image of a Happy Albatross contributing to wildlife conservation"
+                data-i18n-alt="landing.nftAlt"
                 class="nft-single-image"
               />
             </div>
           </div>
           <div class="text-content">
-            <h2>Our NFT Collections</h2>
-            <p>
+            <h2 data-i18n="landing.collectionsTitle">Our NFT Collections</h2>
+            <p data-i18n="landing.collectionsBody">
               Explore our diverse range of NFT collections dedicated to
               endangered and other unique animal species. Each NFT represents
               not only a digital collectible but also our commitment to wildlife
@@ -856,17 +917,21 @@
       <div class="container">
         <div class="content-wrapper">
           <div class="text-content">
-            <h2>Bi-Weekly Lottery</h2>
+            <h2 data-i18n="landing.lotteryTitle">Bi-Weekly Lottery</h2>
             <p>
-              Every two weeks, Happy Animals NFT holders participate in an
-              exclusive lottery. If your NFT's collection is selected as the
-              winner, you will share the pot with other collection holders.
-              Additionally, 5% of the pot is donated to wildlife conservation
-              foundations related to the winning animal.
+              <span data-i18n="landing.lotteryBody1">
+                Every two weeks, Happy Animals NFT holders participate in an
+                exclusive lottery. If your NFT's collection is selected as the
+                winner, you will share the pot with other collection holders.
+                Additionally, 5% of the pot is donated to wildlife conservation
+                foundations related to the winning animal.
+              </span>
               <br />
               <br />
-              Not only do you stand a chance to win, but your participation
-              directly supports conservation efforts.
+              <span data-i18n="landing.lotteryBody2">
+                Not only do you stand a chance to win, but your participation
+                directly supports conservation efforts.
+              </span>
             </p>
           </div>
           <div class="image-content">
@@ -896,18 +961,24 @@
             </div>
           </div>
           <div class="text-content">
-            <h2>Supporting Conservation</h2>
+            <h2 data-i18n="landing.conservationTitle">
+              Supporting Conservation
+            </h2>
             <p>
-              We believe in making a real difference. That’s why 5% of every
-              lottery pot goes directly to wildlife foundations working
-              tirelessly to protect endangered species. Your involvement helps
-              us save habitats and support species in need.
+              <span data-i18n="landing.conservationBody1">
+                We believe in making a real difference. That’s why 5% of every
+                lottery pot goes directly to wildlife foundations working
+                tirelessly to protect endangered species. Your involvement helps
+                us save habitats and support species in need.
+              </span>
               <br />
               <br />
-              We are committed to transparency and will regularly update the
-              community on the impact of your contributions. Together, we can
-              make a lasting difference in the lives of these incredible
-              animals.
+              <span data-i18n="landing.conservationBody2">
+                We are committed to transparency and will regularly update the
+                community on the impact of your contributions. Together, we can
+                make a lasting difference in the lives of these incredible
+                animals.
+              </span>
             </p>
           </div>
         </div>
@@ -918,14 +989,14 @@
     <footer id="contact" class="footer">
       <div class="container">
         <div class="text-content">
-          <h2>WANT TO JOIN US?</h2>
-          <p>
+          <h2 data-i18n="landing.joinTitle">WANT TO JOIN US?</h2>
+          <p data-i18n="landing.joinBody">
             Be a part of our journey to protect wildlife. Follow us, explore our
             collections, and make a difference by contributing to conservation
             efforts through our NFT community.
           </p>
           <div class="social-media">
-            <h3>Follow us on:</h3>
+            <h3 data-i18n="common.followUs">Follow us on:</h3>
             <div class="social-links">
               <a
                 href="https://x.com/happyanimalsxyz"
@@ -935,6 +1006,7 @@
                 <img
                   src="./assets/logo_social_twitterx.svg"
                   alt="Twitter"
+                  data-i18n-alt="common.twitterAlt"
                   width="20"
                 />
                 Twitter
@@ -947,6 +1019,7 @@
                 <img
                   src="./assets/logo_social_discord.svg"
                   alt="Discord"
+                  data-i18n-alt="common.discordAlt"
                   width="20"
                 />
                 Discord
@@ -958,18 +1031,22 @@
               >
                 <img
                   src="./assets/logo_social_github.svg"
-                  alt="Github"
+                  alt="GitHub"
+                  data-i18n-alt="common.githubAlt"
                   width="20"
                 />
                 GitHub
               </a>
             </div>
 
-            <h3>Participate and Support:</h3>
+            <h3 data-i18n="landing.participateSupport">
+              Participate and Support:
+            </h3>
             <div class="additional-links">
               <button
                 class="cta-buttona"
                 onclick="openModal('exploreCollections')"
+                data-i18n="landing.exploreCollections"
               >
                 Explore Collections
               </button>
@@ -984,14 +1061,16 @@
                 onclick="showComingSoon()"
               >
                 <canvas id="buttonCanvas"></canvas>
-                wen token?
+                SMILES token
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 Happy Animals. All Rights Reserved.</p>
+        <p data-i18n="common.copyright">
+          &copy; 2026 Happy Animals. All Rights Reserved.
+        </p>
       </div>
     </footer>
     <!-- "Coming Soon" Modal -->
@@ -1008,82 +1087,291 @@
           onclick="closeComingSoonModal()"
           role="button"
           aria-label="Close"
+          data-i18n-aria-label="common.closeAria"
           >&times;</span
         >
-        <h2 id="comingSoonTitle">Coming Soon</h2>
-        <p>Stay tuned for updates on our token launch!</p>
+        <h2 id="comingSoonTitle" data-i18n="landing.comingSoonTitle">
+          Coming Soon
+        </h2>
+        <p data-i18n="landing.comingSoonBody">
+          Stay tuned for updates on our token launch!
+        </p>
       </div>
     </div>
 
     <script>
-      // array of all blockchains
+      // Array of all blockchains
       const BLOCKCHAINS = [
         {
           name: "Polygon",
           href: "https://polygon.happyanimals.xyz",
           logo: "./assets/logos_blockchain/logo_blockchain_polygon.svg",
           deployed: true,
+          releaseDate: new Date("2025-05-18T00:00:00"),
+          collectionsReleaseDate: new Date("2025-06-11T00:00:00"),
         },
         {
-          name: "coming soon",
-          href: "",
-          logo: "./assets/logos_blockchain/COMING_SOON.jpg",
+          name: "Base",
+          href: "https://base.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_base.svg",
+          deployed: false,
+          releaseDate: new Date("2025-05-18T00:00:00"),
+          collectionsReleaseDate: new Date("2025-06-11T00:00:00"),
+        },
+
+        {
+          name: "Blast",
+          href: "https://blast.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_blast.svg",
           deployed: true,
+          releaseDate: new Date("2025-05-18T00:00:00"),
+          collectionsReleaseDate: new Date("2025-06-11T00:00:00"),
+        },
+        {
+          name: "Arbitrum",
+          href: "https://arbitrum.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_arbitrum.svg",
+          deployed: true,
+          releaseDate: new Date("2025-05-18T00:00:00"),
+          collectionsReleaseDate: new Date("2025-06-11T00:00:00"),
+        },
+        {
+          name: "Berachain",
+          href: "https://berachain.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_berachain.svg",
+          deployed: false,
+          releaseDate: new Date("2025-07-05T00:00:00"),
+          collectionsReleaseDate: new Date("2025-06-03T00:00:00"),
+        },
+
+        {
+          name: "Sonic",
+          href: "https://sonic.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_sonic.svg",
+          deployed: true,
+          releaseDate: new Date("2025-07-08T00:00:00"),
+          collectionsReleaseDate: new Date("2025-07-08T00:00:00"),
+        },
+        {
+          name: "Abstract",
+          href: "https://abstractchain.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_abstractchain.svg",
+          deployed: true,
+          releaseDate: new Date("2025-07-13T00:00:00"),
+          collectionsReleaseDate: new Date("2025-07-13T00:00:00"),
+        },
+
+        {
+          name: "Robinhood",
+          href: "https://robinhood.happyanimals.xyz",
+          logo: "./assets/logos_blockchain/logo_blockchain_robinhood.svg",
+          deployed: true,
+          releaseDate: null,
+          collectionsReleaseDate: null,
         },
       ];
 
-      // Function to populate the blockchain modal with only the `deployed` blockchains
+      const LANDING_CONFIG = window.HAPPY_ANIMALS_LANDING_CONFIG || {
+        enabledBlockchains: BLOCKCHAINS.map((chain) => chain.name),
+        visibleAnimals: "all",
+      };
+
+      // Function to update blockchain status dynamically
+      function updateBlockchainDetails(chain) {
+        const now = Date.now();
+
+        /* ---------- APP launch ---------- */
+        if (chain.releaseDate) {
+          chain.deployed = now >= chain.releaseDate.getTime();
+        }
+        // (If you still want to force it, leave the manual “deployed:true” flag)
+
+        /* ---------- Collections ---------- */
+        if (chain.collectionsReleaseDate) {
+          // separate embargo for collections
+          chain.collectionsReady =
+            now >= chain.collectionsReleaseDate.getTime();
+        } else {
+          // if no separate date is given, collections are available right now
+          chain.collectionsReady = true;
+        }
+      }
+
+      // Function to calculate time remaining for countdown
+      function getTimeRemaining(releaseDate) {
+        const now = new Date().getTime();
+        const timeRemaining = releaseDate - now;
+
+        if (timeRemaining <= 0) {
+          return window.HappyAnimalsI18n.t(
+            "landing.statusAvailableNow",
+            "Available Now!",
+          );
+        }
+
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor(
+          (timeRemaining % (1000 * 60 * 60)) / (1000 * 60),
+        );
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      // Function to render the blockchain options dynamically
       function populateBlockchains(action) {
         const container = document.getElementById("blockchainOptionsContainer");
         container.innerHTML = ""; // Clear any previous content
 
-        // Filter out only blockchains that are deployed == true
-        const activeChains = BLOCKCHAINS.filter((chain) => chain.deployed);
+        BLOCKCHAINS.filter((chain) =>
+          LANDING_CONFIG.enabledBlockchains.includes(chain.name),
+        ).forEach((chain) => {
+          updateBlockchainDetails(chain);
 
-        activeChains.forEach((chain) => {
-          // Create the anchor
-          const anchor = document.createElement("a");
-          anchor.classList.add("blockchain-option");
+          const wrapper = document.createElement("div");
+          wrapper.classList.add("blockchain-option");
 
-          if (chain.name === "coming soon") {
-            // For "SOON," make it visually non-clickable
-            anchor.style.cursor = "not-allowed"; // Show as non-clickable
-            anchor.style.opacity = "0.6"; // Dim to indicate it's disabled
-            anchor.onclick = (evt) => evt.preventDefault(); // Prevent click actions
-          } else {
-            // For other blockchains (e.g., "Polygon")
-            anchor.href = chain.href;
-            anchor.target = "_blank";
-
-            if (action === "exploreCollections") {
-              // Override default click to call `showCollections`
-              anchor.onclick = (evt) => {
-                evt.preventDefault();
-                showCollections(chain.name.toLowerCase().replace(/\s+/g, ""));
-              };
-            }
-          }
-
-          // Create the logo
+          // Logo
           const img = document.createElement("img");
           img.src = chain.logo;
-          img.alt = chain.name + " Logo";
+          img.alt = window.HappyAnimalsI18n.t(
+            "landing.blockchainLogoAlt",
+            `${chain.name} Logo`,
+            { blockchain: chain.name },
+          );
           img.classList.add("blockchain-logo");
-          anchor.appendChild(img);
 
-          // Create the text <p>
-          const p = document.createElement("p");
-          p.textContent = chain.name;
-          anchor.appendChild(p);
+          // Name
+          const nameElement = document.createElement("p");
+          // nameElement.textContent = chain.name;
+          if (
+            (action === "launchApp" && !chain.deployed) ||
+            (action === "exploreCollections" && !chain.collectionsReady)
+          ) {
+            nameElement.textContent = window.HappyAnimalsI18n.t(
+              "landing.statusComingSoon",
+              "Coming Soon",
+            );
+          } else {
+            nameElement.textContent = chain.name;
+          }
 
-          container.appendChild(anchor);
+          // Show countdown based on action
+          if (action === "launchApp" && !chain.deployed && chain.releaseDate) {
+            const appCountdown = document.createElement("small");
+            appCountdown.textContent = getTimeRemaining(chain.releaseDate);
+            nameElement.appendChild(document.createElement("br"));
+            nameElement.appendChild(appCountdown);
+
+            const appInterval = setInterval(() => {
+              appCountdown.textContent = getTimeRemaining(chain.releaseDate);
+              if (chain.deployed) {
+                clearInterval(appInterval);
+                populateBlockchains(action); // re-render UI
+              }
+            }, 1000);
+          }
+
+          if (
+            action === "exploreCollections" &&
+            !chain.collectionsReady &&
+            chain.collectionsReleaseDate
+          ) {
+            const collectionsCountdown = document.createElement("small");
+            collectionsCountdown.textContent = getTimeRemaining(
+              chain.collectionsReleaseDate,
+            );
+            nameElement.appendChild(document.createElement("br"));
+            nameElement.appendChild(collectionsCountdown);
+
+            const collectionsInterval = setInterval(() => {
+              collectionsCountdown.textContent = getTimeRemaining(
+                chain.collectionsReleaseDate,
+              );
+              if (chain.collectionsReady) {
+                clearInterval(collectionsInterval);
+                populateBlockchains(action); // re-render UI
+              }
+            }, 1000);
+          }
+
+          // Append logo and name
+          wrapper.appendChild(img);
+          wrapper.appendChild(nameElement);
+
+          // Interaction and appearance logic
+          const isReady =
+            (action === "launchApp" && chain.deployed) ||
+            (action === "exploreCollections" && chain.collectionsReady);
+
+          if (isReady) {
+            wrapper.style.cursor = "pointer";
+            wrapper.onclick = () => {
+              if (action === "launchApp") {
+                window.open(chain.href, "_blank");
+              } else if (action === "exploreCollections") {
+                showCollections(chain.name.toLowerCase().replace(/\s+/g, ""));
+              }
+            };
+
+            img.style.filter = "none";
+            img.style.opacity = "1";
+          } else {
+            wrapper.style.cursor = "not-allowed";
+            wrapper.title = window.HappyAnimalsI18n.t(
+              "landing.blockchainComingSoonTitle",
+              "Coming soon!",
+            );
+            wrapper.style.opacity = "0.4";
+
+            img.style.filter = "grayscale(100%)";
+            img.style.opacity = "0.5";
+          }
+
+          container.appendChild(wrapper);
         });
       }
+
+      // Initial render of blockchains
+      populateBlockchains();
     </script>
 
     <script>
       // Store the short data here once fetched
       let animalsData = [];
+      let activeCollectionsBlockchain = null;
+
+      function getVisibleAnimals(data, blockchain) {
+        const blockchainConfig =
+          LANDING_CONFIG.visibleAnimalsByBlockchain?.[blockchain];
+
+        /*
+         * Si no existe configuración para esa blockchain,
+         * no mostramos animales.
+         */
+        if (!blockchainConfig) {
+          return [];
+        }
+
+        /*
+         * Permite:
+         * base: "all"
+         */
+        if (blockchainConfig === "all") {
+          return data;
+        }
+
+        const selectedNumbers = new Set(
+          blockchainConfig.map((number) => String(number).padStart(3, "0")),
+        );
+
+        return data.filter((item) =>
+          selectedNumbers.has(String(item.number).padStart(3, "0")),
+        );
+      }
 
       // Function to fetch animal data for the selected blockchain
       async function fetchAnimalData(blockchain) {
@@ -1094,7 +1382,7 @@
         } catch (err) {
           console.error(
             `Could not load data for blockchain ${blockchain}:`,
-            err
+            err,
           );
           animalsData = []; // Reset animalsData if fetch fails
         }
@@ -1102,6 +1390,7 @@
 
       // Function to show the second modal with all animal links
       async function showCollections(blockchain) {
+        activeCollectionsBlockchain = blockchain;
         // Close the first modal
         document.getElementById("blockchainModal").style.display = "none";
 
@@ -1120,18 +1409,28 @@
         // Fetch the animal data for the selected blockchain
         await fetchAnimalData(blockchain);
 
+        const visibleAnimals = getVisibleAnimals(animalsData, blockchain);
+
         // Check if there are any animals to display
         if (!animalsData.length) {
           const message = document.createElement("p");
-          message.textContent = `No data found for the selected blockchain: ${blockchain}`;
+          message.textContent = window.HappyAnimalsI18n.t(
+            "landing.noData",
+            `No data found for the selected blockchain: ${blockchain}`,
+            { blockchain },
+          );
           grid.appendChild(message);
           return;
         }
 
         // Build the links and buttons for each animal
-        animalsData.forEach((item) => {
+        visibleAnimals.forEach((item) => {
           const button = document.createElement("button");
-          button.textContent = `${item.number} - ${item.name}`;
+          const translatedAnimalName = window.HappyAnimalsI18n.t(
+            window.HappyAnimalsI18n.getAnimalNameTranslationKey(item.name),
+            item.name,
+          );
+          button.textContent = `${item.number} - ${translatedAnimalName}`;
           button.classList.add("cta-buttona");
 
           // Add random color for better UI
@@ -1151,6 +1450,7 @@
 
       // Close function for the second modal
       function closeExploreCollectionsModal() {
+        activeCollectionsBlockchain = null;
         document.getElementById("exploreCollectionsModal").style.display =
           "none";
 
@@ -1163,7 +1463,7 @@
     <script>
       function showComingSoon() {
         // Set the release date for the token
-        const releaseDate = new Date("2025-01-30T00:00:00"); // Adjust to your release date
+        const releaseDate = new Date("2025-06-07T00:00:00"); // Adjust to your release date
         const currentDate = new Date();
 
         if (currentDate >= releaseDate) {
@@ -1325,7 +1625,10 @@
     </script>
 
     <script>
+      let activeBlockchainAction = null;
+
       function openModal(action) {
+        activeBlockchainAction = action;
         // 1) First populate the blockchain options based on the action
         populateBlockchains(action);
 
@@ -1338,6 +1641,7 @@
 
       // General close modal function
       function closeModal() {
+        activeBlockchainAction = null;
         document.getElementById("blockchainModal").style.display = "none";
       }
 
@@ -1399,19 +1703,19 @@
     </script>
     <script>
       const headerLaunchAppButton = document.getElementById(
-        "headerLaunchAppButton"
+        "headerLaunchAppButton",
       );
       const footerLaunchAppButton = document.getElementById(
-        "footerLaunchAppButton"
+        "footerLaunchAppButton",
       );
       const headerCountdownTimer = document.getElementById(
-        "headerCountdownTimer"
+        "headerCountdownTimer",
       );
       const footerCountdownTimer = document.getElementById(
-        "footerCountdownTimer"
+        "footerCountdownTimer",
       );
 
-      const countdownEndDate = new Date("2025-01-20T00:00:00").getTime(); // Set your countdown end date here
+      const countdownEndDate = new Date("2025-01-18T00:00:00").getTime(); // Set your countdown end date here
 
       function updateCountdown() {
         const now = new Date().getTime();
@@ -1420,36 +1724,47 @@
         if (timeRemaining > 0) {
           const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
           const hours = Math.floor(
-            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
           );
           const minutes = Math.floor(
-            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60),
           );
           const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
           // Update both countdown timers
-          headerCountdownTimer.innerHTML = `Launching in<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
-          footerCountdownTimer.innerHTML = `Launching in<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
+          const countdownLabel = window.HappyAnimalsI18n.t(
+            "landing.launchingIn",
+            `Launching in<br>${days}d ${hours}h ${minutes}m ${seconds}s`,
+            { days, hours, minutes, seconds },
+          );
+          headerCountdownTimer.innerHTML = countdownLabel;
+          footerCountdownTimer.innerHTML = countdownLabel;
         } else {
           // Countdown finished, enable both buttons
           clearInterval(countdownInterval);
 
           // Update the header button
-          headerLaunchAppButton.textContent = "Launch App";
+          headerLaunchAppButton.textContent = window.HappyAnimalsI18n.t(
+            "landing.launchApp",
+            "Launch App",
+          );
           headerLaunchAppButton.disabled = false; // Enable the button
           headerLaunchAppButton.classList.remove("disabled");
           headerLaunchAppButton.setAttribute(
             "onclick",
-            "openModal('launchApp')"
+            "openModal('launchApp')",
           );
 
           // Update the footer button
-          footerLaunchAppButton.textContent = "Launch App";
+          footerLaunchAppButton.textContent = window.HappyAnimalsI18n.t(
+            "landing.launchApp",
+            "Launch App",
+          );
           footerLaunchAppButton.disabled = false; // Enable the button
           footerLaunchAppButton.classList.remove("disabled");
           footerLaunchAppButton.setAttribute(
             "onclick",
-            "openModal('launchApp')"
+            "openModal('launchApp')",
           );
         }
       }
@@ -1459,6 +1774,18 @@
 
       // Initial update on page load
       updateCountdown();
+
+      window.addEventListener("happy-animals:language-changed", () => {
+        updateCountdown();
+
+        if (activeBlockchainAction) {
+          populateBlockchains(activeBlockchainAction);
+        }
+
+        if (activeCollectionsBlockchain) {
+          void showCollections(activeCollectionsBlockchain);
+        }
+      });
     </script>
   </body>
 </html>

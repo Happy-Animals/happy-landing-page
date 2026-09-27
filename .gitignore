@@ -1,17 +1,15 @@
-# Ignore the folders
-assets/
+# Legacy / local-only folders
 DONT_DEPLOY/
 slugs/
 
-
-# Ignore files
-token.html
+# Local development files
+landing.txt
 debug.log
 
-# Ignore backup files (optional)
+# Backup files
 *.bak
 *.tmp
 
-# Ignore IDE-specific files (optional)
+# IDE-specific files
 .vscode/
 .idea/
