@@ -13,3 +13,11 @@ debug.log
 # IDE-specific files
 .vscode/
 .idea/
+
+# Local build/deploy tooling
+tools/
+dist/
+
+# Local hosting credentials
+.env
+.env.*
