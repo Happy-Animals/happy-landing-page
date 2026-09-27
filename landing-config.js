@@ -7,7 +7,8 @@ window.HAPPY_ANIMALS_LANDING_CONFIG = {
    */
   enabledBlockchains: [
     "Base",
-    "Robinhood",
+    // Activar cuando Robinhood Mainnet + OpenSea estén listos
+    // "Robinhood",
 
     // "Polygon",
     // "Blast",
