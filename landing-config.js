@@ -6,9 +6,9 @@ window.HAPPY_ANIMALS_LANDING_CONFIG = {
    * Para desactivarla, bórrala o comenta la línea.
    */
   enabledBlockchains: [
-    "Base",
+    //"Base",
     // Activar cuando Robinhood Mainnet + OpenSea estén listos
-    // "Robinhood",
+    "Robinhood",
 
     // "Polygon",
     // "Blast",
@@ -28,8 +28,8 @@ window.HAPPY_ANIMALS_LANDING_CONFIG = {
    * [1, 2, 3] = animales #001, #002 y #003
    */
   visibleAnimalsByBlockchain: {
-    base: [1, 5, 9],
-    robinhood: [32, 57, 70, 50, 21],
+    // base: [1, 5, 9],
+    robinhood: [1, 2, 3, 7, 13, 48, 75],
   },
 
   /*
