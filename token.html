@@ -792,6 +792,180 @@
           box-sizing: border-box;
         }
       }
+
+      /* Tokenomics: single centered column; other sections retain original styles. */
+      #section3Competition .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+      #section3Competition .text-content {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 4px 8px;
+        text-align: center;
+      }
+      #section3Competition .text-content > p {
+        margin: 10px auto 0;
+        max-width: 740px;
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
+        line-height: 1.5;
+      }
+      #section3Competition .tokenomics-details {
+        list-style: none;
+        max-width: 740px;
+        margin: 18px auto 0;
+        padding: 0;
+        font-size: clamp(0.96rem, 1.3vw, 1.19rem);
+        line-height: 1.9;
+      }
+      #section3Competition .tokenomics-details li {
+        margin: 3px 0;
+      }
+      #section3Competition .tokenomics-details a {
+        color: #24526a;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      @media (max-width: 768px) {
+        #section3Competition .container {
+          padding: 28px 14px;
+        }
+        #section3Competition .text-content {
+          padding: 0;
+        }
+        #section3Competition .tokenomics-details {
+          padding: 0;
+        }
+      }
+
+      /* SMILES market links: neutral brand tiles, scoped to Tokenomics only. */
+      #section3Competition .smiles-market-links {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        width: min(100%, 690px);
+        margin: 26px auto 0;
+      }
+      #section3Competition .smiles-market-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 88px;
+        padding: 10px 8px;
+        border: 1px solid #dedede;
+        border-radius: 12px;
+        background: #fff;
+        color: #333;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.2;
+        box-sizing: border-box;
+        transition:
+          border-color 0.15s ease,
+          background-color 0.15s ease;
+      }
+      #section3Competition .smiles-market-link:hover,
+      #section3Competition .smiles-market-link:focus-visible {
+        border-color: #f3b34d;
+        background: #fffaf2;
+      }
+      #section3Competition .smiles-market-link img {
+        display: block;
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        border-radius: 6px;
+      }
+      @media (max-width: 768px) {
+        #section3Competition .smiles-market-links {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+          margin-top: 20px;
+        }
+        #section3Competition .smiles-market-link {
+          min-height: 74px;
+          padding: 9px 6px;
+          font-size: 0.92rem;
+        }
+      }
+
+      /* Token trading chooser: neutral, isolated from the existing blockchain modal. */
+      #tradePlatformModal {
+        z-index: 1100;
+      }
+      #tradePlatformModal .trade-modal-content {
+        max-width: 450px;
+        border: 2px solid #f3b34d;
+        border-radius: 24px;
+        padding: 28px 24px 30px;
+      }
+      #tradePlatformModal #tradeModalTitle {
+        font-family: "DynaPuff", cursive;
+        font-size: clamp(1.45rem, 3vw, 1.85rem);
+        margin: 10px 32px 24px;
+      }
+      #tradePlatformModal .trade-modal-close {
+        position: absolute;
+        top: 11px;
+        right: 15px;
+        border: 0;
+        background: transparent;
+        color: #444;
+        font:
+          700 1.8rem/1 Arial,
+          sans-serif;
+        cursor: pointer;
+        border-radius: 6px;
+        padding: 4px 8px;
+      }
+      #tradePlatformModal .trade-platform-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+      #tradePlatformModal .trade-platform-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+        min-height: 88px;
+        border: 1px solid #e6e6e6;
+        border-radius: 16px;
+        background: white;
+        text-decoration: none;
+        transition:
+          border-color 0.15s ease,
+          transform 0.15s ease;
+      }
+      #tradePlatformModal .trade-platform-icon:hover,
+      #tradePlatformModal .trade-platform-icon:focus-visible {
+        border-color: #ff7f50;
+        transform: translateY(-2px);
+      }
+      #tradePlatformModal .trade-platform-icon img {
+        display: block;
+        width: 54px;
+        height: 54px;
+        max-width: 75%;
+        object-fit: contain;
+      }
+      @media (max-width: 480px) {
+        #tradePlatformModal .trade-modal-content {
+          padding: 26px 20px;
+        }
+        #tradePlatformModal .trade-platform-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
     </style>
   </head>
   <body class="token-page" data-i18n-page-title="token.pageTitle">
@@ -845,6 +1019,94 @@
               class="blockchain-logo"
             />
             <p>Solana</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Independent $SMILES trading platform selector. Brand-only icons, no new translations. -->
+    <div
+      id="tradePlatformModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tradeModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-content trade-modal-content">
+        <button
+          type="button"
+          id="tradeModalClose"
+          class="trade-modal-close"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        <h2 id="tradeModalTitle" data-i18n="token.trade">Trade $SMILES</h2>
+        <div class="trade-platform-grid">
+          <a
+            class="trade-platform-icon"
+            href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Raydium"
+            title="Raydium"
+          >
+            <img
+              src="https://www.google.com/s2/favicons?domain=raydium.io&amp;sz=128"
+              alt="Raydium"
+              width="58"
+              height="58"
+              loading="lazy"
+            />
+          </a>
+          <a
+            class="trade-platform-icon"
+            href="https://birdeye.so/solana/token/3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Birdeye"
+            title="Birdeye"
+          >
+            <img
+              src="https://www.google.com/s2/favicons?domain=birdeye.so&amp;sz=128"
+              alt="Birdeye"
+              width="58"
+              height="58"
+              loading="lazy"
+            />
+          </a>
+          <a
+            class="trade-platform-icon"
+            href="https://www.orca.so/trade?tokenIn=So11111111111111111111111111111111111111112&amp;tokenOut=3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Orca"
+            title="Orca"
+          >
+            <img
+              src="https://www.google.com/s2/favicons?domain=orca.so&amp;sz=128"
+              alt="Orca"
+              width="58"
+              height="58"
+              loading="lazy"
+            />
+          </a>
+          <a
+            class="trade-platform-icon"
+            href="https://kamino.com/swap/SOL-3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Kamino"
+            title="Kamino"
+          >
+            <img
+              src="https://www.google.com/s2/favicons?domain=kamino.com&amp;sz=128"
+              alt="Kamino"
+              width="58"
+              height="58"
+              loading="lazy"
+            />
           </a>
         </div>
       </div>
@@ -934,92 +1196,96 @@
     </section>
 
     <!-- section3Competition Section -->
-    <!-- Tokenomics Section -->
+    <!-- Tokenomics: verified facts and token market links -->
     <section id="section3Competition" class="section3Competition">
       <div class="container">
-        <!-- Pie Chart Container -->
-        <div class="graph">
-          <img
-            src="./assets/token-distribution-pie-chart.png"
-            alt="Pie chart showing the token distribution percentages for SMILES Tokens"
-            data-i18n-alt="token.pieAlt"
-            class="pie-chart"
-          />
-        </div>
-
-        <!-- Text Content -->
         <div class="text-content">
           <h2 data-i18n="token.tokenomicsTitle">Tokenomics</h2>
           <p data-i18n="token.tokenomicsBody">
-            Our tokenomics ensure sustainable growth, with a balanced
-            distribution to engage the community and support development.
+            Basic information about SMILES on Solana.
           </p>
-
-          <ul class="ul">
+          <ul class="ul tokenomics-details">
             <li>
               <strong data-i18n="token.totalSupply">Total Supply:</strong>
-              410,000,000 SMILES
+              370,411,890.370205 SMILES
             </li>
             <li>
-              <strong data-i18n="token.publicSale">Public Sale:</strong> 76%
-              <a
-                href="https://raydium.io/swap/?inputMint=3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k&outputMint=sol"
-                target="_blank"
-                rel="noopener noreferrer"
+              <strong data-i18n="token.mintFreezeAuthorities"
+                >Mint &amp; Freeze Authorities:</strong
               >
-                &#x2197;
-              </a>
-            </li>
-            <li>
-              <strong data-i18n="token.ecosystemDevelopment"
-                >Ecosystem Development:</strong
-              >
-              6%
-              <a
-                href="https://solscan.io/address/6zb2ZroFcrh9UdKvHiFuPiVLjC7pSLiMbJZyb9koRUug"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                &#x2197;
-              </a>
-            </li>
-            <li>
-              <strong data-i18n="token.team">Team:</strong> 3% (<span
-                data-i18n="token.vested24Months"
-                >vested over 24 months</span
-              >)
-              <a
-                href="https://solscan.io/address/DR2DAFUDnS86NMdcyN44UdsMfFJ75GRGifNCZPkQGKPn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                &#x2197;
-              </a>
-            </li>
-            <li>
-              <strong data-i18n="token.marketing">Marketing:</strong> 6%
-              <a
-                href="https://solscan.io/address/Ayatx69nfsjbci8LmmgU1eBobAbeKoVf7a4366htJvkd"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                &#x2197;
-              </a>
-            </li>
-            <li>
-              <strong data-i18n="token.communityAirdrop"
-                >Community Airdrop:</strong
-              >
-              9%
-              <a
-                href="https://solscan.io/address/3G9HtfGPT3T2v1bgFZz1SfXg4YEZv5kQKLcQZddGEznx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                &#x2197;
-              </a>
+              <span data-i18n="token.revoked">Revoked</span>
             </li>
           </ul>
+          <!-- Brand names do not need translation. URLs are user-provided.
+               Note: DEXTools points to an older, different Raydium pool;
+               Photon points to the current CPMM. -->
+          <nav class="smiles-market-links" aria-label="SMILES market explorers">
+            <a
+              class="smiles-market-link"
+              href="https://birdeye.so/solana/token/3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Birdeye - SMILES token"
+            >
+              <img
+                src="https://www.google.com/s2/favicons?domain=birdeye.so&amp;sz=64"
+                alt=""
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+              <span>Birdeye</span>
+            </a>
+            <a
+              class="smiles-market-link"
+              href="https://www.dextools.io/app/solana/pair-explorer/BzEK4jQA2Ur4wuqpdPEWqVPau4eVLH9gK5xrJ9taEWrc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="DEXTools - previous HAPPY pool"
+              title="DEXTools: previous HAPPY liquidity pool"
+            >
+              <img
+                src="https://www.google.com/s2/favicons?domain=dextools.io&amp;sz=64"
+                alt=""
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+              <span>DEXTools</span>
+            </a>
+            <a
+              class="smiles-market-link"
+              href="https://photon-sol.tinyastro.io/en/lp/BzEK4jQA2Ur4wuqpdPEWqVPau4eVLH9gK5xrJ9taEWrc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Photon - SMILES current CPMM pool"
+            >
+              <img
+                src="https://www.google.com/s2/favicons?domain=photon-sol.tinyastro.io&amp;sz=64"
+                alt=""
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+              <span>Photon</span>
+            </a>
+            <a
+              class="smiles-market-link"
+              href="https://gmgn.ai/sol/token/3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GMGN - SMILES token"
+            >
+              <img
+                src="https://www.google.com/s2/favicons?domain=gmgn.ai&amp;sz=64"
+                alt=""
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+              <span>GMGN</span>
+            </a>
+          </nav>
         </div>
       </div>
     </section>
@@ -1126,15 +1392,16 @@
       <div class="container">
         <div class="text-content">
           <h2 data-i18n="token.joinTitle">JOIN THE ADVENTURE</h2>
-          <!-- Button linking to the Raydium or Orca pool once you've created it -->
-          <a
+          <!-- Open the platform selector; no swap or wallet connection happens here. -->
+          <button
+            type="button"
+            id="tradeSmilesButton"
             class="cta-buttona"
-            href="https://raydium.io/swap/?inputMint=3Fzfx5KMVy8B3BjsY7vvzbvjYorN9LLEDTUWQh69q94k&outputMint=sol"
-            target="_blank"
-            rel="noopener noreferrer"
+            aria-haspopup="dialog"
+            aria-controls="tradePlatformModal"
           >
             <span data-i18n="token.trade">Trade $SMILES</span>
-          </a>
+          </button>
           <!-- Link to your token address on Solscan -->
           <a
             class="cta-buttona"
@@ -1339,6 +1606,54 @@
       window.addEventListener("scroll", updateArrowDirection);
       window.addEventListener("load", updateArrowDirection);
     </script>
+
+    <script>
+      // Independent modal; does not alter the legacy multichain modal or global handlers.
+      (() => {
+        const modal = document.getElementById("tradePlatformModal");
+        const openButton = document.getElementById("tradeSmilesButton");
+        const closeButton = document.getElementById("tradeModalClose");
+        const links = [...modal.querySelectorAll(".trade-platform-icon")];
+        let priorFocus = null;
+
+        function openTradeModal() {
+          priorFocus = document.activeElement;
+          modal.style.display = "block";
+          modal.setAttribute("aria-hidden", "false");
+          closeButton.focus();
+        }
+        function closeTradeModal() {
+          modal.style.display = "none";
+          modal.setAttribute("aria-hidden", "true");
+          if (priorFocus && typeof priorFocus.focus === "function")
+            priorFocus.focus();
+        }
+        openButton.addEventListener("click", openTradeModal);
+        closeButton.addEventListener("click", closeTradeModal);
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) closeTradeModal();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (modal.getAttribute("aria-hidden") !== "false") return;
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeTradeModal();
+          } else if (event.key === "Tab") {
+            const focusable = [closeButton, ...links];
+            const first = focusable[0],
+              last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+              event.preventDefault();
+              last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+              event.preventDefault();
+              first.focus();
+            }
+          }
+        });
+      })();
+    </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

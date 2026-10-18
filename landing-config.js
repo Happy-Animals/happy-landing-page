@@ -9,7 +9,7 @@ window.HAPPY_ANIMALS_LANDING_CONFIG = {
     //"Base",
     // Activar cuando Robinhood Mainnet + OpenSea estén listos
     "Robinhood",
-
+    "Ethereum",
     // "Polygon",
     // "Blast",
     // "Arbitrum",
@@ -30,6 +30,7 @@ window.HAPPY_ANIMALS_LANDING_CONFIG = {
   visibleAnimalsByBlockchain: {
     // base: [1, 5, 9],
     robinhood: [1, 2, 3, 7, 13, 48, 75],
+    ethereum: [7],
   },
 
   /*
