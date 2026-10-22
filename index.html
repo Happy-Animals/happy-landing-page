@@ -1055,14 +1055,14 @@
                 <span id="footerCountdownTimer"></span>
               </button>
               <!-- New "wen token" Button -->
-              <div
+              <!--               <div
                 class="cta-token-button"
                 id="tokenButton"
                 onclick="showComingSoon()"
               >
                 <canvas id="buttonCanvas"></canvas>
                 SMILES token
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -1436,7 +1436,7 @@
     </script>
 
     <script>
-      function showComingSoon() {
+      /*      function showComingSoon() {
         // Set the release date for the token
         const releaseDate = new Date("2025-06-07T00:00:00"); // Adjust to your release date
         const currentDate = new Date();
@@ -1451,7 +1451,7 @@
           document.getElementById("comingSoonModal").style.display = "block";
         }
       }
-
+ */
       function closeComingSoonModal() {
         document.getElementById("comingSoonModal").style.display = "none";
       }
@@ -1465,7 +1465,7 @@
       };
     </script>
 
-    <script>
+    <!--     <script>
       (function () {
         const button = document.querySelector(".cta-token-button");
         const canvas = button.querySelector("#buttonCanvas");
@@ -1541,7 +1541,7 @@
         resizeCanvas();
         animate();
       })();
-    </script>
+    </script> -->
     <script type="module">
       import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
 
