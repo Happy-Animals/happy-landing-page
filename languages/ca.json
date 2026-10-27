@@ -388,5 +388,7 @@
   "token.trade": "Intercanvia $SMILES",
   "token.viewSolscan": "Veure a Solscan",
   "token.pieAlt": "Gràfic circular amb els percentatges de distribució dels tokens SMILES",
-  "animal.name.owl": "Mussol"
+  "animal.name.owl": "Mussol",
+  "landing.happySwapsExplore": "Explora HappySwaps",
+  "landing.happySwapsOpen": "Obre l'aplicació DeFi HappySwaps en una pestanya nova"
 }

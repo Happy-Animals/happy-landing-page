@@ -388,5 +388,7 @@
   "token.trade": "Perdagangkan $SMILES",
   "token.viewSolscan": "Lihat di Solscan",
   "token.pieAlt": "Diagram lingkaran persentase distribusi token SMILES",
-  "animal.name.owl": "Burung Hantu"
+  "animal.name.owl": "Burung Hantu",
+  "landing.happySwapsExplore": "Jelajahi HappySwaps",
+  "landing.happySwapsOpen": "Buka aplikasi DeFi HappySwaps di tab baru"
 }

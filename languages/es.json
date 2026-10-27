@@ -388,5 +388,7 @@
   "token.trade": "Comprar/intercambiar $SMILES",
   "token.viewSolscan": "Ver en Solscan",
   "token.pieAlt": "Gráfico circular con los porcentajes de distribución de los tokens SMILES",
-  "animal.name.owl": "Búho"
+  "animal.name.owl": "Búho",
+  "landing.happySwapsExplore": "Explorar HappySwaps",
+  "landing.happySwapsOpen": "Abrir la aplicación DeFi HappySwaps en una pestaña nueva"
 }
