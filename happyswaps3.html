@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HappySwaps — Habitat Bento · Design Concept 03</title>
+  <meta name="description" data-i18n-content="swaps.metaDescription" content="Discover HappySwaps: a multichain DeFi application with swaps, pools, portfolio, verified activity and experimental rewards. Testnet preview.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f5f0ff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=DynaPuff:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./language-selector.css">
+  <script defer src="./i18n.js"></script>
+  <style>
+    :root {--cream:#fffdfb;--ink:#2c2a32;--muted:#5e5666;--lilac:#7958b5;--lilac-2:#a17add;--pink:#f395c4;--accent-glow:#c2a1ec;--habitat-surface:#fefdfa;--habitat-field:#f9f4ea;--habitat-soft:#f9f0dc;--habitat-border:#e5dabd;--habitat-accent:#816a19;--habitat-button:#e8e4d6;--radius:27px}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:110px}
+    body{margin:0;min-width:300px;color:var(--ink);font-family:DynaPuff,"Trebuchet MS",sans-serif;background:var(--cream);overflow-x:hidden}
+    button,input,select{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}
+    a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--lilac);outline-offset:4px}
+    .skip{position:absolute;top:-100px;left:12px;z-index:100;padding:12px;background:#fff;color:#111}.skip:focus{top:10px}
+    .habitats{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none;background:#fff9f4}
+    .habitat-layer{position:absolute;inset:0;background-position:center;background-size:cover;opacity:0;transition:opacity 2400ms ease-in-out;will-change:opacity}
+    .habitat-layer.active{opacity:1}
+    .habitats::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.84)}
+    .ambient{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+    .ambient::before{content:"";position:absolute;top:-310px;right:-190px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,#b698ef44 0,#c3a2ed16 42%,transparent 68%)}
+    .ambient::after{content:"";position:absolute;top:38%;left:-300px;width:650px;height:600px;background:radial-gradient(circle,#f9b5d636,transparent 65%)}
+    .wrap{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 0;position:relative;z-index:10}
+    .brand{display:inline-flex;gap:11px;align-items:center;min-width:0}
+    .brand-mark{display:block;position:relative;width:57px;height:57px;flex:0 0 57px;border-radius:50%;overflow:hidden;background:#ffffff77}
+    .brand-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+    .brand-mark img.brand-arrow{opacity:1;animation:none}
+    .brand-arrow.top{--from:45%;--to:-45%}.brand-arrow.bottom{--from:-45%;--to:45%}
+    @media(hover:hover) and (pointer:fine){.brand:hover .brand-arrow{animation:arrow-flow 1.6s ease-in-out infinite}}
+    @keyframes arrow-flow{0%,18%{transform:translateX(0);opacity:1}44%{transform:translateX(var(--from));opacity:0}45%{transform:translateX(var(--to));opacity:0}72%,100%{transform:translateX(0);opacity:1}}
+    .wordmark{display:flex;flex-direction:column;gap:3px}
+    .wordmark strong{font:400 clamp(1.37rem,2.1vw,2.02rem)/.97 "Luckiest Guy",Impact,sans-serif;color:#29262f;white-space:nowrap}
+    .wordmark small{font:500 .68rem/1.2 Roboto,Arial,sans-serif;letter-spacing:.08em;color:#6b596f;white-space:nowrap}
+    .nav{display:flex;align-items:center;gap:25px}
+    .nav a{font-size:.85rem;white-space:nowrap;color:#544e5e;transition:color .2s}.nav a:hover{color:var(--lilac)}
+    .header-end{display:flex;align-items:center;gap:10px}
+    .header .language-selector{min-width:0;min-height:40px;padding:4px 8px;border-color:#e4d5eb;background:#ffffffdc;box-shadow:0 4px 18px #44335510}
+    .header .language-selector__select{font-size:.78rem}
+    .home-link{padding:12px 15px;border-radius:24px;border:1px solid #e4d9ec;color:#503c65;background:#fffdfcde;font-size:.78rem;white-space:nowrap}
+    .home-link:hover{background:#f0e7f8}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4vw,65px);align-items:center;min-height:610px;padding:46px 0 66px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#6f528a;font:700 .76rem/1.3 Roboto,Arial,sans-serif;letter-spacing:.135em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:23px;height:3px;border-radius:4px;background:var(--pink)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{color:#30243a}
+    h1{font:400 clamp(3.8rem,7.2vw,7.6rem)/.98 "Luckiest Guy",Impact,sans-serif;letter-spacing:.012em;margin:21px 0 20px}
+    h1 .gradient{display:inline-block;color:#875fbd;background:linear-gradient(95deg,#9362c8 3%,#cc79b9 59%,#e89cc8 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{font:400 clamp(1rem,1.45vw,1.18rem)/1.74 DynaPuff,sans-serif;max-width:560px;color:#554e5f}
+    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:29px 0 20px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:13px 20px;border-radius:24px;border:1px solid transparent;transition:background .2s,box-shadow .2s,transform .2s;font:500 .91rem DynaPuff,sans-serif}
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{color:#fff;background:linear-gradient(110deg,#8057bf,#9e6ac4);box-shadow:0 14px 30px #7d56b528}
+    .btn-primary:hover{box-shadow:0 16px 38px #7d56b548;background:linear-gradient(110deg,#7047b7,#9560bd)}
+    .btn-secondary{background:#fffdf9df;color:#503d66;border-color:#dfd2e9}
+    .btn-secondary:hover{background:#f6ecff}
+    .hero-meta{display:flex;gap:15px 20px;align-items:center;flex-wrap:wrap;font:500 .79rem/1.6 Roboto,Arial,sans-serif;color:#6d6370}
+    .hero-meta span{display:inline-flex;align-items:center;gap:6px}
+    .hero-meta svg{color:#7753a7}
+    .hero-side{position:relative;padding-top:20px}
+    .hero-side::before{content:"";position:absolute;inset:12% -5%;z-index:-1;background:radial-gradient(ellipse at center,#b38fe450,transparent 68%);filter:blur(20px)}
+    .hero-sticker{position:absolute;right:-19px;top:-28px;z-index:4;padding:7px 13px;border-radius:18px;transform:rotate(8deg);background:#fff;border:1px solid #f3c8dc;box-shadow:0 13px 25px #552f5b1a;color:#8b5fa6;font:700 .73rem Roboto,Arial,sans-serif}
+    .mini-app{border-radius:29px;padding:22px;background:#ffffffee;box-shadow:0 30px 65px #4e315a25,0 0 0 1px #dfd0eb,0 14px 0 #ede5f6;backdrop-filter:blur(14px);transform:rotate(1.1deg);transition:transform .45s ease}
+    .mini-app:hover{transform:rotate(0) translateY(-4px)}
+    .mini-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:20px}
+    .mini-head strong{font:400 1.34rem "Luckiest Guy",sans-serif;color:#33263e}
+    .demo-badge{font:700 .63rem Roboto,sans-serif;letter-spacing:.045em;color:#896a9b;background:#f5eaf9;border:1px solid #e8d6ee;border-radius:20px;padding:8px 10px;white-space:nowrap}
+    .mini-tabs{display:flex;gap:7px;padding:5px;background:#f1eaf5;border-radius:17px;margin-bottom:17px}
+    .mini-tabs button{flex:1;border:0;border-radius:13px;background:transparent;padding:10px 6px;color:#82718a;font-size:.8rem}
+    .mini-tabs [aria-selected=true]{background:#fff;box-shadow:0 3px 10px #6d4e7a18;color:#5b377e}
+    .amount{padding:17px 17px 14px;border-radius:19px;background:var(--habitat-field);border:1px solid var(--habitat-border)}
+    .amount-label{display:block;margin-bottom:12px;color:#777078;font:700 .77rem Roboto,sans-serif}
+    .amount-line{display:flex;align-items:center;gap:8px;justify-content:space-between}
+    .amount strong{font:500 clamp(1.65rem,2.8vw,2.15rem) Roboto,sans-serif;color:#2c282c;font-variant-numeric:tabular-nums}
+    .coin-label{display:flex;gap:7px;align-items:center;padding:8px 11px;border-radius:17px;background:#fff;box-shadow:0 1px 7px #51402b10;font:700 .83rem Roboto,sans-serif;white-space:nowrap}
+    .coin-label img{width:23px;height:23px;object-fit:contain}
+    .switch-icon{position:relative;z-index:2;display:grid;place-items:center;width:39px;height:39px;margin:-5px auto;border:4px solid #fff;background:#ece0f6;border-radius:13px;color:#785ab2;font:800 1.2rem Roboto,sans-serif}
+    .mini-info{display:flex;justify-content:space-between;gap:10px;margin:15px 2px;color:#777078;font:500 .75rem Roboto,sans-serif}
+    .demo-action{width:100%;padding:14px;border-radius:16px;background:#ebdcf5;color:#6c5190;text-align:center;font-size:.8rem}
+    .demo-foot{color:#928992;text-align:center;font:400 .7rem/1.5 Roboto,sans-serif;margin:11px 0 0}
+    .scene-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:15px 20px;background:rgba(255,255,255,.77);border:1px solid #eaddec;border-radius:25px;box-shadow:0 10px 25px #593b6b10;backdrop-filter:blur(12px)}
+    .scene-title{display:flex;align-items:center;gap:8px;color:#5f4c72;font:500 .79rem Roboto,sans-serif}
+    .scene-name{font-weight:700;color:#694b89}
+    .scene-buttons{display:flex;align-items:center;gap:6px}
+    .scene-buttons button{display:inline-grid;place-items:center;min-width:35px;height:35px;padding:4px 9px;border:1px solid #e2d3eb;border-radius:12px;background:white;color:#6f5790;font:700 1rem Roboto,sans-serif}
+    .scene-buttons button:hover{background:#f4ebfc}
+    .scene-buttons button[aria-pressed=true]{background:#e8ddf4}
+    .mini-counter{font:500 .72rem Roboto,sans-serif;color:#85788b;min-width:45px;text-align:center}
+    .section{padding:104px 0}
+    .section-intro{display:flex;justify-content:space-between;gap:26px;align-items:end;flex-wrap:wrap;margin-bottom:31px}
+    .section-intro>div{max-width:710px}
+    h2{font:400 clamp(2.4rem,5.2vw,4.5rem)/1.05 "Luckiest Guy",Impact,sans-serif;margin:17px 0 0}
+    .section-intro p{max-width:360px;color:#6f6375;font-size:.95rem;line-height:1.7}
+    .bento{display:grid;grid-template-columns:1.15fr 1fr 1fr;grid-auto-rows:minmax(230px,auto);gap:16px}
+    .tile{position:relative;overflow:hidden;background:#ffffffd9;border:1px solid #e1d5e9;border-radius:29px;padding:28px;box-shadow:0 12px 28px #543a6410;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .tile:hover{transform:translateY(-5px);box-shadow:0 19px 33px #543a6420;border-color:#c3a5da}
+    .tile h3{font:400 2rem/1.1 "Luckiest Guy",sans-serif;margin:15px 0 11px}
+    .tile p{font:400 .94rem/1.65 Roboto,sans-serif;color:#5e5566;max-width:300px}
+    .tile .overline{font:700 .72rem Roboto,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#876da0}
+    .tile-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:16px;background:#f3e9fa;color:#7952b0;font-size:1.55rem}
+    .tile-large{grid-column:span 2;background:linear-gradient(117deg,#e4d2f5ee,#faf4ffee 64%,#f1dfefdd);border-color:#d9c3e7}
+    .tile-large h3{font-size:clamp(2.1rem,3.5vw,3.1rem);max-width:370px}
+    .tile-large p{max-width:360px}
+    .tile-orbits{position:absolute;width:330px;height:330px;right:-55px;bottom:-147px;border:44px solid #ae89db2e;border-radius:50%;box-shadow:0 0 0 43px #a77acc1c,inset 0 0 0 40px #ae89db15}
+    .tile-orbits::before{content:"⇄";position:absolute;top:19%;left:34%;font:700 5.7rem Roboto,sans-serif;color:#9363bd68;transform:rotate(-21deg)}
+    .tile-accent{background:linear-gradient(145deg,var(--habitat-soft),#ffffffed)}
+    .tile-accent .tile-icon{background:var(--habitat-surface);color:var(--habitat-accent)}
+    .tile-rose{background:linear-gradient(135deg,#fce3f1,#fff2f9)}
+    .tile-rose::after{content:"✦";position:absolute;bottom:-61px;right:18px;font-size:11rem;color:#e5a6d14d;transform:rotate(15deg)}
+    .tile-dark{background:linear-gradient(135deg,#403159,#775ca0);color:white}
+    .tile-dark h3,.tile-dark .overline{color:white}.tile-dark p{color:#efe3fb}.tile-dark .tile-icon{background:#ffffff20;color:white}
+    .tile-wide{grid-column:span 2}
+    .chain-list{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:20px}
+    .chain{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #e2d8e8;border-radius:14px;padding:9px 12px;font:700 .82rem Roboto,sans-serif}
+    .chain img{width:20px;height:20px;object-fit:contain}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+    .story-banner{border-radius:34px;background:linear-gradient(130deg,#5b3d7c,#8563b5 52%,#c37aaf);color:#fff;padding:clamp(26px,5vw,56px);position:relative;overflow:hidden;min-height:370px}
+    .story-banner::after{content:"✦";position:absolute;right:-8%;bottom:-44%;font-size:26rem;color:#ffffff14;transform:rotate(-12deg)}
+    .story-banner .eyebrow{color:#f1d6fb}.story-banner .eyebrow::before{background:#f7acd4}
+    .story-banner h2{color:white;font-size:clamp(3rem,5vw,4.65rem);margin:20px 0}
+    .story-banner p{max-width:370px;color:#f5eafc;line-height:1.7}
+    .story-details{border:1px solid #e0d2e9;border-radius:34px;background:#ffffffd9;padding:clamp(25px,4vw,41px);display:flex;flex-direction:column;gap:20px}
+    .story-details>div{display:flex;gap:14px;align-items:flex-start}
+    .step-number{display:grid;place-items:center;flex:0 0 38px;height:38px;border:1px solid #d9c5e9;border-radius:14px;color:#8661b0;background:#f6eefb;font:700 .79rem Roboto,sans-serif}
+    .story-details h3{font:400 1.42rem "Luckiest Guy",sans-serif;margin:2px 0 5px}
+    .story-details p{font:400 .9rem/1.6 Roboto,sans-serif;color:#62596b;margin:0}
+    .closer{position:relative;text-align:center;padding:110px 22px;background:linear-gradient(125deg,#eee1f9c7,#fcedf6da);border-block:1px solid #e9d5f0;margin-top:75px;overflow:hidden}
+    .closer::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:70px solid #c59ce52c;right:-280px;top:-220px;pointer-events:none}
+    .closer h2{max-width:850px;margin:16px auto 19px}.closer p{color:#645869;line-height:1.7;max-width:730px;margin:0 auto 28px;font-size:1rem}
+    .closer .btn{position:relative}
+    .footer{background:#2d213e;color:#f0e6fc;padding:32px 0}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+    .footer-title{font:400 1.6rem "Luckiest Guy",sans-serif}
+    .footer-links{display:flex;gap:19px;flex-wrap:wrap;color:#e1d3ed;font:500 .81rem Roboto,sans-serif}
+    .footer-links a:hover{color:#fff}
+    .footer-note{font:400 .72rem/1.6 Roboto,sans-serif;color:#bfaed1;margin:18px 0 0}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:1060px){.nav{gap:15px}.nav a{font-size:.78rem}.hero{gap:30px}.header-end{gap:6px}.home-link{font-size:.73rem;padding:10px}}
+    @media(max-width:850px){.wrap{width:min(100% - 34px,620px)}.header{flex-wrap:wrap}.nav{order:3;justify-content:center;width:100%;gap:24px}.header-end{margin-left:auto}.hero{grid-template-columns:1fr;padding-top:45px;gap:44px}.hero-copy{text-align:center}.eyebrow{justify-content:center}.lead{margin-inline:auto}.hero-actions,.hero-meta{justify-content:center}.hero-side{width:min(100%,470px);margin:auto}.bento{grid-template-columns:1fr 1fr}.tile-large{grid-column:span 1}.tile-wide{grid-column:span 2}.tile-orbits{opacity:.6}.section{padding:80px 0}.story{grid-template-columns:1fr}.story-banner{min-height:310px}}
+    @media(max-width:570px){.wrap{width:calc(100% - 28px)}.header{gap:10px;padding:13px 0}.brand-mark{width:44px;height:44px;flex-basis:44px}.wordmark strong{font-size:1.3rem}.wordmark small{font-size:.57rem}.home-link{font-size:.7rem;padding:9px 11px}.header .language-selector{padding:3px 6px}.header .language-selector__select{font-size:.72rem}.nav{gap:17px;overflow-x:auto;padding-bottom:4px}.nav a{font-size:.75rem}.hero{padding:42px 0 35px}.hero h1{font-size:clamp(3.55rem,15vw,5rem)}.hero-side{padding-top:16px}.mini-app{padding:17px}.hero-sticker{right:-4px;top:-14px}.section{padding:70px 0}.bento{grid-template-columns:1fr}.tile-large,.tile-wide{grid-column:span 1}.tile{min-height:220px}.tile-large{min-height:310px}.tile-orbits{right:-115px}.scene-toolbar{padding:12px;gap:10px}.scene-title{font-size:.72rem}.scene-buttons button{min-width:33px}.story-banner,.story-details{border-radius:27px}.closer{padding:90px 15px}}
+    @media(max-width:365px){.wordmark small{display:none}.nav{gap:10px}.hero h1{font-size:3.2rem}.mini-head strong{font-size:1.1rem}.coin-label{padding:7px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.habitat-layer{transition:none!important}}
+  </style>
+</head>
+<body data-i18n-page-title="swaps.pageTitle">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="habitats" aria-hidden="true"><div class="habitat-layer active" id="habitatA" style="background-image:url('./assets/background_01.webp')"></div><div class="habitat-layer" id="habitatB"></div></div>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="wrap header">
+    <a class="brand" href="./happyswaps3.html" aria-label="HappySwaps by Happy Animals">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="https://raw.githubusercontent.com/d1v1ng1sC00l/happyswaps/main/public/assets/logos/happyswaps/logo_happyswaps_base.png" alt="" onerror="this.onerror=null;this.src='./assets/logo_happyanimals.webp'">
+        <img class="brand-arrow top" src="https://raw.githubusercontent.com/d1v1ng1sC00l/happyswaps/main/public/assets/logos/happyswaps/logo_happyswaps_flecha_rosa.png" alt="">
+        <img class="brand-arrow bottom" src="https://raw.githubusercontent.com/d1v1ng1sC00l/happyswaps/main/public/assets/logos/happyswaps/logo_happyswaps_flecha_verde.png" alt="">
+      </span><span class="wordmark"><strong>HAPPYSWAPS</strong><small>by HAPPY ANIMALS</small></span>
+    </a>
+    <nav class="nav" aria-label="Sections"><a href="#features" data-i18n="swaps3.navFeatures">Features</a><a href="#experience" data-i18n="swaps3.navExperience">Experience</a><a href="#networks" data-i18n="swaps3.navNetworks">Networks</a></nav>
+    <div class="header-end"><div class="language-selector"><select id="languageSelector" class="language-selector__select" aria-label="Select language"></select><span class="language-selector__arrow" aria-hidden="true">▾</span></div><a class="home-link" href="./index.html"><span data-i18n="swaps.backHome">Back to Happy Animals</span> ↗</a></div>
+  </header>
+  <main id="main">
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="swaps3.eyebrow">12 habitats. One DeFi adventure.</span>
+        <h1><span data-i18n="swaps3.heroLine1">EXPLORE THE</span><br><span class="gradient" data-i18n="swaps3.heroLine2">WILD SIDE</span><br><span data-i18n="swaps3.heroLine3">OF DEFI.</span></h1>
+        <p class="lead" data-i18n="swaps3.heroText">Discover swaps, liquidity and rewards through a multichain experience with the playful soul of Happy Animals.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#features"><span data-i18n="swaps3.discover">Discover HappySwaps</span> <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="#experience"><span data-i18n="swaps3.howItWorks">How it works</span> <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-meta"><span>✧ <span data-i18n="swaps3.testnetOnly">Testnet preview</span></span><span>✓ <span data-i18n="swaps3.yourWallet">Your wallet, your control</span></span><span>♡ <span data-i18n="swaps3.byAnimals">Created by Happy Animals</span></span></div>
+      </div>
+      <div class="hero-side">
+        <span class="hero-sticker">✦ <span data-i18n="swaps3.demoSticker">Interactive concept</span></span>
+        <div class="mini-app" aria-label="Illustrative, nonfunctional DeFi interface">
+          <div class="mini-head"><strong>HAPPY<span style="color:#9e63bf">SWAPS</span></strong><span class="demo-badge" data-i18n="swaps3.noLiveData">NO LIVE DATA</span></div>
+          <div class="mini-tabs" role="tablist" aria-label="Concept features"><button id="tabSwap" role="tab" aria-selected="true" aria-controls="conceptPanel" data-demo="swap">Swap</button><button id="tabPools" role="tab" aria-selected="false" aria-controls="conceptPanel" data-demo="pools" tabindex="-1">Pools</button><button id="tabRewards" role="tab" aria-selected="false" aria-controls="conceptPanel" data-demo="rewards" tabindex="-1">Rewards</button></div>
+          <div id="conceptPanel" role="tabpanel" aria-labelledby="tabSwap" aria-live="polite">
+            <div class="amount"><span class="amount-label" id="demoLabelA" data-i18n="swaps3.youSend">You send · illustration</span><div class="amount-line"><strong id="demoAmountA">0.00</strong><span class="coin-label"><img id="demoCoinA" src="./assets/logos_blockchain/logo_blockchain_ethereum.svg" alt=""><span id="demoSymbolA">ETH</span></span></div></div>
+            <span class="switch-icon" aria-hidden="true">↕</span>
+            <div class="amount"><span class="amount-label" id="demoLabelB" data-i18n="swaps3.youReceive">You receive · no quote</span><div class="amount-line"><strong id="demoAmountB">0.00</strong><span class="coin-label"><span id="demoSymbolB">USDC</span></span></div></div>
+            <div class="mini-info"><span id="demoHint" data-i18n="swaps3.reviewBeforeSigning">Review before signing</span><span data-i18n="swaps3.demoSticker">Interactive concept</span></div>
+            <div class="demo-action" id="demoAction" data-i18n="swaps3.demoOnly">Preview only · no transactions</div>
+            <p class="demo-foot" data-i18n="swaps3.noWallet">No wallet connection, real funds or price quotes on this page.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="wrap scene-toolbar" aria-label="Habitat background controls">
+      <div class="scene-title">✿ <span data-i18n="swaps3.currentHabitat">Current habitat</span>: <span class="scene-name" id="sceneName">Grasslands / Savannah</span></div>
+      <div class="scene-buttons"><button type="button" id="previousScene" aria-label="Previous habitat" title="Previous habitat">‹</button><span class="mini-counter" id="sceneCounter">01 / 12</span><button type="button" id="nextScene" aria-label="Next habitat" title="Next habitat">›</button><button type="button" id="pauseScene" aria-pressed="false" aria-label="Pause habitat rotation" title="Pause habitat rotation">Ⅱ</button></div>
+    </div>
+    <section class="wrap section" id="features">
+      <div class="section-intro reveal"><div><span class="eyebrow" data-i18n="swaps3.featuresEyebrow">THE BEST OF BOTH WORLDS</span><h2 data-i18n="swaps3.featuresHeading">DeFi, with personality.</h2></div><p data-i18n="swaps3.featuresIntro">The tools you already know, reimagined with nature, colorful habitats and a playful interface.</p></div>
+      <div class="bento">
+        <article class="tile tile-large reveal"><span class="overline">01 / SWAP</span><h3 data-i18n="swaps3.swapHeading">Less friction.<br>More flow.</h3><p data-i18n="swaps.swapBody">Exchange supported tokens with transparent quotes and fees.</p><span class="tile-orbits" aria-hidden="true"></span></article>
+        <article class="tile tile-accent reveal"><span class="tile-icon" aria-hidden="true">◈</span><h3>Pools</h3><p data-i18n="swaps.poolsBody">Explore liquidity pools and manage supported positions.</p></article>
+        <article class="tile tile-rose reveal"><span class="tile-icon" aria-hidden="true">★</span><h3>Rewards</h3><p data-i18n="swaps.rewardsBody">Track verified achievements and experimental points, without promised cash rewards.</p></article>
+        <article class="tile tile-dark reveal"><span class="tile-icon" aria-hidden="true">◷</span><h3>Activity</h3><p data-i18n="swaps.activityBody">Review operations and recover supported blockchain receipts.</p></article>
+        <article class="tile tile-wide reveal" id="networks"><span class="overline">05 / MULTICHAIN</span><h3 data-i18n="swaps.networkTitle">Explore multiple networks</h3><p data-i18n="swaps.networkBody">These are testnet pilots, not mainnet trading. Supported assets and operations vary by network; HyperEVM remains paused.</p>
+          <div class="chain-list"><span class="chain"><img src="./assets/logos_blockchain/logo_blockchain_base.svg" alt="">Base</span><span class="chain"><img src="./assets/logos_blockchain/logo_blockchain_ethereum.svg" alt="">Ethereum</span><span class="chain"><img src="./assets/logos_blockchain/logo_blockchain_solana.svg" alt="">Solana</span><span class="chain"><img src="./assets/logos_blockchain/logo_blockchain_robinhood.svg" alt="">Robinhood</span></div>
+        </article>
+      </div>
+    </section>
+    <section class="wrap section story" id="experience">
+      <div class="story-banner reveal"><span class="eyebrow" data-i18n="swaps3.experienceEyebrow">THE HAPPY ANIMALS DNA</span><h2 data-i18n="swaps3.experienceHeading">Nature meets blockchain.</h2><p data-i18n="swaps3.experienceText">Every habitat brings its own colors, energy and personality. The background changes as you explore — just like the HappySwaps app.</p></div>
+      <div class="story-details reveal">
+        <div><span class="step-number">01</span><div><h3 data-i18n="swaps3.step1Title">Choose your network</h3><p data-i18n="swaps3.step1Text">Start with supported testnets and see which tools are available for each network.</p></div></div>
+        <div><span class="step-number">02</span><div><h3 data-i18n="swaps3.step2Title">Review the details</h3><p data-i18n="swaps3.step2Text">Check amounts, fees and transaction details before doing anything on-chain.</p></div></div>
+        <div><span class="step-number">03</span><div><h3 data-i18n="swaps3.step3Title">Stay in control</h3><p data-i18n="swaps3.step3Text">Your connected wallet handles signatures; HappySwaps never asks for your seed phrase.</p></div></div>
+      </div>
+    </section>
+    <section class="closer"><div class="wrap"><span class="eyebrow" data-i18n="swaps3.finalEyebrow">THE ADVENTURE CONTINUES</span><h2 data-i18n="swaps3.finalHeading">A happier way to discover DeFi.</h2><p data-i18n="swaps3.finalText">HappySwaps is in active development. The testnet interface is being prepared; mainnet and future Earn or Perps features are not available here.</p><a class="btn btn-primary" href="./happyswaps.html"><span data-i18n="swaps3.projectOverview">Learn about the project</span> ↗</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><div class="footer-row"><span class="footer-title">HAPPYSWAPS <span aria-hidden="true">✦</span></span><nav class="footer-links" aria-label="Footer"><a href="./index.html" data-i18n="swaps.backHome">Back to Happy Animals</a><a href="./happyswaps1.html">Concept 01</a><a href="./happyswaps2.html">Concept 02</a><a href="./happyswaps.html" data-i18n="swaps3.projectOverview">Learn about the project</a></nav></div><p class="footer-note" data-i18n="swaps3.footerNote">Design concept only. No trading, wallet connections or financial offers on this page. External logo and habitat images are loaded from the project's public GitHub for this preview.</p></div></footer>
+<script>
+(() => {
+  "use strict";
+  const themes = [{"scene":"01_Grasslands_Savannah","dominant":"#826B19","secondary":"#EDD49F","surface":"#fefdfa","field":"#f9f4ea","soft":"#f9f0dc","border":"#e5dabd","accent":"#816a19","button":"#e8e4d6","buttonTextContrast":14.35,"buttonContrast":5.24,"hoverContrast":5.15},{"scene":"02_Tropical_Rainforest","dominant":"#A4C645","secondary":"#406530","surface":"#fafcf6","field":"#ecf2dd","soft":"#deeabc","border":"#c5d5a8","accent":"#406530","button":"#dde3da","buttonTextContrast":13.98,"buttonContrast":6.73,"hoverContrast":6.51},{"scene":"03_Desert","dominant":"#F9D978","secondary":"#ADCB9F","surface":"#fffdf8","field":"#fcf8e8","soft":"#fdf1ce","border":"#ebe3c0","accent":"#7a6a3b","button":"#e7e4dc","buttonTextContrast":14.37,"buttonContrast":5.31,"hoverContrast":5.23},{"scene":"04_Wetlands","dominant":"#A5CFAD","secondary":"#5F6442","surface":"#fafdfb","field":"#edf3ed","soft":"#dfeee1","border":"#cbd7c8","accent":"#5f6442","button":"#e2e3dd","buttonTextContrast":14.14,"buttonContrast":6.2,"hoverContrast":6.05},{"scene":"05_Savannah","dominant":"#B1D0AD","secondary":"#F3EAC7","surface":"#fefefc","field":"#fbfbf4","soft":"#fbf7eb","border":"#e9e8da","accent":"#706c5c","button":"#e5e5e2","buttonTextContrast":14.47,"buttonContrast":5.27,"hoverContrast":5.21},{"scene":"06_Mountains_Highlands","dominant":"#91948A","secondary":"#D9DAD1","surface":"#fdfdfd","field":"#f6f6f5","soft":"#f1f2ee","border":"#dedfdb","accent":"#6a6c65","button":"#e4e5e3","buttonTextContrast":14.45,"buttonContrast":5.32,"hoverContrast":5.23},{"scene":"07_Oceans_Coral_Reefs","dominant":"#85B6D0","secondary":"#A1CEDE","surface":"#fafdfd","field":"#edf6f9","soft":"#ddedf3","border":"#cbdfe7","accent":"#527181","button":"#e0e5e8","buttonTextContrast":14.38,"buttonContrast":5.2,"hoverContrast":5.09},{"scene":"08_Rainforest_Forest","dominant":"#A2BD6B","secondary":"#6C8A43","surface":"#fafcf8","field":"#edf2e3","soft":"#dee7ca","border":"#cad7b5","accent":"#5b7438","button":"#e1e6db","buttonTextContrast":14.39,"buttonContrast":5.25,"hoverContrast":5.09},{"scene":"09_Plains","dominant":"#96B58C","secondary":"#B4CAA2","surface":"#fbfcfa","field":"#f1f5ee","soft":"#e4ecde","border":"#d3decd","accent":"#5e7258","button":"#e2e6e1","buttonTextContrast":14.47,"buttonContrast":5.22,"hoverContrast":5.07},{"scene":"10_Underground_Burrows","dominant":"#C7A47B","secondary":"#D9BB96","surface":"#fdfcfa","field":"#f8f2eb","soft":"#f1e7d9","border":"#e4d7c7","accent":"#7f694f","button":"#e8e4df","buttonTextContrast":14.43,"buttonContrast":5.2,"hoverContrast":5.07},{"scene":"11_Arctic_Tundra","dominant":"#C9D9D7","secondary":"#A9C1C6","surface":"#fcfdfd","field":"#f4f8f7","soft":"#ecf1f1","border":"#dbe2e2","accent":"#606e71","button":"#e2e5e5","buttonTextContrast":14.41,"buttonContrast":5.29,"hoverContrast":5.2},{"scene":"12_Rocky_Outcrops","dominant":"#C1BEAA","secondary":"#DED3BE","surface":"#fdfdfc","field":"#f8f7f3","soft":"#f3efe8","border":"#e4e0d8","accent":"#6e6c61","button":"#e5e5e3","buttonTextContrast":14.48,"buttonContrast":5.28,"hoverContrast":5.18}];
+  const files = ["01_Grasslands_Savannah", "02_Tropical_Rainforest", "03_Desert", "04_Wetlands", "05_Savannah", "06_Mountains_Highlands", "07_Oceans_Coral_Reefs", "08_Rainforest_Forest", "09_Plains", "10_Underground_Burrows", "11_Arctic_Tundra", "12_Rocky_Outcrops"];
+  const remote = "https://raw.githubusercontent.com/d1v1ng1sC00l/happyswaps/main/public/assets/habitats/";
+  const fallback = ["./assets/background_01.webp", "./assets/background_02.webp"];
+  const rotationKey = "happyswaps-habitat-rotation";
+  const scenes = [document.getElementById("habitatA"), document.getElementById("habitatB")];
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const nameEl = document.getElementById("sceneName"), counter = document.getElementById("sceneCounter"), pause = document.getElementById("pauseScene");
+  let active = 0, front = 0, timer = null, serial = 0, paused = false;
+  try { paused = localStorage.getItem(rotationKey) === "off"; } catch {}
+  function setTheme(index) {
+    const theme = themes[index];
+    for (const key of ["surface","field","soft","border","accent","button"]) document.documentElement.style.setProperty("--habitat-" + key, theme[key]);
+    document.documentElement.dataset.habitat = theme.scene;
+    nameEl.textContent = theme.scene.replace(/^\d+_/, "").replaceAll("_", " / ");
+    counter.textContent = String(index + 1).padStart(2,"0") + " / " + String(files.length).padStart(2,"0");
+    pause.setAttribute("aria-pressed", String(paused));
+    pause.textContent = paused ? "▶" : "Ⅱ";
+    pause.setAttribute("aria-label", paused ? "Resume habitat rotation" : "Pause habitat rotation");
+    pause.title = pause.getAttribute("aria-label");
+  }
+  function clearClock() { if (timer !== null) { clearTimeout(timer); timer = null; } }
+  function schedule() { clearClock(); if (!paused && !reduced.matches && !document.hidden) timer = setTimeout(() => void move(1), 30000); }
+  function preload(src) { return new Promise(resolve => { const img = new Image(); img.onload = () => resolve(src); img.onerror = () => resolve(null); img.src = src; }); }
+  async function move(step) {
+    clearClock();
+    const id = ++serial;
+    const next = (active + step + files.length) % files.length;
+    const src = await preload(remote + files[next] + ".webp");
+    if (id !== serial) return;
+    const back = 1 - front;
+    scenes[back].style.backgroundImage = 'url("' + (src || fallback[next % fallback.length]) + '")';
+    scenes[back].classList.add("active");
+    scenes[front].classList.remove("active");
+    front = back; active = next; setTheme(active); schedule();
+  }
+  document.getElementById("previousScene").addEventListener("click", () => void move(-1));
+  document.getElementById("nextScene").addEventListener("click", () => void move(1));
+  pause.addEventListener("click", () => { paused = !paused; try { localStorage.setItem(rotationKey, paused ? "off" : "on"); } catch {} setTheme(active); schedule(); });
+  document.addEventListener("visibilitychange", schedule);
+  if (typeof reduced.addEventListener === "function") reduced.addEventListener("change", schedule);
+  setTheme(0);
+  // Swap/Pools/Rewards are a visual demonstration only; no real quotes or wallet calls.
+  const modes = {
+    swap:{a:"You send · illustration",b:"You receive · no quote",first:"0.00",second:"0.00",from:"ETH",to:"USDC",hint:"Review before signing"},
+    pools:{a:"Pool positions · illustration",b:"Available liquidity · illustration",first:"—",second:"—",from:"LP",to:"POOL",hint:"No live position data"},
+    rewards:{a:"Verified achievements · illustration",b:"Testnet points · illustration",first:"—",second:"—",from:"XP",to:"POINTS",hint:"No monetary rewards promised"}
+  };
+  const tabs = [...document.querySelectorAll(".mini-tabs [role=tab]")];
+  function choose(mode) {
+    const m = modes[mode]; if(!m) return;
+    tabs.forEach(tab => { const yes = tab.dataset.demo === mode; tab.setAttribute("aria-selected", String(yes)); tab.tabIndex = yes ? 0 : -1; });
+    document.getElementById("conceptPanel").setAttribute("aria-labelledby", "tab" + mode[0].toUpperCase() + mode.slice(1));
+    document.getElementById("demoLabelA").textContent = m.a;
+    document.getElementById("demoLabelB").textContent = m.b;
+    document.getElementById("demoAmountA").textContent = m.first;
+    document.getElementById("demoAmountB").textContent = m.second;
+    document.getElementById("demoSymbolA").textContent = m.from;
+    document.getElementById("demoSymbolB").textContent = m.to;
+    document.getElementById("demoCoinA").style.visibility = mode === "swap" ? "visible" : "hidden";
+    document.getElementById("demoHint").textContent = m.hint;
+  }
+  tabs.forEach((tab, i) => { tab.addEventListener("click", () => choose(tab.dataset.demo)); tab.addEventListener("keydown", e => { if(e.key !== "ArrowRight" && e.key !== "ArrowLeft")return; e.preventDefault(); const next = (i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length; choose(tabs[next].dataset.demo);tabs[next].focus(); }); });
+  if ("IntersectionObserver" in window && !reduced.matches) {
+    const observer = new IntersectionObserver(entries => { entries.forEach(item => { if (item.isIntersecting) { item.target.classList.add("visible"); observer.unobserve(item.target); }}); }, {threshold:.08});
+    document.querySelectorAll(".reveal").forEach(item => observer.observe(item));
+  } else document.querySelectorAll(".reveal").forEach(item => item.classList.add("visible"));
+})();
+</script>
+</body>
+</html>
