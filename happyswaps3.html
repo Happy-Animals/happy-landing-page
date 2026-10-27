@@ -129,6 +129,15 @@ h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 1
 @media(max-width:430px){.nav-shell{padding:9px 11px}.header{gap:5px}.wordmark strong{font-size:1.17rem}.wordmark small{font-size:.52rem}.brand-mark{width:36px;height:36px;flex-basis:36px}.header-end{gap:5px}.header .language-selector{max-width:98px;padding:1px 3px;min-height:33px}.header .language-selector__select{font-size:.65rem}.back-home{font-size:.66rem;padding:8px 7px}.screen{padding-top:100px;padding-bottom:80px}h1{font-size:clamp(3.1rem,14vw,4.2rem)}h2{font-size:clamp(2.6rem,12vw,4.2rem)}.feature-card{min-height:250px;padding:19px}.mini-app{padding:16px}.amount strong{font-size:1.55rem}.demo-info{font-size:.65rem}.network-icons span{padding:10px;font-size:.75rem}.network-icons img{width:23px;height:23px}}
 @media(max-height:740px) and (min-width:761px){.screen{padding-top:95px;padding-bottom:65px}h1{font-size:clamp(3.2rem,6vw,6rem)}h2{font-size:clamp(2.7rem,5.6vw,5rem)}.feature-card{min-height:330px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.deck-arrow:hover{transform:none}}
+
+/* Same fixed animated arrow treatment as the original Happy Animals landing. */
+.deck-arrow{background:transparent;border:0;border-radius:0;box-shadow:none;color:#ff9e8f;text-shadow:0 2px 11px #86517938;width:70px;height:70px;font:400 4rem/1 Roboto,Arial,sans-serif;animation:deck-arrow-pulse 1.5s ease-in-out infinite}
+.deck-arrow:hover,.deck-arrow.is-last:hover{background:transparent;box-shadow:none;color:#dc84b5;transform:none}
+@keyframes deck-arrow-pulse{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(10px);opacity:.7}}
+.deck-arrow.is-last{animation-name:deck-arrow-up}
+@keyframes deck-arrow-up{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-10px);opacity:.7}}
+@media(max-width:760px){.deck-arrow{width:58px;height:58px;font-size:3.2rem}}
+@media(prefers-reduced-motion:reduce){.deck-arrow,.deck-arrow.is-last{animation:none!important;opacity:1!important}}
 </style></head>
 <body data-i18n-page-title="swaps.pageTitle">
 <a class="skip" href="#intro">Skip to content</a>
