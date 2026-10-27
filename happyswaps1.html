@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HappySwaps / The playful side of DeFi — Concept 01</title>
+<meta name="description" content="HappySwaps by Happy Animals. Discover swaps, pools, portfolio, activity and rewards on supported test networks.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0d1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090b15;--ink:#f7f8ff;--muted:#b2b4ce;--line:rgba(255,255,255,.11);--rose:#ff81b7;--mint:#a6ffe4;--violet:#ad97ff;--orange:#ffcf94;--panel:#171a2d;--radius:27px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible{outline:3px solid var(--mint);outline-offset:4px}
+::selection{background:#a6ffe4;color:#171a2d}
+.skip{position:absolute;top:-90px;left:12px;z-index:100;padding:12px;background:white;color:black}.skip:focus{top:10px}
+.site-shell{position:relative;isolation:isolate;overflow:hidden}
+.site-shell::before{content:"";position:absolute;inset:0 0 auto;height:1150px;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 17% 13%,rgba(139,112,255,.22),transparent 42%),radial-gradient(ellipse at 87% 10%,rgba(250,100,183,.18),transparent 34%),radial-gradient(ellipse at 58% 68%,rgba(103,233,196,.085),transparent 48%)}
+.site-shell::after{content:"";position:absolute;inset:0 0 auto;height:1150px;z-index:-1;pointer-events:none;opacity:.16;background-image:radial-gradient(#fff .65px,transparent .7px);background-size:23px 23px;mask-image:linear-gradient(#000,transparent 95%)}
+.container{width:min(1170px,calc(100% - 48px));margin:0 auto}
+.nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:98px;z-index:15}
+.wordmark{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.055em;font-size:1.55rem}
+.mark{width:37px;height:37px;display:grid;place-items:center;color:#171126;font-size:1.45rem;background:linear-gradient(135deg,#ffb4cb,#a1ffdf);border-radius:13px;transform:rotate(-10deg);box-shadow:0 5px 20px rgba(255,135,183,.25)}
+.nav-links{display:flex;align-items:center;gap:29px;color:#dadced;font-size:.87rem;font-weight:600}
+.nav-links a:hover{color:var(--mint)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.note-link{padding:12px 17px;border:1px solid var(--line);border-radius:30px;font-size:.83rem;font-weight:700;background:#ffffff0a;white-space:nowrap;transition:background .2s ease}
+.note-link:hover{background:#ffffff1a}
+.status-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(166,255,228,.24);background:rgba(166,255,228,.07);border-radius:30px;color:#c8ffed;font-size:.76rem;font-weight:700;letter-spacing:.045em}
+.status-pill i{width:7px;height:7px;display:block;background:#a6ffe4;border-radius:100%;box-shadow:0 0 12px #a6ffe4}
+.hero{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:28px;min-height:645px;align-items:center;padding:55px 0 92px}
+.hero-copy{position:relative;z-index:2}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--mint)}
+.kicker::before{content:"";width:26px;height:2px;background:var(--mint)}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.065em}
+.hero h1{font-size:clamp(4.15rem,7.65vw,7.75rem);line-height:.92;margin:24px 0 30px;font-weight:700}
+.gradient-type{display:inline-block;background:linear-gradient(92deg,#ffb1d9 5%,#c9baff 41%,#a5ffe4 95%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 9px 35px #b289ff28)}
+.hero-sub{max-width:490px;line-height:1.78;font-size:1.05rem;color:var(--muted)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:12px 22px;border-radius:17px;font-size:.89rem;font-weight:800;transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{color:#14111e;background:linear-gradient(105deg,#ffb4cb,#a4ffe4);box-shadow:0 10px 38px rgba(163,255,227,.14)}
+.btn-primary:hover{box-shadow:0 14px 38px rgba(163,255,227,.26)}
+.btn-outline{border:1px solid rgba(255,255,255,.20);background:#ffffff0b}
+.btn-outline:hover{background:#ffffff19}
+.hero-footnote{display:flex;gap:18px;margin-top:32px;color:#9498b2;font-size:.75rem;align-items:center;flex-wrap:wrap}
+.hero-footnote span{display:inline-flex;align-items:center;gap:7px}.hero-footnote b{color:#a4ffe4}
+.visual{position:relative;min-height:510px;perspective:1000px}
+.visual-halo{position:absolute;inset:4% -11% 0;background:radial-gradient(ellipse,rgba(169,127,255,.32),transparent 58%);filter:blur(12px);pointer-events:none}
+.visual-orbit{position:absolute;width:515px;height:515px;left:50%;top:44%;transform:translate(-50%,-50%);border:1px solid rgba(214,200,255,.13);border-radius:50%;pointer-events:none}
+.visual-orbit::before{content:"";position:absolute;inset:45px;border:1px dashed rgba(214,200,255,.12);border-radius:50%}
+.mascot-sticker{position:absolute;z-index:4;right:-8px;top:-18px;width:146px;height:146px;object-fit:contain;filter:drop-shadow(0 18px 25px #08071688);transform:rotate(12deg);animation:bob 6s ease-in-out infinite;pointer-events:none}
+.float-chip{position:absolute;z-index:3;display:flex;gap:9px;align-items:center;padding:9px 14px;background:rgba(30,33,55,.82);border:1px solid rgba(255,255,255,.18);box-shadow:0 12px 38px #05081388;backdrop-filter:blur(18px);border-radius:18px;color:#ecedff;font-weight:700;font-size:.76rem}
+.float-chip img{width:22px;height:22px;object-fit:contain}.chip-one{left:-20px;top:19%;animation:bob 6s ease-in-out infinite}.chip-two{right:-17px;bottom:13%;animation:bob 7s ease-in-out infinite reverse}
+.device{position:relative;z-index:2;width:min(100%,440px);margin:35px auto 0;border:1px solid #ffffff29;border-radius:31px;background:linear-gradient(145deg,#282941f5,#17192ef5 65%,#11182ff5);padding:23px;box-shadow:0 38px 90px #01020ab8, inset 0 1px #ffffff1f;transform:rotate(3deg);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.device:hover{transform:rotate(0) translateY(-7px)}
+.device-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:21px}
+.device-brand{font-weight:800;font-size:.84rem;letter-spacing:.02em}.device-brand span{color:#a6ffe4}
+.device-tag{padding:6px 9px;background:#ffffff12;border:1px solid #ffffff14;border-radius:30px;font-size:.63rem;color:#b8bbcf}
+.device-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;background:#111321;border-radius:14px;padding:5px;margin-bottom:20px}
+.device-tab{color:#aeb2c8;background:transparent;border:0;border-radius:10px;padding:10px 7px;cursor:pointer;font-size:.76rem;font-weight:700}
+.device-tab[aria-selected="true"]{background:#35364f;color:#fff;box-shadow:0 3px 10px #02020849}
+.preview-group{border:1px solid #ffffff17;border-radius:18px;background:#0d1122;padding:15px 17px;margin-bottom:9px}
+.preview-label{font-size:.68rem;color:#8e91b0;display:block;margin-bottom:12px}
+.preview-line{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.preview-value{font:700 2rem "Space Grotesk",sans-serif;letter-spacing:-.05em}
+.coin{display:inline-flex;align-items:center;gap:9px;padding:8px 10px;background:#ffffff11;border-radius:30px;font-weight:800;font-size:.78rem;white-space:nowrap}
+.coin img{width:22px;height:22px;object-fit:contain}
+.switch-orb{position:relative;display:grid;place-items:center;margin:-6px auto;z-index:2;width:36px;height:36px;border:4px solid #191b2f;background:#343954;color:#adffe6;border-radius:11px;font-size:1.2rem}
+.preview-hint{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:17px 0;color:#9fa2be;font-size:.74rem}
+.preview-hint strong{color:#d6fbe9}
+.fake-action{width:100%;padding:14px;border-radius:15px;background:linear-gradient(98deg,#ffafd5,#b1ffe6);color:#141624;font-weight:900;text-align:center;font-size:.79rem}
+.preview-disclaimer{margin:13px 0 0;color:#777e9e;text-align:center;font-size:.65rem}
+.ticker-wrap{border-block:1px solid var(--line);overflow:hidden;background:#ffffff04}
+.ticker{display:flex;gap:64px;width:max-content;white-space:nowrap;padding:18px 0;animation:marquee 31s linear infinite;color:#aaa9c8;font-size:.77rem;font-weight:800;letter-spacing:.15em}
+.ticker b{color:#a6ffe4}.ticker span{display:inline-flex;align-items:center;gap:13px}
+.section{padding:116px 0}
+.section-head{display:flex;gap:25px;align-items:end;justify-content:space-between;margin-bottom:35px;flex-wrap:wrap}
+.section-title{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.06;margin:13px 0 0}
+.section-desc{max-width:355px;color:var(--muted);line-height:1.7;font-size:.95rem}
+.bento{display:grid;grid-template-columns:1.15fr 1fr 1fr;grid-auto-rows:minmax(245px,auto);gap:17px}
+.tile{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);padding:29px;background:#1a1d31;transition:transform .25s,border-color .25s;min-width:0}
+.tile:hover{transform:translateY(-5px);border-color:#ffffff55}
+.tile h3{font-size:1.55rem;margin:0 0 10px;letter-spacing:-.055em}
+.tile p{color:#bdc0d7;font-size:.91rem;line-height:1.65;max-width:320px}
+.tile .mini-label{font-size:.7rem;font-weight:800;letter-spacing:.14em;color:#abb0ca;display:block;margin-bottom:35px;text-transform:uppercase}
+.tile-large{grid-column:span 2;background:radial-gradient(circle at 78% 67%,#6f4ac84d,transparent 40%),linear-gradient(135deg,#2a2246,#191d32)}
+.tile-large h3{font-size:2.45rem;max-width:300px}
+.tile-orbit{position:absolute;right:-33px;bottom:-100px;width:330px;height:330px;border-radius:50%;border:39px solid #a58af82b;box-shadow:0 0 0 36px #a58af80d,inset 0 0 0 36px #a58af81e;pointer-events:none}
+.tile-orbit::before{content:"⇄";position:absolute;top:34%;left:38%;font-size:5.3rem;color:#cfbaff;transform:rotate(-22deg)}
+.tile-mint{background:linear-gradient(145deg,#d5ffe9,#a5ead9);color:#1a332d}.tile-mint p,.tile-mint .mini-label{color:#45665a}
+.tile-mint .coin-stack{position:absolute;right:18px;bottom:10px;font-size:4rem;filter:drop-shadow(0 10px 15px #2d635244);transform:rotate(-14deg)}
+.tile-pink{background:linear-gradient(140deg,#fed6e7,#f1aac8);color:#43243d}.tile-pink p,.tile-pink .mini-label{color:#80506d}
+.tile-pink::after{content:"✦";position:absolute;right:22px;bottom:-50px;font-size:10rem;color:#ffffff88;transform:rotate(-16deg)}
+.tile-deep{background:linear-gradient(130deg,#242b4d,#172436)}
+.tile-deep::after{content:"◷";position:absolute;font-size:9rem;color:#97ddff22;right:19px;bottom:-40px}
+.tile-wide{grid-column:span 2;background:linear-gradient(140deg,#292346,#1c243a)}
+.tile-wide .network-icons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.network-token{display:flex;gap:7px;align-items:center;border:1px solid #ffffff23;padding:9px 12px;border-radius:18px;background:#ffffff0c;font-weight:700;font-size:.73rem}
+.network-token img{width:21px;height:21px;object-fit:contain}
+.process-wrap{background:linear-gradient(180deg,#151828,#0d101c);border-block:1px solid var(--line)}
+.process{display:grid;grid-template-columns:1fr 1fr 1fr;gap:17px}
+.step{padding:26px;border-top:1px solid #ffffff40}
+.step-id{display:block;color:#adffe5;font-weight:900;font-size:.76rem;letter-spacing:.15em;margin-bottom:19px}
+.step h3{font-size:1.55rem;margin-bottom:12px}.step p{color:#afb4ce;line-height:1.7;font-size:.92rem}
+.big-quote{position:relative;border:1px solid var(--line);border-radius:32px;padding:60px clamp(24px,6vw,74px);overflow:hidden;background:radial-gradient(ellipse at 90% 60%,#5a3a9e55,transparent 49%),#15172a}
+.big-quote h2{font-size:clamp(2.9rem,6.6vw,6.2rem);line-height:1.04;max-width:840px;margin:0 0 27px}
+.big-quote p{max-width:650px;color:#bfc2d9;line-height:1.7}
+.big-quote .btn{margin-top:15px}
+footer{border-top:1px solid var(--line);padding:35px 0 40px;color:#abaec5}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-brand{color:#fff;font-family:"Space Grotesk";font-size:1.23rem;font-weight:700}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:.82rem}
+.footer-note{font-size:.76rem;opacity:.75;max-width:650px;line-height:1.6;margin-top:20px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in-view{opacity:1;transform:none}
+@keyframes bob{50%{transform:translateY(-17px)}}@keyframes marquee{to{transform:translateX(-50%)}}
+@media(max-width:1080px){.nav-links{display:none}.hero{grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(3.7rem,7vw,5.7rem)}.visual-orbit{width:420px;height:420px}.bento{grid-template-columns:1fr 1fr}.tile-large{grid-column:span 1}.tile-wide{grid-column:span 2}}
+@media(max-width:750px){.container{width:min(100% - 34px,550px)}.nav{min-height:76px}.nav-right .status-pill{display:none}.hero{display:flex;flex-direction:column;align-items:stretch;gap:20px;padding:48px 0 54px}.hero h1{font-size:clamp(3.65rem,15vw,5.5rem)}.hero-sub{font-size:.98rem}.visual{min-height:485px}.device{transform:rotate(0);margin:20px auto 0}.float-chip{display:none}.mascot-sticker{width:102px;height:102px;right:-8px;top:-18px}.visual-orbit{width:410px;height:410px}.section{padding:80px 0}.bento{grid-template-columns:1fr}.tile-large,.tile-wide{grid-column:span 1}.tile{min-height:235px}.tile-large h3{font-size:2.25rem}.process{grid-template-columns:1fr;gap:0}.process .step{padding:22px 0}.big-quote{padding:40px 25px}}
+@media(max-width:420px){.wordmark{font-size:1.3rem}.note-link{font-size:.75rem;padding:10px 12px}.hero h1{font-size:3.6rem}.visual{min-height:470px}.preview-value{font-size:1.7rem}.hero-footnote{gap:10px}.tile-orbit{opacity:.55}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="site-shell">
+  <header class="container nav">
+    <a class="wordmark" href="./happyswaps1.html" aria-label="HappySwaps concept one home"><span class="mark" aria-hidden="true">↔</span><span>happy<span style="color:var(--mint)">swaps</span>.</span></a>
+    <nav class="nav-links" aria-label="Sections"><a href="#features">Why HappySwaps</a><a href="#networks">Networks</a><a href="#how">How it works</a></nav>
+    <div class="nav-right"><span class="status-pill"><i></i> TESTNET PREVIEW</span><a class="note-link" href="./index.html">Happy Animals ↗</a></div>
+  </header>
+  <main id="main">
+    <section class="container hero">
+      <div class="hero-copy">
+        <span class="kicker">by Happy Animals · Multichain DeFi</span>
+        <h1>SWAP THE<br><span class="gradient-type">ORDINARY.</span></h1>
+        <p class="hero-sub">DeFi can feel different. Discover a more playful way to explore swaps, liquidity pools, your portfolio and on-chain activity — all in one beautifully simple place.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#features">Explore HappySwaps <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#how">How it works <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-footnote"><span><b>✓</b> Your wallet. Your control.</span><span><b>✓</b> Transparent on-chain data.</span><span><b>◉</b> Test networks only.</span></div>
+      </div>
+      <div class="visual" aria-label="Illustrative, nonfunctional HappySwaps interface concept">
+        <div class="visual-halo"></div><div class="visual-orbit"></div>
+        <img class="mascot-sticker" src="https://raw.githubusercontent.com/d1v1ng1sC00l/happyswaps/main/public/assets/logos/happyswaps/logo_happyswaps_base.png" alt="HappySwaps bear mascot" width="146" height="146">
+        <div class="float-chip chip-one"><img alt="" src="./assets/logos_blockchain/logo_blockchain_base.svg">BASE TESTNET</div>
+        <div class="float-chip chip-two"><img alt="" src="./assets/logos_blockchain/logo_blockchain_solana.svg">SOLANA DEVNET</div>
+        <div class="device">
+          <div class="device-header"><span class="device-brand">happy<span>swaps</span> / preview</span><span class="device-tag">CONCEPT · NOT LIVE</span></div>
+          <div class="device-tabs" role="tablist" aria-label="Illustrative feature preview">
+            <button class="device-tab" id="tab-swap" role="tab" aria-selected="true" aria-controls="previewPanel" data-mode="swap">Swap</button>
+            <button class="device-tab" id="tab-pools" role="tab" aria-selected="false" aria-controls="previewPanel" tabindex="-1" data-mode="pools">Pools</button>
+            <button class="device-tab" id="tab-rewards" role="tab" aria-selected="false" aria-controls="previewPanel" tabindex="-1" data-mode="rewards">Rewards</button>
+          </div>
+          <div id="previewPanel" role="tabpanel" aria-labelledby="tab-swap" aria-live="polite">
+            <div class="preview-group"><span class="preview-label" id="previewTopLabel">You send · illustration only</span><div class="preview-line"><span class="preview-value" id="previewTopValue">0.00</span><span class="coin"><img src="./assets/logos_blockchain/logo_blockchain_ethereum.svg" alt=""> ETH</span></div></div>
+            <span class="switch-orb" aria-hidden="true">↕</span>
+            <div class="preview-group"><span class="preview-label" id="previewBottomLabel">You receive · no quote</span><div class="preview-line"><span class="preview-value" id="previewBottomValue">0.00</span><span class="coin"><span id="previewSymbol">USDC</span></span></div></div>
+            <div class="preview-hint"><span id="previewHint">Clear quotes. You approve each action.</span><strong id="previewHintRight">TESTNET</strong></div>
+            <div class="fake-action" id="previewAction">ILLUSTRATIVE INTERFACE ONLY ↗</div>
+            <p class="preview-disclaimer">No wallet connection, live prices or transactions on this page.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker-wrap" aria-hidden="true"><div class="ticker">
+      <span>✦ SWAP SMARTER</span><span><b>◈</b> EXPLORE LIQUIDITY</span><span>✦ TRACK YOUR JOURNEY</span><span><b>◈</b> STAY IN CONTROL</span>
+      <span>✦ SWAP SMARTER</span><span><b>◈</b> EXPLORE LIQUIDITY</span><span>✦ TRACK YOUR JOURNEY</span><span><b>◈</b> STAY IN CONTROL</span>
+    </div></div>
+    <section id="features" class="container section">
+      <div class="section-head reveal"><div><span class="kicker">Everything, together</span><h2 class="section-title">THE FUN SIDE<br>OF FINANCE.</h2></div><p class="section-desc">A familiar DeFi toolkit, with a distinctive Happy Animals personality. One place to explore what your network supports.</p></div>
+      <div class="bento">
+        <article class="tile tile-large reveal"><span class="mini-label">01 / SWAP</span><h3>Less friction.<br>More flow.</h3><p>View supported swaps and review amounts, minimums and fees before you approve any transaction.</p><span class="tile-orbit" aria-hidden="true"></span></article>
+        <article class="tile tile-mint reveal"><span class="mini-label">02 / POOLS</span><h3>Explore liquidity.</h3><p>Find supported pools and manage your liquidity positions in a shared interface.</p><span class="coin-stack" aria-hidden="true">◉</span></article>
+        <article class="tile tile-pink reveal"><span class="mini-label">03 / REWARDS</span><h3>Every step counts.</h3><p>Discover verified achievements and testnet points — no promised financial rewards.</p></article>
+        <article class="tile tile-deep reveal"><span class="mini-label">04 / ACTIVITY</span><h3>Know what happened.</h3><p>Review supported on-chain operations and recover transaction receipts.</p></article>
+        <article id="networks" class="tile tile-wide reveal"><span class="mini-label">05 / NETWORKS</span><h3>Your chains. One vibe.</h3><p>Explore the currently supported testnet pilots. Each network has its own capabilities and verification status.</p>
+          <div class="network-icons"><span class="network-token"><img src="./assets/logos_blockchain/logo_blockchain_base.svg" alt="">Base</span><span class="network-token"><img src="./assets/logos_blockchain/logo_blockchain_ethereum.svg" alt="">Ethereum</span><span class="network-token"><img src="./assets/logos_blockchain/logo_blockchain_solana.svg" alt="">Solana</span><span class="network-token"><img src="./assets/logos_blockchain/logo_blockchain_robinhood.svg" alt="">Robinhood</span></div>
+        </article>
+      </div>
+    </section>
+    <section id="how" class="process-wrap"><div class="container section">
+      <div class="section-head reveal"><div><span class="kicker">Made to be understood</span><h2 class="section-title">YOUR WALLET.<br>YOUR RULES.</h2></div><p class="section-desc">A clearer experience should never mean hiding risk. Every network and feature is validated separately.</p></div>
+      <div class="process"><div class="step reveal"><span class="step-id">STEP 01</span><h3>Pick a network.</h3><p>Choose from supported testnets. Unsupported features stay unavailable, never silently enabled.</p></div><div class="step reveal"><span class="step-id">STEP 02</span><h3>Review the details.</h3><p>Check the intended action, estimated network fees and any supported minimum received.</p></div><div class="step reveal"><span class="step-id">STEP 03</span><h3>Sign for yourself.</h3><p>Your wallet handles your signature. Transactions and their results remain on-chain.</p></div></div>
+    </div></section>
+    <section class="container section"><div class="big-quote reveal"><span class="kicker">Something different is taking shape</span><h2>GOOD VIBES.<br><span class="gradient-type">ON-CHAIN.</span></h2><p>HappySwaps is growing from a testnet DeFi experience. Mainnet, vaults and perpetuals are not live offerings on this page. We would rather show what's real than invent numbers or promises.</p><a class="btn btn-primary" href="./happyswaps.html">Meet the project <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer><div class="container"><div class="footer-row"><span class="footer-brand">happyswaps <span style="color:var(--mint)">✦</span></span><div class="footer-links"><a href="./index.html">Happy Animals</a><a href="./happyswaps.html">Project overview</a><a href="./happyswaps2.html">Compare concept 02</a></div></div><p class="footer-note">Concept presentation only · Testnet features vary by blockchain · No financial offers, quoted prices, or live wallet actions.</p></div></footer>
+</div>
+<script>
+(function(){
+  var modes={
+    swap:{top:"You send · illustration only",bottom:"You receive · no quote",a:"0.00",b:"0.00",symbol:"USDC",hint:"Clear quotes. You approve each action.",side:"TESTNET",action:"ILLUSTRATIVE INTERFACE ONLY ↗"},
+    pools:{top:"Liquidity pools · concept preview",bottom:"Position tracking · concept preview",a:"—",b:"—",symbol:"LP",hint:"On-chain positions when available.",side:"NO LIVE DATA",action:"EXPLORE POOLS IN THE APP"},
+    rewards:{top:"Verified achievements · concept",bottom:"Experimental testnet points",a:"—",b:"—",symbol:"XP",hint:"No promised tokens or payouts.",side:"TESTNET",action:"DISCOVER REWARDS"}
+  };
+  var tabs=Array.from(document.querySelectorAll(".device-tab"));
+  function show(mode){var m=modes[mode];if(!m)return;
+    tabs.forEach(function(t){var active=t.dataset.mode===mode;t.setAttribute("aria-selected",String(active));t.tabIndex=active?0:-1;});
+    document.getElementById("previewPanel").setAttribute("aria-labelledby","tab-"+mode);
+    document.getElementById("previewTopLabel").textContent=m.top;
+    document.getElementById("previewBottomLabel").textContent=m.bottom;
+    document.getElementById("previewTopValue").textContent=m.a;
+    document.getElementById("previewBottomValue").textContent=m.b;
+    document.getElementById("previewSymbol").textContent=m.symbol;
+    document.getElementById("previewHint").textContent=m.hint;
+    document.getElementById("previewHintRight").textContent=m.side;
+    document.getElementById("previewAction").textContent=m.action;
+  }
+  tabs.forEach(function(t,i){t.addEventListener("click",function(){show(t.dataset.mode);});t.addEventListener("keydown",function(e){if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;e.preventDefault();var n=(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length;show(tabs[n].dataset.mode);tabs[n].focus();});});
+  if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in-view");observer.unobserve(e.target);}});},{threshold:.08});document.querySelectorAll(".reveal").forEach(function(x){observer.observe(x);});}
+  else{document.querySelectorAll(".reveal").forEach(function(x){x.classList.add("in-view");});}
+})();
+</script>
+</body>
+</html>
