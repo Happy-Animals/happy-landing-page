@@ -56,3 +56,14 @@ Two standalone static design studies have been added to this feature branch; nei
 To compare locally with the repo's existing files: `python -m http.server 8000`, then open `http://localhost:8000/happyswaps1.html` and `http://localhost:8000/happyswaps2.html`. The official HappySwaps bear logo is loaded from the public HappySwaps GitHub repository for **preview only**. Self-host an optimized checked copy before publishing; the pages also use Google Fonts and page 2 uses the same external DotLottie library as the NFT landing.
 
 Neither page is the DEX or enables mainnet. No `index.html`, `landing-config.js`, NFT payouts, RPC, routes, domains, or production deployment are altered in this comparison phase.
+
+
+### Concept 03 — Habitat Bento (candidate preview)
+
+- `happyswaps3.html`: blends the lightweight lavender aesthetics of concept 02 with concept 01's modern Bento feature cards and test-only interactive swap panel.
+- Reuses the genuine **12 habitat file names + CSS palettes** from `src/components/Habitats.tsx` / `habitatThemes.json` in the HappySwaps codebase, with 30-second rotation, a 2.4-second crossfade, tab visibility and reduced-motion support. Scenery can be changed or paused from the on-page controls.
+- Reuses the genuine HappySwaps layered logo (base + two individually animated arrows on hover) and the application's fonts: Luckiest Guy, DynaPuff and Roboto.
+- The preview loads the official logo and habitat pictures from the public HappySwaps GitHub raw asset URLs. If a habitat fails to load, it falls back to one of the original landing backgrounds. **Self-host optimized copies in `assets/` before publishing**, so this does not become a GitHub-hosted asset dependency.
+- New `swaps3.*` copy has Spanish and Catalan translations. English remains available as HTML fallback; other 11 language catalogs currently fall back to English for the new concept-specific copy (existing `swaps.*` translations continue to work). Complete the remaining locales before replacing the production explainer.
+- Preview locally with `http://localhost:8000/happyswaps3.html` after updating the Worktree. This page **does not activate DEX trading, wallet connections, real quotes, or mainnet**.
+- No changes to the NFT application, original landing routing, DNS or production deployment from concept 03.
