@@ -388,5 +388,7 @@
   "token.trade": "$SMILES 거래",
   "token.viewSolscan": "Solscan에서 보기",
   "token.pieAlt": "SMILES Token 배분 비율을 보여주는 원형 차트",
-  "animal.name.owl": "올빼미"
+  "animal.name.owl": "올빼미",
+  "landing.happySwapsExplore": "HappySwaps 살펴보기",
+  "landing.happySwapsOpen": "새 탭에서 HappySwaps DeFi 앱 열기"
 }

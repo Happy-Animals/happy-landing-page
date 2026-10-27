@@ -388,5 +388,7 @@
   "token.trade": "$SMILES Al/Sat",
   "token.viewSolscan": "Solscan'de görüntüle",
   "token.pieAlt": "SMILES Token dağılım yüzdelerini gösteren pasta grafik",
-  "animal.name.owl": "Baykuş"
+  "animal.name.owl": "Baykuş",
+  "landing.happySwapsExplore": "HappySwaps'i keşfet",
+  "landing.happySwapsOpen": "HappySwaps DeFi uygulamasını yeni sekmede aç"
 }

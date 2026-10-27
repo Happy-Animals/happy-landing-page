@@ -388,5 +388,7 @@
   "token.trade": "Giao dịch $SMILES",
   "token.viewSolscan": "Xem trên Solscan",
   "token.pieAlt": "Biểu đồ tròn thể hiện tỷ lệ phân bổ SMILES Token",
-  "animal.name.owl": "Cú"
+  "animal.name.owl": "Cú",
+  "landing.happySwapsExplore": "Khám phá HappySwaps",
+  "landing.happySwapsOpen": "Mở ứng dụng DeFi HappySwaps trong tab mới"
 }

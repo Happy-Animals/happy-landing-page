@@ -388,5 +388,7 @@
   "token.trade": "تداول $SMILES",
   "token.viewSolscan": "عرض على Solscan",
   "token.pieAlt": "مخطط دائري يوضح نسب توزيع SMILES Token",
-  "animal.name.owl": "بومة"
+  "animal.name.owl": "بومة",
+  "landing.happySwapsExplore": "استكشف HappySwaps",
+  "landing.happySwapsOpen": "افتح تطبيق HappySwaps للتمويل اللامركزي في علامة تبويب جديدة"
 }

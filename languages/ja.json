@@ -388,5 +388,7 @@
   "token.trade": "$SMILESを取引",
   "token.viewSolscan": "Solscanで見る",
   "token.pieAlt": "SMILES Tokenの配分割合を示す円グラフ",
-  "animal.name.owl": "フクロウ"
+  "animal.name.owl": "フクロウ",
+  "landing.happySwapsExplore": "HappySwapsを見る",
+  "landing.happySwapsOpen": "HappySwapsのDeFiアプリを新しいタブで開く"
 }

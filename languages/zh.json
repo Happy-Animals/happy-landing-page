@@ -388,5 +388,7 @@
   "token.trade": "交易 $SMILES",
   "token.viewSolscan": "在 Solscan 查看",
   "token.pieAlt": "显示 SMILES Token 分配比例的饼图",
-  "animal.name.owl": "猫头鹰"
+  "animal.name.owl": "猫头鹰",
+  "landing.happySwapsExplore": "探索 HappySwaps",
+  "landing.happySwapsOpen": "在新标签页中打开 HappySwaps DeFi 应用"
 }
