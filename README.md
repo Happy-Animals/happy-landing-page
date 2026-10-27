@@ -41,3 +41,7 @@ Optional local build/deploy tools live under `tools/` and are intentionally excl
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
+## HappySwaps explainer
+
+`happyswaps.html` is a public-facing introduction, not the DEX itself. It uses the original Happy Animals typography, background palette and 14-language selector; it describes testnet-only capabilities and marks future Earn/Perps as planned. Its draft logo currently points to the existing image in the HappySwaps GitHub repository; before production, copy and optimize the same original image under the landing's `assets/` and update the link to avoid an external runtime dependency. No wallets, NFT contracts, RPC or backend are shared.
