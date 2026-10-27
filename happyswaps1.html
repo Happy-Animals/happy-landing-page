@@ -54,6 +54,7 @@ h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.065em}
 .visual-halo{position:absolute;inset:4% -11% 0;background:radial-gradient(ellipse,rgba(169,127,255,.32),transparent 58%);filter:blur(12px);pointer-events:none}
 .visual-orbit{position:absolute;width:515px;height:515px;left:50%;top:44%;transform:translate(-50%,-50%);border:1px solid rgba(214,200,255,.13);border-radius:50%;pointer-events:none}
 .visual-orbit::before{content:"";position:absolute;inset:45px;border:1px dashed rgba(214,200,255,.12);border-radius:50%}
+.mascot-sticker{position:absolute;z-index:4;right:-8px;top:-18px;width:146px;height:146px;object-fit:contain;filter:drop-shadow(0 18px 25px #08071688);transform:rotate(12deg);animation:bob 6s ease-in-out infinite;pointer-events:none}
 .float-chip{position:absolute;z-index:3;display:flex;gap:9px;align-items:center;padding:9px 14px;background:rgba(30,33,55,.82);border:1px solid rgba(255,255,255,.18);box-shadow:0 12px 38px #05081388;backdrop-filter:blur(18px);border-radius:18px;color:#ecedff;font-weight:700;font-size:.76rem}
 .float-chip img{width:22px;height:22px;object-fit:contain}.chip-one{left:-20px;top:19%;animation:bob 6s ease-in-out infinite}.chip-two{right:-17px;bottom:13%;animation:bob 7s ease-in-out infinite reverse}
 .device{position:relative;z-index:2;width:min(100%,440px);margin:35px auto 0;border:1px solid #ffffff29;border-radius:31px;background:linear-gradient(145deg,#282941f5,#17192ef5 65%,#11182ff5);padding:23px;box-shadow:0 38px 90px #01020ab8, inset 0 1px #ffffff1f;transform:rotate(3deg);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
@@ -120,7 +121,7 @@ footer{border-top:1px solid var(--line);padding:35px 0 40px;color:#abaec5}
 .reveal.in-view{opacity:1;transform:none}
 @keyframes bob{50%{transform:translateY(-17px)}}@keyframes marquee{to{transform:translateX(-50%)}}
 @media(max-width:1080px){.nav-links{display:none}.hero{grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(3.7rem,7vw,5.7rem)}.visual-orbit{width:420px;height:420px}.bento{grid-template-columns:1fr 1fr}.tile-large{grid-column:span 1}.tile-wide{grid-column:span 2}}
-@media(max-width:750px){.container{width:min(100% - 34px,550px)}.nav{min-height:76px}.nav-right .status-pill{display:none}.hero{display:flex;flex-direction:column;align-items:stretch;gap:20px;padding:48px 0 54px}.hero h1{font-size:clamp(3.65rem,15vw,5.5rem)}.hero-sub{font-size:.98rem}.visual{min-height:485px}.device{transform:rotate(0);margin:20px auto 0}.float-chip{display:none}.visual-orbit{width:410px;height:410px}.section{padding:80px 0}.bento{grid-template-columns:1fr}.tile-large,.tile-wide{grid-column:span 1}.tile{min-height:235px}.tile-large h3{font-size:2.25rem}.process{grid-template-columns:1fr;gap:0}.process .step{padding:22px 0}.big-quote{padding:40px 25px}}
+@media(max-width:750px){.container{width:min(100% - 34px,550px)}.nav{min-height:76px}.nav-right .status-pill{display:none}.hero{display:flex;flex-direction:column;align-items:stretch;gap:20px;padding:48px 0 54px}.hero h1{font-size:clamp(3.65rem,15vw,5.5rem)}.hero-sub{font-size:.98rem}.visual{min-height:485px}.device{transform:rotate(0);margin:20px auto 0}.float-chip{display:none}.mascot-sticker{width:102px;height:102px;right:-8px;top:-18px}.visual-orbit{width:410px;height:410px}.section{padding:80px 0}.bento{grid-template-columns:1fr}.tile-large,.tile-wide{grid-column:span 1}.tile{min-height:235px}.tile-large h3{font-size:2.25rem}.process{grid-template-columns:1fr;gap:0}.process .step{padding:22px 0}.big-quote{padding:40px 25px}}
 @media(max-width:420px){.wordmark{font-size:1.3rem}.note-link{font-size:.75rem;padding:10px 12px}.hero h1{font-size:3.6rem}.visual{min-height:470px}.preview-value{font-size:1.7rem}.hero-footnote{gap:10px}.tile-orbit{opacity:.55}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -144,6 +145,7 @@ footer{border-top:1px solid var(--line);padding:35px 0 40px;color:#abaec5}
       </div>
       <div class="visual" aria-label="Illustrative, nonfunctional HappySwaps interface concept">
         <div class="visual-halo"></div><div class="visual-orbit"></div>
+        <img class="mascot-sticker" src="https://raw.githubusercontent.com/d1v1ng1sC00l/happyswaps/main/public/assets/logos/happyswaps/logo_happyswaps_base.png" alt="HappySwaps bear mascot" width="146" height="146">
         <div class="float-chip chip-one"><img alt="" src="./assets/logos_blockchain/logo_blockchain_base.svg">BASE TESTNET</div>
         <div class="float-chip chip-two"><img alt="" src="./assets/logos_blockchain/logo_blockchain_solana.svg">SOLANA DEVNET</div>
         <div class="device">
