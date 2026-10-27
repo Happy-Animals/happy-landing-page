@@ -752,6 +752,15 @@
           box-sizing: border-box;
         }
       }
+
+      /* HappySwaps: external product navigation; NFT flow unchanged. */
+      .header-actions { display:flex; align-items:center; justify-content:flex-end; gap:12px; min-width:0; }
+      .happyswaps-header-link { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; padding:8px 14px; border:1px solid rgba(41,16,2,.18); border-radius:24px; background:rgba(255,255,255,.93); color:#291002; text-decoration:none; font:700 clamp(.85rem,1.2vw,1.05rem) Roboto,sans-serif; transition:background-color .2s ease,transform .2s ease; }
+      .happyswaps-header-link:hover,.happyswaps-header-link:focus-visible { background:#fff; transform:translateY(-1px); outline-offset:3px; }
+      .additional-links .happyswaps-footer-link { display:inline-flex; align-items:center; justify-content:center; gap:7px; border:1px solid rgba(255,255,255,.66); border-radius:24px; padding:11px 18px; font:700 clamp(.95rem,1.2vw,1.15rem) Roboto,sans-serif; }
+      .additional-links .happyswaps-footer-link:hover,.additional-links .happyswaps-footer-link:focus-visible { border-color:#ff7f50; }
+      @media (max-width:768px) { .header-container { gap:8px; flex-wrap:wrap; } .header-actions { margin-left:auto; gap:7px; } .happyswaps-header-link { padding:6px 10px; } }
+      @media (max-width:540px) { .header-container { padding:6px 12px; gap:5px; } .logo-image { width:36px; margin-right:6px; } .logo-text { font-size:clamp(.85rem,3.5vw,1rem); } .header-actions #headerLaunchAppButton[disabled] { display:none; } }
     </style>
   </head>
   <body class="landing-page" data-i18n-page-title="landing.pageTitle">
@@ -819,10 +828,13 @@
           />
           <div class="logo-text">HAPPY ANIMALS</div>
         </div>
-        <!-- Header Button -->
-        <button id="headerLaunchAppButton" class="cta-buttona" disabled>
-          <span id="headerCountdownTimer"></span>
-        </button>
+        <nav class="header-actions" aria-label="Happy Animals ecosystem">
+          <a class="happyswaps-header-link" href="https://happyswaps.happyanimals.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Open the HappySwaps DeFi app in a new tab" data-i18n-aria-label="landing.happySwapsOpen">HappySwaps <span aria-hidden="true">↗</span></a>
+          <!-- Original NFT launch button remains unchanged and disabled. -->
+          <button id="headerLaunchAppButton" class="cta-buttona" disabled>
+            <span id="headerCountdownTimer"></span>
+          </button>
+        </nav>
       </div>
     </header>
     <!-- start Section -->
@@ -1054,6 +1066,7 @@
               <button id="footerLaunchAppButton" class="cta-buttona" disabled>
                 <span id="footerCountdownTimer"></span>
               </button>
+              <a class="happyswaps-footer-link" href="https://happyswaps.happyanimals.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Open the HappySwaps DeFi app in a new tab" data-i18n-aria-label="landing.happySwapsOpen"><span data-i18n="landing.happySwapsExplore">Explore HappySwaps</span> <span aria-hidden="true">↗</span></a>
               <!-- New "wen token" Button -->
               <!--               <div
                 class="cta-token-button"

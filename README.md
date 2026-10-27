@@ -1,48 +1,43 @@
-# Happy Landing Page 🌟
+# Happy Animals — Landing 2026 🐾
 
-The official landing page for the [Happy Animals](https://happyanimals.xyz) project, combining collectible NFTs with wildlife conservation efforts.
+Official [Happy Animals](https://happyanimals.xyz/) landing for NFT collections, wildlife conservation and community information.
 
----
+## Products
 
-## 🌐 Project Overview
+- **Happy Animals NFTs:** collections, conservation and prize draws. Chain-specific NFT applications and backend remain independent of this static landing.
+- **HappySwaps by Happy Animals:** separate DeFi app at [happyswaps.happyanimals.xyz](https://happyswaps.happyanimals.xyz/). The landing links to it from its header and footer without modifying NFT logic. **Do not publish the links until the destination is actually deployed with valid HTTPS.**
 
-Happy Animals is an NFT project dedicated to supporting wildlife conservation. The landing page serves as the entry point for users to:
-- Learn about the mission of Happy Animals.
-- Explore NFT collections and conservation initiatives.
-- Engage with the community through links to social media and updates.
+The landing retains its existing story: introduction → about → collections → lottery → conservation → contact. No additional full-screen DEX section.
 
----
+## Tech
 
-## 🚀 Features
+Static HTML5, CSS and JavaScript, no `npm run dev` at repository root. `index.html` is the NFT landing; `token.html` is the separate historical token page. `landing-config.js` is only for NFT network configuration, not the DEX.
 
-- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
-- **Informative Sections**: Includes information about the project, NFT collections, and conservation efforts.
-- **Clean UI**: Built with a focus on simplicity and usability.
-- **Social Links**: Direct links to follow Happy Animals on [Twitter](https://x.com/happyanimalsxyz) and join the community on Discord.
+Fourteen translations in `languages/`, loaded by `i18n.js`. Selection uses `happy_animals_lang` in localStorage, browser language then English. HappySwaps translations: `landing.happySwapsExplore`, `landing.happySwapsOpen`.
 
----
+## Local preview
 
-## 🛠️ Technologies Used
-
-- **HTML5**: For semantic structure.
-- **CSS3**: For styling and animations.
-- **JavaScript**: For interactive elements.
-
----
-
-## ✨ How to Run
-Clone the repository:
 ```bash
 git clone git@github.com:Happy-Animals/happy-landing-page.git
+cd happy-landing-page
+git switch reboot/landing-2026
+python -m http.server 8000
 ```
 
----
+Open http://localhost:8000.
 
-## 🌟 Contributing
-We welcome contributions! Please feel free to:
-Open issues for bugs or feature suggestions.
-Submit pull requests to improve the landing page.
-## 📬 Contact
-For inquiries or support, reach out at dev@happyanimals.xyz or connect with us on [Twitter](https://x.com/happyanimalsxyz) or [Discord](https://discord.gg/hSGmJdRweD)
-## 📜 License
-This project is licensed under the MIT License.
+Optional local build/deploy tools live under `tools/` and are intentionally excluded by `.gitignore`. Never overwrite local tools, `.env` or other ignored files by replacing the project folder. Pushing to GitHub does not itself publish this landing.
+
+## Branches
+
+- `main`: historical landing until the reviewed 2026 upgrade is fast-forwarded.
+- `reboot/landing-2026`: current 2026 working branch.
+- Feature branches target `reboot/landing-2026` for review before merging.
+
+## Contact
+
+[dev@happyanimals.xyz](mailto:dev@happyanimals.xyz) · [Twitter/X](https://x.com/happyanimalsxyz) · [Discord](https://discord.gg/hSGmJdRweD)
+
+## License
+
+MIT, see [LICENSE](LICENSE).
