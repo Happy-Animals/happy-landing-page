@@ -67,3 +67,18 @@ Neither page is the DEX or enables mainnet. No `index.html`, `landing-config.js`
 - New `swaps3.*` copy has Spanish and Catalan translations. English remains available as HTML fallback; other 11 language catalogs currently fall back to English for the new concept-specific copy (existing `swaps.*` translations continue to work). Complete the remaining locales before replacing the production explainer.
 - Preview locally with `http://localhost:8000/happyswaps3.html` after updating the Worktree. This page **does not activate DEX trading, wallet connections, real quotes, or mainnet**.
 - No changes to the NFT application, original landing routing, DNS or production deployment from concept 03.
+
+## HappySwaps concept 03 — full-screen snap navigation
+
+As a response to the visual review, `happyswaps3.html` is now a **nine-screen presentation**:
+1. Intro, 2. Swap, 3. Pools, 4. Portfolio, 5. Rewards, 6. Activity, 7. Networks, 8. Security/how it works, 9. Closing.
+
+- Removed the previous 12 habitat **photo backgrounds**, rotation timer, manual habitat controls and the related theme-changing JS. Retains subtle non-photographic lilac/pink CSS gradients and native HappySwaps branding.
+- Mimics the NFT landing's one-step-at-a-time wheel navigation using a timed wheel lock at desktop widths; CSS scroll-snap with natural touch scrolling on mobile.
+- Fixed down-arrow goes forward, turns into an up-arrow at the last screen and returns to the first; section indicator and optional side dots are synchronized.
+- Keyboard PageUp/PageDown/Arrow keys/Home/End operate when focus is not inside a control. `prefers-reduced-motion` respected.
+- Swap/Pools/Rewards tabs in the illustration still work and still **do not execute on-chain transactions**, make real quotes or connect a wallet.
+- Spanish/Catalan plus English cover all nine main headings and descriptions; remaining i18n language catalogs fall back to English for the new `swapsDeck.*` keys until final localization.
+- The public mascot artwork and arrow layers remain referenced from the HappySwaps GitHub raw URLs in this preview. These should be copied to local assets before production.
+- Preview URL: `http://localhost:8000/happyswaps3.html`; updates to `feature/happyswaps-landing-v1` do not update `main`, `reboot/landing-2026`, public DNS, or ChatGPT Sites automatically.
+- Creating a separate ChatGPT Site requires using **Work → @Sites**, with a link to this branch and the target HTML. This conversation currently has no direct Sites creation action.

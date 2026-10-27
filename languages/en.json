@@ -431,5 +431,8 @@
   "swapsDeck.securityTitle": "YOUR WALLET.<br><span class=\"gradient\">YOUR RULES.</span>",
   "swapsDeck.securityBody": "HappySwaps is independent from the Happy Animals NFT application. You review each transaction and sign it in your wallet.",
   "swapsDeck.startTitle": "READY FOR THE<br><span class=\"gradient\">NEXT CHAPTER?</span>",
-  "swapsDeck.startBody": "This is a visual preview. HappySwaps is in development; verified testnet deployment, HTTPS and supported features will determine when the application link can be activated."
+  "swapsDeck.startBody": "This is a visual preview. HappySwaps is in development; verified testnet deployment, HTTPS and supported features will determine when the application link can be activated.",
+  "swapsDeck.how": "How it works",
+  "swapsDeck.about": "About the project",
+  "swapsDeck.aboutHappy": "About HappySwaps"
 }

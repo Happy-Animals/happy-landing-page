@@ -470,5 +470,8 @@
   "swapsDeck.securityTitle": "TU CARTERA.<br><span class=\"gradient\">TUS REGLAS.</span>",
   "swapsDeck.securityBody": "HappySwaps es independiente de la aplicación NFT de Happy Animals. Tú revisas cada transacción y la firmas desde tu cartera.",
   "swapsDeck.startTitle": "¿PREPARADO PARA<br><span class=\"gradient\">EL PRÓXIMO CAPÍTULO?</span>",
-  "swapsDeck.startBody": "Esta es una vista de prueba del diseño. HappySwaps sigue en desarrollo; activaremos el enlace a la aplicación cuando verifiquemos su despliegue testnet, HTTPS y las funciones compatibles."
+  "swapsDeck.startBody": "Esta es una vista de prueba del diseño. HappySwaps sigue en desarrollo; activaremos el enlace a la aplicación cuando verifiquemos su despliegue testnet, HTTPS y las funciones compatibles.",
+  "swapsDeck.how": "Cómo funciona",
+  "swapsDeck.about": "Sobre el proyecto",
+  "swapsDeck.aboutHappy": "Sobre HappySwaps"
 }
