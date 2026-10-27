@@ -45,3 +45,14 @@ MIT, see [LICENSE](LICENSE).
 ## HappySwaps explainer
 
 `happyswaps.html` is a public-facing introduction, not the DEX itself. It uses the original Happy Animals typography, background palette and 14-language selector; it describes testnet-only capabilities and marks future Earn/Perps as planned. Its draft logo currently points to the existing image in the HappySwaps GitHub repository; before production, copy and optimize the same original image under the landing's `assets/` and update the link to avoid an external runtime dependency. No wallets, NFT contracts, RPC or backend are shared.
+
+## HappySwaps design comparison — experimental, not deployed
+
+Two standalone static design studies have been added to this feature branch; neither replaces the existing NFT landing or the first HappySwaps explainer:
+
+- `happyswaps1.html` — immersive 2026-style, dark gradients, large typography, responsive bento layout, testnet-only illustrative preview with selectable Swap/Pools/Rewards panels. No wallet connection or live market data.
+- `happyswaps2.html` — reuses the original Happy Animals landing stylesheet, full-screen section structure, backgrounds, typographic hierarchy, responsive layout and three Lottie animation files, but switches to HappySwaps content and violet/rose accents.
+
+To compare locally with the repo's existing files: `python -m http.server 8000`, then open `http://localhost:8000/happyswaps1.html` and `http://localhost:8000/happyswaps2.html`. The official HappySwaps bear logo is loaded from the public HappySwaps GitHub repository for **preview only**. Self-host an optimized checked copy before publishing; the pages also use Google Fonts and page 2 uses the same external DotLottie library as the NFT landing.
+
+Neither page is the DEX or enables mainnet. No `index.html`, `landing-config.js`, NFT payouts, RPC, routes, domains, or production deployment are altered in this comparison phase.
