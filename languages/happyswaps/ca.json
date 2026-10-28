@@ -102,5 +102,7 @@
   "swapsDemo.review": "Revisa abans de signar",
   "swapsEnd.launch": "Obre l’app",
   "swapsEnd.animals": "Descobreix Happy Animals!",
-  "swapsEnd.body": "Explora HappySwaps i segueix les novetats del projecte."
+  "swapsEnd.body": "Explora HappySwaps i segueix les novetats del projecte.",
+  "swapsTab.pools": "Pools",
+  "swapsTab.rewards": "Recompenses"
 }

@@ -45,25 +45,5 @@ document.addEventListener("keydown",event=>{
  if(direction){event.preventDefault();step(direction);}
 });
 window.addEventListener("hashchange",()=>{const index=sections.findIndex(s=>"#"+s.id===location.hash);if(index>=0)paint(index);});
-const modes={
- swap:{a:"You send",b:"You receive",first:"0.00",second:"0.00",from:"ETH",to:"USDC",hint:"Review before signing"},
- pools:{a:"Pool positions · illustration",b:"Available liquidity · illustration",first:"—",second:"—",from:"LP",to:"POOL",hint:"No live position data"},
- rewards:{a:"Achievements · illustration",b:"Testnet points · illustration",first:"—",second:"—",from:"XP",to:"POINTS",hint:"No monetary rewards"}
-};
-const tabs=[...document.querySelectorAll(".mini-tabs [role=tab]")];
-let selectedMode="swap";
-function choose(mode){const m=modes[mode];if(!m)return;selectedMode=mode;
- tabs.forEach(tab=>{const selected=tab.dataset.demo===mode;tab.setAttribute("aria-selected",String(selected));tab.tabIndex=selected?0:-1;});
- document.getElementById("conceptPanel").setAttribute("aria-labelledby","tab"+mode[0].toUpperCase()+mode.slice(1));
- [["demoLabelA",m.a],["demoLabelB",m.b],["demoAmountA",m.first],["demoAmountB",m.second],["demoSymbolA",m.from],["demoSymbolB",m.to],["demoHint",m.hint]].forEach(([id,v])=>{document.getElementById(id).textContent=v;});
- [["demoLabelA","swapsDemo.send",m.a],["demoLabelB","swapsDemo.receive",m.b],["demoHint","swapsDemo.review",m.hint]].forEach(([id,key,fallback])=>{
- const el=document.getElementById(id);
- if(mode==="swap"){el.dataset.i18n=key;el.textContent=window.HappyAnimalsI18n?.t(key,fallback)||fallback;}
- else {delete el.dataset.i18n;el.textContent=fallback;}
-});
-document.getElementById("demoCoinA").style.visibility=mode==="swap"?"visible":"hidden";
-}
-tabs.forEach((tab,i)=>{tab.addEventListener("click",()=>choose(tab.dataset.demo));tab.addEventListener("keydown",e=>{if(!["ArrowLeft","ArrowRight"].includes(e.key))return;e.preventDefault();let j=(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length;choose(tabs[j].dataset.demo);tabs[j].focus();});});
-window.addEventListener("happy-animals:language-changed",()=>choose(selectedMode));
 paint(nearest());
 })();

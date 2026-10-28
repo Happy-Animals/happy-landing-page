@@ -63,5 +63,7 @@
   "swapsDemo.review": "Review before signing",
   "swapsEnd.launch": "Launch app",
   "swapsEnd.animals": "Discover Happy Animals!",
-  "swapsEnd.body": "Explore HappySwaps and follow the project."
+  "swapsEnd.body": "Explore HappySwaps and follow the project.",
+  "swapsTab.pools": "Pools",
+  "swapsTab.rewards": "Rewards"
 }
