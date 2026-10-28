@@ -206,3 +206,13 @@ h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 1
 
 .nav-shell{background:transparent;backdrop-filter:none;border-bottom:0}
 body.past-intro .header .language-selector{visibility:hidden;pointer-events:none}
+
+/* Center branding and language control without shifting between sections. */
+.header{flex-direction:column;justify-content:center;gap:8px;min-height:0}
+.brand{justify-content:center}
+.header-end{justify-content:center}
+.header .language-selector{min-height:30px}
+body.past-intro .header-end{display:none}
+.screen{padding-top:150px}
+#start{padding-top:150px}
+@media(max-width:760px){.nav-shell{padding:8px 12px}.header{gap:6px}.screen{padding-top:128px}#start{padding-top:128px}}
