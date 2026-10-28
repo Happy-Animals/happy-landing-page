@@ -222,3 +222,5 @@ body.past-intro .header-end{display:none}
  .header-end{position:absolute;right:0;top:50%;transform:translateY(-50%)}
  .screen,#start{padding-top:105px}
 }
+
+.wordmark small{font-family:"DynaPuff",sans-serif}
