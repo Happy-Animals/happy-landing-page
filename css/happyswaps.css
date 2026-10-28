@@ -133,11 +133,14 @@ h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 1
 
 /* Use the desktop canvas without depending on browser preview zoom. */
 @media(min-width:1100px){
- .frame{width:min(1480px,calc(100% - 48px))}
- .header{max-width:1490px}
+ .frame{width:min(1320px,calc(100% - 96px))}
+ .header{max-width:1330px}
  .stage-copy{max-width:700px}
  .lead{max-width:675px;font-size:clamp(1.13rem,1.35vw,1.4rem)}
  .mascot-circle{width:min(100%,510px)}
 }
 .final-stage{width:min(1180px,100%);max-width:1180px}
 .final-stage .lead{max-width:675px}
+
+/* Keep navigation at the viewport edge, independent of content margins. */
+.deck-arrow{right:14px}
