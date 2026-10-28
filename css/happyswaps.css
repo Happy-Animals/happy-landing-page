@@ -216,3 +216,9 @@ body.past-intro .header-end{display:none}
 .screen{padding-top:150px}
 #start{padding-top:150px}
 @media(max-width:760px){.nav-shell{padding:8px 12px}.header{gap:6px}.screen{padding-top:128px}#start{padding-top:128px}}
+
+@media(min-width:761px){
+ .header{position:relative;flex-direction:row;min-height:65px}
+ .header-end{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+ .screen,#start{padding-top:105px}
+}
