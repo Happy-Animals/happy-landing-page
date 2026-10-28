@@ -388,5 +388,6 @@
   "token.trade": "Intercanvia $SMILES",
   "token.viewSolscan": "Veure a Solscan",
   "token.pieAlt": "Gràfic circular amb els percentatges de distribució dels tokens SMILES",
-  "animal.name.owl": "Mussol"
+  "animal.name.owl": "Mussol",
+  "landing.tryHappySwaps": "Prova HappySwaps"
 }

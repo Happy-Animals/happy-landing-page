@@ -752,6 +752,22 @@
           box-sizing: border-box;
         }
       }
+    
+      /* HappySwaps keeps the footer button shape with its own lilac accent. */
+      .cta-buttona.cta-happyswaps {
+        background-color: #825bb8;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .cta-buttona.cta-happyswaps:hover {
+        background-color: #623c94;
+      }
+      .cta-buttona.cta-happyswaps:focus-visible {
+        outline: 3px solid #623c94;
+        outline-offset: 4px;
+      }
     </style>
   </head>
   <body class="landing-page" data-i18n-page-title="landing.pageTitle">
@@ -1063,6 +1079,13 @@
                 <canvas id="buttonCanvas"></canvas>
                 SMILES token
               </div> -->
+              <a
+                class="cta-buttona cta-happyswaps"
+                href="./happyswaps.html"
+              >
+                <span aria-hidden="true">⇄</span>
+                <span data-i18n="landing.tryHappySwaps">Try HappySwaps</span>
+              </a>
             </div>
           </div>
         </div>

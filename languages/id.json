@@ -388,5 +388,6 @@
   "token.trade": "Perdagangkan $SMILES",
   "token.viewSolscan": "Lihat di Solscan",
   "token.pieAlt": "Diagram lingkaran persentase distribusi token SMILES",
-  "animal.name.owl": "Burung Hantu"
+  "animal.name.owl": "Burung Hantu",
+  "landing.tryHappySwaps": "Coba HappySwaps"
 }

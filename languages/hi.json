@@ -388,5 +388,6 @@
   "token.trade": "$SMILES ट्रेड करें",
   "token.viewSolscan": "Solscan पर देखें",
   "token.pieAlt": "SMILES टोकन वितरण प्रतिशत दिखाने वाला पाई चार्ट",
-  "animal.name.owl": "उल्लू"
+  "animal.name.owl": "उल्लू",
+  "landing.tryHappySwaps": "HappySwaps आज़माएँ"
 }
