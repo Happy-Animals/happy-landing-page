@@ -45,5 +45,30 @@ document.addEventListener("keydown",event=>{
  if(direction){event.preventDefault();step(direction);}
 });
 window.addEventListener("hashchange",()=>{const index=sections.findIndex(s=>"#"+s.id===location.hash);if(index>=0)paint(index);});
+
+/* One-card swipes on touch screens; tall sections retain native scrolling. */
+let swipe=null;
+window.addEventListener("touchstart",event=>{
+ if(event.touches.length!==1){swipe=null;return;}
+ if(event.target.closest("a,button,select,input,textarea,[contenteditable],[data-native-scroll]")){swipe=null;return;}
+ const index=nearest(),section=sections[index];
+ if(!section||section.getBoundingClientRect().height>window.innerHeight+2){swipe=null;return;}
+ swipe={x:event.touches[0].clientX,y:event.touches[0].clientY,index};
+},{passive:true});
+window.addEventListener("touchmove",event=>{
+ if(!swipe)return;
+ if(event.touches.length!==1){swipe=null;return;}
+ const dx=event.touches[0].clientX-swipe.x,dy=event.touches[0].clientY-swipe.y;
+ if(Math.abs(dy)>12&&Math.abs(dy)>Math.abs(dx)&&event.cancelable)event.preventDefault();
+},{passive:false});
+window.addEventListener("touchend",event=>{
+ const start=swipe;swipe=null;
+ if(!start||event.changedTouches.length!==1)return;
+ const dx=event.changedTouches[0].clientX-start.x,dy=event.changedTouches[0].clientY-start.y;
+ if(Math.abs(dy)>=45&&Math.abs(dy)>Math.abs(dx))go(start.index+(dy<0?1:-1));
+ else go(start.index);
+},{passive:true});
+window.addEventListener("touchcancel",()=>{swipe=null;},{passive:true});
+
 paint(nearest());
 })();
