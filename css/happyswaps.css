@@ -203,3 +203,6 @@ h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 1
 .mascot-circle::after{content:none}
 #start .end-socials a[aria-label="GitHub"] img{filter:brightness(0)}
 .chain-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%;z-index:1}.chain-grid div{display:grid;justify-items:center;gap:10px;color:var(--ink);font:500 .9rem DynaPuff,sans-serif}.chain-grid img{width:64px;height:64px;object-fit:contain}@media(max-width:760px){.chain-grid{gap:12px}.chain-grid img{width:36px;height:36px}.chain-grid div{font-size:.7rem;gap:5px}}
+
+.nav-shell{background:transparent;backdrop-filter:none;border-bottom:0}
+body.past-intro .header .language-selector{visibility:hidden;pointer-events:none}

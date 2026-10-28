@@ -9,7 +9,7 @@ const desktop=window.matchMedia("(pointer:fine) and (min-width:761px)");
 let active=0,locked=false,wheelTotal=0,wheelTime=0,unlockTimer=null,scrollFrame=0;
 const clamp=n=>Math.max(0,Math.min(n,sections.length-1));
 function nearest(){let best=0,dist=Infinity;sections.forEach((section,i)=>{const d=Math.abs(section.getBoundingClientRect().top);if(d<dist){dist=d;best=i;}});return best;}
-function paint(i){active=clamp(i);const last=active===sections.length-1;
+function paint(i){active=clamp(i);document.body.classList.toggle("past-intro",active>0);const last=active===sections.length-1;
 arrow.textContent=last?"↑":"↓";arrow.classList.toggle("is-last",last);
 arrow.setAttribute("aria-label",last?"Back to first section":"Next section");
 arrow.title=arrow.getAttribute("aria-label");
