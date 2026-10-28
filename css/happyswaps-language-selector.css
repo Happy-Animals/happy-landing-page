@@ -1,0 +1,125 @@
+/* HAPPY ANIMALS 2026 - shared language selector */
+
+/*
+ * Visual base.
+ * Dimensions follow the HAPPY ANIMALS 2026 webapp button pattern:
+ * min-width: 120px
+ * min-height: 44px
+ * padding: 10px 22px
+ * border-radius: 25px
+ */
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-width: 120px;
+  min-height: 44px;
+  padding: 10px 22px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 25px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   LANDING
+   Only visible as part of the first/hero screen.
+   ========================================================= */
+
+.landing-page .start > .language-selector {
+  position: absolute;
+
+  top: auto;
+  right: auto;
+  bottom: 58px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+}
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.language-selector__select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 0;
+  outline: 0;
+  background: transparent;
+
+  min-width: 132px;
+  padding: 0 2px;
+
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  text-align: center;
+  text-align-last: center;
+
+  cursor: pointer;
+}
+
+.language-selector__select:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.language-selector__arrow {
+  flex: 0 0 auto;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* =========================================================
+   TOKEN PAGE
+   Keep its existing top position.
+   ========================================================= */
+
+.token-page .section1Intro > .language-selector {
+  position: absolute;
+
+  top: auto;
+  right: auto;
+  bottom: 58px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+}
+
+html[dir="rtl"] .token-page .language-selector {
+  right: auto;
+  left: 270px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .landing-page .start > .language-selector,
+  .token-page .section1Intro > .language-selector {
+    top: auto;
+    right: auto;
+    bottom: 58px;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  .language-selector__select {
+    min-width: 132px;
+  }
+}

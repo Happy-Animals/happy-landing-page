@@ -1,0 +1,132 @@
+
+:root{--ink:#2b2136;--muted:#64566f;--purple:#825bb8;--purple-deep:#623c94;--rose:#ed97bd;--cream:#fff9fd;--line:#e8dcef;--soft:#f2e7fa}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;scroll-padding-top:0}
+body{margin:0;min-width:300px;color:var(--ink);background:#fcf8ff;font-family:"DynaPuff",sans-serif;overflow-x:hidden}
+button,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--purple);outline-offset:4px}
+.skip{position:fixed;top:-100px;left:12px;z-index:150;background:#fff;padding:12px}.skip:focus{top:10px}
+.nav-shell{position:fixed;top:0;left:0;right:0;z-index:100;padding:10px 20px;background:linear-gradient(180deg,rgba(252,248,255,.97),rgba(252,248,255,.82));backdrop-filter:blur(15px);border-bottom:1px solid #eadff250}
+.header{max-width:1190px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:65px}
+.brand{display:inline-flex;align-items:center;gap:9px;min-width:0}
+.brand-mark{position:relative;display:block;width:52px;height:52px;flex:0 0 52px;border-radius:50%;overflow:hidden;background:#fff}
+.brand-mark img{width:100%;height:100%;position:absolute;inset:0;object-fit:contain;pointer-events:none}
+.brand-arrow.top{--from:45%;--to:-45%}.brand-arrow.bottom{--from:-45%;--to:45%}
+@keyframes arrow-flow{0%,18%{transform:translateX(0);opacity:1}44%{transform:translateX(var(--from));opacity:0}45%{transform:translateX(var(--to));opacity:0}72%,100%{transform:translateX(0);opacity:1}}
+@media(hover:hover) and (pointer:fine){.brand:hover .brand-arrow{animation:arrow-flow 1.6s ease-in-out infinite}}
+.wordmark{display:flex;flex-direction:column;gap:2px}
+.wordmark strong{font:400 clamp(1.3rem,2vw,1.9rem)/1 "Luckiest Guy",sans-serif;white-space:nowrap}
+.wordmark small{font:500 .59rem Roboto,sans-serif;letter-spacing:.12em;color:#876b95;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:16px}
+.nav a{font:500 .83rem DynaPuff,sans-serif;color:#675176}.nav a:hover{color:#844ebd}
+.header-end{display:flex;align-items:center;gap:8px}
+.header .language-selector{min-width:0;min-height:38px;padding:3px 6px;border:1px solid #e3d5e8;background:#ffffffd9}
+.header .language-selector__select{font-size:.76rem}
+.back-home{padding:10px 14px;border-radius:22px;background:#f0e4f8;color:#5b357e;white-space:nowrap;font-size:.76rem}
+.back-home:hover{background:#ead6f8}
+.screen{scroll-snap-align:start;scroll-snap-stop:always;position:relative;min-height:100svh;display:flex;align-items:center;isolation:isolate;overflow:hidden;padding:105px 24px 86px}
+.screen::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(circle at 83% 12%,rgba(222,186,245,.36),transparent 39%),radial-gradient(circle at 13% 87%,rgba(255,207,230,.32),transparent 37%)}
+.screen::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.1;background-image:radial-gradient(#9b6cc2 .6px,transparent .7px);background-size:23px 23px;mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent)}
+.screen:nth-of-type(2n){background:#f5ecfc}
+.screen:nth-of-type(3n){background:#fdf1f8}
+.screen:nth-of-type(4n){background:#f9f4ff}
+.screen-intro{background:#fdfaff}.screen-intro::before{background:radial-gradient(circle at 82% 38%,#dbc0f472,transparent 39%),radial-gradient(circle at 6% 14%,#fed4e45c,transparent 39%)}
+.frame{width:min(1180px,100%);margin:0 auto;position:relative}
+.stage{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(22px,5vw,78px)}
+.stage-copy{max-width:600px;position:relative;z-index:2}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;font:700 .76rem Roboto,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#7b519b}
+.eyebrow::before{content:"";height:3px;width:24px;border-radius:5px;background:#e495c4}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{color:var(--ink)}
+h1{font:400 clamp(3.65rem,7.7vw,7.4rem)/.98 "Luckiest Guy",sans-serif;letter-spacing:.006em;margin:20px 0}
+h2{font:400 clamp(3rem,6.8vw,6.1rem)/1.02 "Luckiest Guy",sans-serif;margin:14px 0 19px}
+h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 12px}
+.gradient{display:inline-block;background:linear-gradient(98deg,#8156bf,#be76bb,#ea93c9);background-clip:text;-webkit-background-clip:text;color:transparent}
+.lead{font:400 clamp(.96rem,1.5vw,1.13rem)/1.78 "DynaPuff",sans-serif;color:#5e5264;max-width:540px}
+.lead strong{color:#724b9b}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:24px;font:500 .91rem DynaPuff,sans-serif;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:linear-gradient(112deg,#8058bd,#a06cc7);color:white;box-shadow:0 12px 27px #7d56b528}
+.btn-ghost{border-color:#e6d7eb;background:#ffffffc9;color:#603d84}
+.btn-ghost:hover{background:#fff}
+.feature-card{position:relative;min-height:405px;padding:clamp(23px,3vw,35px);border-radius:34px;background:linear-gradient(130deg,#ffffff,#faf5ff);border:1px solid #e0d0ec;box-shadow:0 22px 0 #e9d7f077,0 36px 70px #5b3b7224;overflow:hidden}
+.feature-card::before{content:"";position:absolute;right:-94px;top:-105px;width:315px;height:315px;border-radius:50%;border:57px solid #ac8be720;box-shadow:0 0 0 40px #ac8be710;pointer-events:none}
+.feature-card .card-top{position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#8b699d;font:700 .73rem Roboto,sans-serif;letter-spacing:.07em;margin-bottom:20px}
+.feature-card .card-top span:last-child{padding:9px 12px;background:#efe2fa;border-radius:20px}
+.card-symbol{font:400 clamp(4.4rem,9vw,8.6rem)/1 "Luckiest Guy",sans-serif;color:#a674cc;letter-spacing:-.07em;position:relative;margin:13px 0}
+.card-detail{position:relative;color:#62526a;font:400 1rem/1.7 Roboto,sans-serif;max-width:355px}
+.card-bottom{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;font:700 .78rem Roboto,sans-serif;color:#744f97}
+.card-badges{position:relative;display:flex;flex-wrap:wrap;gap:9px;margin:25px 0}
+.card-badge{border-radius:20px;padding:9px 12px;background:#f3e8fa;color:#6b4d8f;font:700 .78rem Roboto,sans-serif}
+.feature-card.pink{background:linear-gradient(135deg,#fffafc,#ffe5f2);border-color:#f2d4e4}
+.feature-card.pink .card-symbol{color:#ed9bc4}
+.feature-card.deep{background:linear-gradient(135deg,#57417c,#8a6bb5);border:1px solid #6e5389;color:white}
+.feature-card.deep .card-top,.feature-card.deep .card-detail,.feature-card.deep .card-bottom{color:#f3eafa}
+.feature-card.deep .card-symbol{color:#e6c6ff}
+.feature-card.deep .card-top span:last-child{background:#ffffff2a}
+.feature-card.deep .card-badge{background:#ffffff29;color:white}
+.feature-card.mint{background:linear-gradient(135deg,#fffefd,#edfaf5);border-color:#cfe8e0}
+.feature-card.mint .card-symbol{color:#68b8a5}
+.mascot-show{display:grid;place-items:center;min-height:415px}
+.mascot-circle{display:grid;place-items:center;width:min(100%,410px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 26%,white,#f5e2fe 53%,#e7ccef);box-shadow:0 20px 0 #e0c1ef66,0 32px 65px #674e8423;border:2px solid #fff;position:relative}
+.mascot-circle::after{content:"✦";position:absolute;right:9%;top:12%;font-size:3.4rem;color:#c782c3}
+.mascot-circle img{display:block;width:85%;max-height:90%;object-fit:contain;filter:drop-shadow(0 20px 14px #684c8030)}
+.mini-app{border-radius:29px;padding:22px;background:white;box-shadow:0 18px 35px #5b3b7220;border:1px solid #e8d9ef;position:relative}
+.mini-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px}
+.mini-head strong{font:400 1.32rem "Luckiest Guy",sans-serif}
+.demo-badge{padding:7px 10px;background:#f4e9fa;color:#775b8d;border-radius:16px;font:700 .64rem Roboto,sans-serif}
+.mini-tabs{display:flex;gap:6px;border-radius:14px;padding:5px;background:#f3ecf8;margin-bottom:17px}
+.mini-tabs button{flex:1;border:0;border-radius:11px;background:transparent;color:#887393;font-size:.8rem;padding:10px 5px}
+.mini-tabs [aria-selected=true]{background:#fff;color:#674294;box-shadow:0 4px 12px #5b3b7219}
+.amount{background:#f9f5ff;border:1px solid #e6daee;border-radius:17px;padding:15px;margin-bottom:0}
+.amount-label{font:700 .74rem Roboto,sans-serif;color:#85768a;display:block;margin-bottom:12px}
+.amount-line{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.amount strong{font:500 1.95rem Roboto,sans-serif;color:#342b3a;font-variant-numeric:tabular-nums}
+.coin-label{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:15px;background:#fff;font:700 .8rem Roboto,sans-serif}
+.coin-label img{width:20px;height:20px}
+.switch-icon{display:grid;place-items:center;width:38px;height:38px;margin:-5px auto;position:relative;z-index:2;background:#e9d9f8;border:4px solid white;border-radius:13px;color:#7e54af}
+.demo-info{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 10px;color:#6d5d74;font:500 .76rem Roboto,sans-serif}
+.demo-action{padding:13px;background:#eadcf6;color:#674a89;border-radius:15px;text-align:center;font-size:.82rem}
+.demo-foot{color:#867990;margin:12px 0 0;text-align:center;font:400 .68rem/1.4 Roboto,sans-serif}
+.network-icons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;position:relative;margin-top:23px}
+.network-icons span{display:flex;align-items:center;gap:10px;padding:14px;border:1px solid #e9dcf2;background:#fff;border-radius:18px;font:700 .85rem Roboto,sans-serif}
+.network-icons img{width:28px;height:28px;object-fit:contain}
+.stack-steps{display:grid;gap:10px;margin-top:25px}
+.stack-steps>div{display:flex;align-items:flex-start;gap:14px;padding:17px;border:1px solid #e8d8f3;border-radius:18px;background:#ffffffdd}
+.stack-steps b{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:12px;background:#eadaf7;color:#7546a5;font:700 .8rem Roboto,sans-serif}
+.stack-steps strong{display:block;font:700 .92rem Roboto,sans-serif;margin-bottom:5px}
+.stack-steps p{font:400 .83rem/1.6 Roboto,sans-serif;margin:0;color:#63546d}
+.final-stage{text-align:center;max-width:875px;margin:auto}
+.final-stage .lead{margin:0 auto}
+.final-stage h2{font-size:clamp(3.5rem,8vw,7rem)}
+.final-emblem{display:inline-grid;place-items:center;width:100px;height:100px;border-radius:30px;background:linear-gradient(135deg,#f5d9f0,#dec5fd);font-size:4rem;color:#8e5db5;margin-bottom:25px;transform:rotate(-7deg)}
+.final-actions{justify-content:center}
+.final-foot{margin-top:45px;font:400 .77rem/1.5 Roboto,sans-serif;color:#8a7995}
+.deck-arrow{position:fixed;right:clamp(15px,3.4vw,45px);bottom:clamp(17px,3vw,35px);z-index:105;display:grid;place-items:center;width:66px;height:66px;border-radius:50%;border:2px solid #fff;background:linear-gradient(135deg,#996bcd,#7149ae);color:white;box-shadow:0 12px 30px #61437855;font:400 2.65rem/1 "Luckiest Guy",sans-serif;transition:transform .2s,background .2s}
+.deck-arrow:hover{transform:translateY(3px);background:#643995}
+.deck-arrow.is-last:hover{transform:translateY(-3px)}
+.deck-counter{position:fixed;bottom:clamp(38px,4vw,54px);right:clamp(92px,10vw,145px);z-index:105;background:#ffffffdc;border:1px solid #ead7f5;color:#674683;border-radius:20px;padding:8px 12px;font:700 .75rem Roboto,sans-serif;box-shadow:0 5px 22px #6a507522;white-space:nowrap}
+.progress-rail{position:fixed;left:clamp(12px,2vw,24px);top:50%;transform:translateY(-50%);z-index:102;display:flex;flex-direction:column;gap:11px}
+.progress-rail button{width:10px;height:10px;border:0;border-radius:10px;background:#bcaacb;opacity:.75;padding:0;transition:height .18s,background .18s}
+.progress-rail button[aria-current=true]{height:30px;background:#835ab6;opacity:1}
+@media(max-width:1030px){.nav{display:none}.stage{gap:28px}.screen{padding-inline:28px}.progress-rail{display:none}}
+@media(max-width:760px){html{scroll-snap-type:y proximity}.screen{padding:110px 18px 90px;min-height:100svh}.stage{grid-template-columns:1fr;gap:24px}.stage-copy{text-align:center;max-width:630px;margin:auto}.eyebrow{justify-content:center}.lead{margin-inline:auto}.actions{justify-content:center}.feature-card{min-height:285px;padding:23px}.mascot-show{min-height:260px}.mascot-circle{width:min(100%,260px)}.card-symbol{font-size:4.5rem;margin:4px 0}.card-badges{margin:15px 0}.feature-card::before{width:200px;height:200px;right:-65px;top:-85px}.mini-app{max-width:480px;margin:0 auto}.brand-mark{width:43px;height:43px;flex-basis:43px}.wordmark strong{font-size:1.4rem}.header .language-selector{max-width:128px}.back-home{padding:9px;font-size:.73rem}.deck-arrow{width:52px;height:52px;font-size:2.1rem}.deck-counter{right:78px;bottom:34px}}
+@media(max-width:430px){.nav-shell{padding:9px 11px}.header{gap:5px}.wordmark strong{font-size:1.17rem}.wordmark small{font-size:.52rem}.brand-mark{width:36px;height:36px;flex-basis:36px}.header-end{gap:5px}.header .language-selector{max-width:98px;padding:1px 3px;min-height:33px}.header .language-selector__select{font-size:.65rem}.back-home{font-size:.66rem;padding:8px 7px}.screen{padding-top:100px;padding-bottom:80px}h1{font-size:clamp(3.1rem,14vw,4.2rem)}h2{font-size:clamp(2.6rem,12vw,4.2rem)}.feature-card{min-height:250px;padding:19px}.mini-app{padding:16px}.amount strong{font-size:1.55rem}.demo-info{font-size:.65rem}.network-icons span{padding:10px;font-size:.75rem}.network-icons img{width:23px;height:23px}}
+@media(max-height:740px) and (min-width:761px){.screen{padding-top:95px;padding-bottom:65px}h1{font-size:clamp(3.2rem,6vw,6rem)}h2{font-size:clamp(2.7rem,5.6vw,5rem)}.feature-card{min-height:330px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.deck-arrow:hover{transform:none}}
+
+/* Same fixed animated arrow treatment as the original Happy Animals landing. */
+.deck-arrow{background:transparent;border:0;border-radius:0;box-shadow:none;color:#a078c5;text-shadow:0 2px 11px #86517938;width:70px;height:70px;font:400 4rem/1 Roboto,Arial,sans-serif;animation:deck-arrow-pulse 1.5s ease-in-out infinite}
+.deck-arrow:hover,.deck-arrow.is-last:hover{background:transparent;box-shadow:none;color:#825bb8;transform:none}
+@keyframes deck-arrow-pulse{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(10px);opacity:.7}}
+.deck-arrow.is-last{animation-name:deck-arrow-up}
+@keyframes deck-arrow-up{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-10px);opacity:.7}}
+@media(max-width:760px){.deck-arrow{width:58px;height:58px;font-size:3.2rem}}
+@media(prefers-reduced-motion:reduce){.deck-arrow,.deck-arrow.is-last{animation:none!important;opacity:1!important}}
+/* Alternate desktop card placement; keep reading order on mobile. */
+@media(min-width:761px){
+ .stage-card-left>.feature-card{grid-column:1;grid-row:1}
+ .stage-card-left>.stage-copy{grid-column:2;grid-row:1}
+}
+.end-socials{display:flex;justify-content:center;gap:16px;margin:28px 0 20px}.end-socials a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#ffffffaa;border:1px solid var(--line);transition:transform .2s}.end-socials a:hover{transform:translateY(-3px)}.end-socials img{object-fit:contain}.discover-animals{display:inline-block;padding:9px 15px;border:1px solid var(--line);border-radius:20px;color:var(--muted);font:400 .78rem DynaPuff,sans-serif}.discover-animals:hover{background:#fff}
