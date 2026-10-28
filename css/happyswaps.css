@@ -193,3 +193,7 @@ h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 1
 }
 
 .feature-card{display:grid;place-items:center}.card-art{display:block;width:min(100%,340px);height:280px;object-fit:contain}@media(max-width:760px){.card-art{height:145px;width:min(100%,220px)}}
+
+/* Fill the card illustration area while preserving its aspect ratio. */
+.feature-card>.card-art{position:absolute;inset:18px;width:calc(100% - 36px);height:calc(100% - 36px);max-width:none;max-height:none;object-fit:contain}
+@media(max-width:760px){.feature-card>.card-art{inset:12px;width:calc(100% - 24px);height:calc(100% - 24px)}}
