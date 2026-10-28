@@ -144,3 +144,31 @@ h3{font:400 clamp(1.5rem,3vw,2.25rem)/1.1 "Luckiest Guy",sans-serif;margin:0 0 1
 
 /* Keep navigation at the viewport edge, independent of content margins. */
 .deck-arrow{right:14px}
+
+/* The swap mockup is a static illustration. */
+.mini-app[inert] button{cursor:default}
+/* Keep the final content below the header with minimal bottom spacing. */
+#start{padding-top:120px;padding-bottom:24px}
+.final-emblem{width:64px;height:64px;font-size:2.6rem;margin-bottom:14px}
+.final-stage h2{margin-top:0;margin-bottom:18px}
+.final-actions{margin-top:18px}
+.end-socials{margin:20px 0 14px}
+@media(max-width:760px){
+ .screen{padding:96px 18px 64px}
+ .stage{gap:18px}
+ h1{font-size:clamp(2.7rem,11vw,4rem)}
+ h2{font-size:clamp(2rem,8vw,3.1rem)}
+ .lead{font-size:.9rem;line-height:1.6}
+ .feature-card{min-height:175px;padding:18px;border-radius:26px}
+ .mini-app{width:100%;max-width:350px;padding:16px;border-radius:24px}
+ .mini-head{margin-bottom:12px}.mini-tabs{margin-bottom:12px}
+ .mini-tabs button{padding:8px 4px;font-size:.73rem}
+ .amount{padding:12px}.amount-label{margin-bottom:8px}
+ .amount strong{font-size:1.5rem}.demo-info{margin:12px 0 8px}
+ .demo-action{padding:10px}.mascot-show{min-height:210px}
+ .mascot-circle{width:min(100%,210px)}
+ #start{padding:100px 18px 18px}
+ .final-stage h2{font-size:clamp(1.9rem,7.5vw,2.8rem)}
+ .final-emblem{width:52px;height:52px;font-size:2.1rem;margin-bottom:12px}
+ .final-actions{margin-top:14px}.end-socials{margin:16px 0 12px}
+}
