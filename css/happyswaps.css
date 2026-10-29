@@ -224,3 +224,8 @@ body.past-intro .header-end{display:none}
 }
 
 .wordmark small{font-family:"DynaPuff",sans-serif}
+
+/* Stable brand colors shared with the HappySwaps app. */
+.wordmark strong{color:#151515}
+.wordmark-swaps{color:#825bb8}
+.wordmark small{font-family:"DynaPuff",sans-serif;color:#151515;letter-spacing:0;font-weight:500}
