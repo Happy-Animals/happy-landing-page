@@ -276,7 +276,7 @@ body.past-intro .header-end{display:none}
  .header-end{
   position:fixed;
   left:50%;
-  bottom:max(18px,env(safe-area-inset-bottom));
+  bottom:max(38px,env(safe-area-inset-bottom));
   transform:translateX(-50%);
   display:flex!important;
  }
