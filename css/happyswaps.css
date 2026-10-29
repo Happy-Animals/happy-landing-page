@@ -268,3 +268,31 @@ body.past-intro .header-end{display:none}
  .header .language-selector__select{min-height:33px;padding:0 26px 0 10px}
  .header .language-selector__arrow{right:9px}
 }
+
+
+/* Mobile header: one compact row, with a short language control. */
+.language-selector__current{display:none}
+@media(max-width:760px){
+ .header{flex-direction:row;justify-content:space-between;width:100%;min-height:54px;gap:10px}
+ .brand{justify-content:flex-start}
+ .brand-mark{width:38px;height:38px;flex-basis:38px}
+ .wordmark strong{font-size:1.22rem}
+ .wordmark small{font-size:.5rem}
+ .header-end{position:static;display:flex!important;flex:0 0 auto}
+ body.past-intro .header-end{display:none!important}
+ .header .language-selector{width:72px;min-width:72px;max-width:72px;min-height:34px}
+ .header .language-selector__select{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:0;opacity:0;cursor:pointer}
+ .header .language-selector__current{display:block;width:100%;padding-right:20px;text-align:center;font-size:.72rem;font-weight:600;text-transform:uppercase}
+ .header .language-selector__arrow{right:10px}
+ .screen,#start{padding-top:90px}
+}
+@media(max-width:430px){
+ .nav-shell{padding:8px 11px}
+ .header{gap:7px}
+ .brand{gap:7px}
+ .brand-mark{width:34px;height:34px;flex-basis:34px}
+ .wordmark strong{font-size:1.08rem}
+ .wordmark small{font-size:.46rem}
+ .header .language-selector{width:64px;min-width:64px;max-width:64px}
+ .screen,#start{padding-top:84px}
+}

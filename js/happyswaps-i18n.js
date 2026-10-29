@@ -134,6 +134,12 @@
     }
 
     select.value = language;
+
+    const currentLanguage = document.querySelector(".language-selector__current");
+    if (currentLanguage) {
+      currentLanguage.textContent = language.toUpperCase();
+    }
+
     select.setAttribute(
       "aria-label",
       t("language.selectorAria", "Select language"),
