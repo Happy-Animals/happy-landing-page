@@ -229,3 +229,42 @@ body.past-intro .header-end{display:none}
 .wordmark strong{color:#151515}
 .wordmark-swaps{color:inherit}
 .wordmark small{font-family:"DynaPuff",sans-serif;color:#151515;letter-spacing:0;font-weight:500}
+
+
+/* Keep the two-line wordmark optically centered. */
+.wordmark{align-items:center;text-align:center}
+
+/* Keep the language arrow inside one compact selector capsule. */
+.header .language-selector{
+ position:relative;
+ display:inline-flex;
+ align-items:center;
+ width:132px;
+ min-width:118px;
+ max-width:160px;
+ padding:0;
+ gap:0;
+ overflow:hidden;
+}
+.header .language-selector__select{
+ display:block;
+ width:100%;
+ min-width:0;
+ min-height:36px;
+ padding:0 30px 0 14px;
+ text-align:center;
+ text-align-last:center;
+}
+.header .language-selector__arrow{
+ position:absolute;
+ top:50%;
+ right:11px;
+ transform:translateY(-50%);
+ line-height:1;
+ pointer-events:none;
+}
+@media(max-width:430px){
+ .header .language-selector{width:116px;min-width:108px;max-width:120px;padding:0}
+ .header .language-selector__select{min-height:33px;padding:0 26px 0 10px}
+ .header .language-selector__arrow{right:9px}
+}
